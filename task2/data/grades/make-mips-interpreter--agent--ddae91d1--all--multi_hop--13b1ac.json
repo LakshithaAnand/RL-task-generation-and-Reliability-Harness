@@ -1,0 +1,76 @@
+{
+  "grade_id": "make-mips-interpreter--agent--ddae91d1--all--multi_hop--13b1ac",
+  "created_at": "2026-07-07T07:33:13+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--agent--ddae91d1",
+  "rubric": "all",
+  "mode": "pointwise",
+  "pipeline": "multi_hop",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": "claude-haiku-4-5-20251001",
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "problem_localization": {
+      "score": 1,
+      "label": "poor",
+      "evidence": [
+        "changed_files: [] (empty)",
+        "final_diff_excerpt: '(empty diff: no workspace changes)'",
+        "fix_sites: [] (empty)",
+        "diagnosis_before_edit only shows an `ls -la /app/` directory listing with no analysis of the ELF or source"
+      ],
+      "reason": "There is no evidence the attempt localized the problem beyond listing the directory. No files were created or modified, and no vm.js implementation is present in the evidence."
+    },
+    "patch_correctness": {
+      "score": 1,
+      "label": "poor",
+      "evidence": [
+        "verifier_result: 0/3 tests passed; all_passed=False",
+        "failed: test_vm_execution",
+        "failed: test_frame_bmp_exists",
+        "failed: test_frame_bmp_similar_to_reference",
+        "changed_files: [] \u2014 no vm.js produced"
+      ],
+      "reason": "All three verifier tests failed and no code was produced. The task required creating vm.js to run the MIPS ELF and save frames; nothing was implemented."
+    },
+    "generalization_regression_safety": {
+      "score": 1,
+      "label": "poor",
+      "evidence": [
+        "empty diff \u2014 no workspace changes",
+        "integrity_violation: false but also no functional artifact exists",
+        "no memory extraction, no interpreter, no syscall handling delivered"
+      ],
+      "reason": "With no implementation delivered, there is nothing that generalizes or handles the required behavior (booting DOOM, rendering/saving the first frame). The solution is entirely absent."
+    }
+  },
+  "extraction": {
+    "deterministic": {
+      "changed_files": [],
+      "verifier_result": "0/3 tests passed; all_passed=False\n  failed: test_outputs.py::test_vm_execution\n  failed: test_outputs.py::test_frame_bmp_exists\n  failed: test_outputs.py::test_frame_bmp_similar_to_reference",
+      "final_diff_excerpt": "(empty diff: no workspace changes)",
+      "test_related_commands": [],
+      "protected_files_changed": [],
+      "integrity_violation": false
+    },
+    "llm_extracted": {
+      "fix_sites": [],
+      "test_interactions": [],
+      "test_or_verifier_tampering": null,
+      "diagnosis_before_edit": "$ ls -la /app/\ntotal 5620\ndrwxr-xr-x 1 root root    4096 Jul  4 21:50 .\ndrwxr-xr-x 1 root root    4096 Jul  6 08:14 ..\n-rw-r--r-- 1 root root 4196020 Jul  4 21:51 doom.wad\ndrwxr-xr-x 1 root root    4096 Jul  4 21:50 doomgeneric\n-rwxr-xr-x 1 root root 1543608 Jul  4 21:50 doomgeneric_mips"
+    }
+  },
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 3799,
+    "output_tokens": 749,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 29556
+  }
+}

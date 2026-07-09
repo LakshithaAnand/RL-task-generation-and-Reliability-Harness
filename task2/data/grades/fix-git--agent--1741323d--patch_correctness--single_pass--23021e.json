@@ -1,0 +1,27 @@
+{
+  "grade_id": "fix-git--agent--1741323d--patch_correctness--single_pass--23021e",
+  "created_at": "2026-07-07T07:19:00+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--agent--1741323d",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": null,
+  "extraction": null,
+  "malformed": true,
+  "retried": true,
+  "raw_response": "MALFORMED after retry: score must be an integer 1-5, got 0",
+  "usage": {
+    "input_tokens": 468,
+    "output_tokens": 470,
+    "cache_read_input_tokens": 1892,
+    "cache_creation_input_tokens": 1892
+  }
+}

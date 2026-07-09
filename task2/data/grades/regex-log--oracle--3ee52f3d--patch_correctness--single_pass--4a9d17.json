@@ -1,0 +1,46 @@
+{
+  "grade_id": "regex-log--oracle--3ee52f3d--patch_correctness--single_pass--4a9d17",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--oracle--3ee52f3d",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "regex-log--scripted--d4429778",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.99,
+    "evidence_for_A": [
+      "Empty diff, no regex file created",
+      "Agent gave up immediately",
+      "0/1 tests passed"
+    ],
+    "evidence_for_B": [
+      "Created /app/regex.txt with a complete regex",
+      "Uses lookahead to require an IPv4 address on the line",
+      "Handles month-specific day limits including Feb up to 29",
+      "Uses boundary checks to avoid alphanumeric adjacency",
+      "Captures the last date via greedy .* before the capture group",
+      "1/1 tests passed"
+    ],
+    "reason": "Attempt A produced no patch and failed the test. Attempt B produced a working regex that satisfies all stated requirements and passed the verifier.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 1547,
+    "output_tokens": 241,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

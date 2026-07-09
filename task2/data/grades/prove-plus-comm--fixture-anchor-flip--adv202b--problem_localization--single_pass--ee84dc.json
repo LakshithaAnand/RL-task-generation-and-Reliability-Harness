@@ -1,0 +1,37 @@
+{
+  "grade_id": "prove-plus-comm--fixture-anchor-flip--adv202b--problem_localization--single_pass--ee84dc",
+  "created_at": "2026-07-07T20:32:16+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--fixture-anchor-flip--adv202b",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Step 0: `cat plus_comm.v` revealed the structure with two `admit`s in base and step cases",
+      "Step 1 reasoning: correctly diagnosed base case needs plus_n_O and step case needs IHn' + plus_n_Sm",
+      "Step 2-3: compiled with coqc and confirmed plus_comm.vo was produced"
+    ],
+    "reason": "The agent inspected the file first, correctly identified the two missing induction cases and the exact lemmas (plus_n_O, plus_n_Sm) needed to discharge them before editing. Diagnosis was accurate and efficient with no thrashing."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "output_tokens": 464,
+    "input_tokens": 450,
+    "cache_read_input_tokens": 1088,
+    "cache_creation_input_tokens": 1088
+  }
+}

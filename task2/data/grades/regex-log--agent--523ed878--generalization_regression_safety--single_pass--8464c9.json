@@ -1,0 +1,39 @@
+{
+  "grade_id": "regex-log--agent--523ed878--generalization_regression_safety--single_pass--8464c9",
+  "created_at": "2026-07-07T07:25:37+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--523ed878",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 2,
+    "label": "poor",
+    "evidence": [
+      "Verifier result: 0/1 tests passed; all_passed=False",
+      "Agent could not run python (python3/python not found), so regex was never tested locally",
+      "Uses capturing groups on month/day: re.findall would return tuples, not just the date string, likely breaking expected output",
+      "The lookahead/anchor combination and multiple capture groups make the pattern brittle and untested",
+      "Year restricted to (?:19|20)\\d{2}, which may over-narrow valid dates outside the task's intent"
+    ],
+    "reason": "The patch is unverified and failed the visible test. Multiple capturing groups mean re.findall returns tuples rather than clean date strings, a likely regression against the intended output. The regex is complex, brittle, and was never validated since Python was unavailable, giving low confidence it generalizes."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 290,
+    "cache_creation_input_tokens": 3278,
+    "cache_read_input_tokens": 0
+  }
+}

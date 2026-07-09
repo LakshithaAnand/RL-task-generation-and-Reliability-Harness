@@ -1,0 +1,38 @@
+{
+  "grade_id": "kv-store-grpc--scripted--c424fbc0--patch_correctness--single_pass--06e6f2",
+  "created_at": "2026-07-07T07:22:14+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--scripted--c424fbc0",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Empty diff: no workspace changes",
+      "Agent output 'looks complicated, giving up' and did nothing",
+      "6/7 tests failed; only pre-installed grpc_tools check passed",
+      "No proto file, no generated code, no server.py created"
+    ],
+    "reason": "The agent made no code changes at all, explicitly giving up. None of the required deliverables (proto file, generated code, server implementation) were produced, and nearly all tests failed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 1069,
+    "output_tokens": 170,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

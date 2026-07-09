@@ -1,0 +1,38 @@
+{
+  "grade_id": "make-mips-interpreter--fixture-anchor-pass--adv302a--problem_localization--single_pass--b8485c",
+  "created_at": "2026-07-07T20:32:06+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--fixture-anchor-pass--adv302a",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 2,
+    "label": "poor",
+    "evidence": [
+      "Step 0: only ran `ls /app && file /app/doomgeneric_mips` for inspection",
+      "Step 1-2: wrote vm.js contents as opaque comment stubs (`// ELF32 loader...`, `// syscall bridge...`) rather than actual implementation",
+      "Never inspected doomgeneric/ source, the ELF program headers, or the syscall ABI/register conventions",
+      "Step 3-4: outputs appear immediately with no debugging or iteration"
+    ],
+    "reason": "This is a build-from-scratch task, so localization means understanding the ELF format, MIPS ISA, and syscall ABI before implementing. The agent did almost no investigation: it never examined the source code, ELF headers, or expected syscall numbers/output format. The trajectory shows placeholder-comment 'edits' rather than real diagnostic work, and the clean success looks unearned given the near-total absence of file inspection or examination of what doomgeneric actually requires."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 70,
+    "output_tokens": 342,
+    "cache_creation_input_tokens": 1305,
+    "cache_read_input_tokens": 0
+  }
+}

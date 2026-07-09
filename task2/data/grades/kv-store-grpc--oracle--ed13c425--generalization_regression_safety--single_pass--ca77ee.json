@@ -1,0 +1,38 @@
+{
+  "grade_id": "kv-store-grpc--oracle--ed13c425--generalization_regression_safety--single_pass--ca77ee",
+  "created_at": "2026-07-07T07:22:14+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--oracle--ed13c425",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "proto file defines all four messages and both RPCs matching the spec exactly",
+      "generated pb2/pb2_grpc files are standard protoc output, not hardcoded to test cases",
+      "server.py GetVal handles missing keys gracefully by returning 0 instead of KeyError",
+      "server uses ThreadPoolExecutor and standard grpc server setup on the required port 5328"
+    ],
+    "reason": "The implementation follows the task spec closely: proto file, generated code, and server logic are all standard and generalizable. The GetVal handler defensively returns 0 for missing keys, handling an implied edge case. No brittle hardcoding to visible inputs, no unrelated refactors, and the change is minimal but complete."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 494,
+    "output_tokens": 546,
+    "cache_read_input_tokens": 6492,
+    "cache_creation_input_tokens": 6492
+  }
+}

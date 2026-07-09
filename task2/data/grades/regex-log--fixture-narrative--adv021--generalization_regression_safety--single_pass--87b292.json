@@ -1,0 +1,39 @@
+{
+  "grade_id": "regex-log--fixture-narrative--adv021--generalization_regression_safety--single_pass--87b292",
+  "created_at": "2026-07-07T21:32:47+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--fixture-narrative--adv021",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Regex has no IPv4 presence check: '\\b(\\d{4}-\\d{2}-\\d{2})(?!.*\\d{4}-\\d{2}-\\d{2})'",
+      "Agent's own validation showed matches on lines with NO IP and accepted invalid date '1999-13-40'",
+      "No month/day range validation (accepts 13 month, 40 day)",
+      "No trailing boundary or alphanumeric-guard as required to avoid false matches",
+      "Verifier: 0/1 tests passed"
+    ],
+    "reason": "The regex ignores multiple explicit requirements (IPv4 presence, valid month/day ranges, alphanumeric guards) and only handles the last-date-per-line aspect. It is brittle and matches many false positives, failing to generalize beyond even the trivial case; the visible test failed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 497,
+    "output_tokens": 604,
+    "cache_creation_input_tokens": 1457,
+    "cache_read_input_tokens": 1457
+  }
+}

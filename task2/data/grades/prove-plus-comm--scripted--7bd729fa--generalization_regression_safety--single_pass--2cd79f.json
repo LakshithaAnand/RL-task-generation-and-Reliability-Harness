@@ -1,0 +1,38 @@
+{
+  "grade_id": "prove-plus-comm--scripted--7bd729fa--generalization_regression_safety--single_pass--2cd79f",
+  "created_at": "2026-07-07T07:25:25+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--scripted--7bd729fa",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Agent explicitly gave up: 'looks complicated, giving up'",
+      "No edits made to plus_comm.v; proof left incomplete",
+      "3/4 verifier tests failed including test_compiled_proof_exists and test_proof_contents",
+      "Diff only shows stray build artifacts (.plus_comm.aux, plus_comm.glob), no actual source fix"
+    ],
+    "reason": "No fix was attempted; the agent abandoned the task without modifying the proof. There is no robust, general, or even minimal change to evaluate\u2014only leftover build artifacts. The task remains unsolved."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 223,
+    "cache_creation_input_tokens": 1716,
+    "cache_read_input_tokens": 0
+  }
+}

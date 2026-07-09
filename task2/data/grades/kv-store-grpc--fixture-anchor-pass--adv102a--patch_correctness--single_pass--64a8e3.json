@@ -1,0 +1,40 @@
+{
+  "grade_id": "kv-store-grpc--fixture-anchor-pass--adv102a--patch_correctness--single_pass--64a8e3",
+  "created_at": "2026-07-07T20:31:53+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--fixture-anchor-pass--adv102a",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "good",
+    "evidence": [
+      "Created /app/kv-store.proto with KVStore service and GetVal/SetVal RPCs",
+      "Generated pb2 and pb2_grpc bindings via grpc_tools.protoc",
+      "Implemented Server class extending KVStoreServicer with dict-backed store",
+      "SetVal stores request.value under request.key and returns SetValResponse(val=...); GetVal returns stored value or 0",
+      "Server runs on port 5328 in background; smoke test shows distinct keys kept separate",
+      "All 7/7 verifier tests passed including functionality and handshake tests"
+    ],
+    "reason": "The patch fully implements the required KV store server: proto file with correct service/RPCs, generated bindings, a real dict-backed Server on port 5328. Behavior is correct and consistent with the task, and all verifier tests pass legitimately without bypassing checks."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "output_tokens": 608,
+    "input_tokens": 514,
+    "cache_read_input_tokens": 1848,
+    "cache_creation_input_tokens": 1848
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "grade_id": "kv-store-grpc--oracle--ed13c425--patch_correctness--single_pass--9fa443",
+  "created_at": "2026-07-07T07:22:05+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--oracle--ed13c425",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "good",
+    "evidence": [
+      "kv-store.proto defines KVStore service with GetVal/SetVal RPCs and correct message fields (GetValResponse val int32, SetValRequest key+value, SetValResponse val)",
+      "Generated kv_store_pb2.py and kv_store_pb2_grpc.py placed in app dir",
+      "server.py implements Server(KVStoreServicer) with dict-backed GetVal/SetVal, binds port 5328, and runs",
+      "All 7 verifier tests passed including real grpc server running and functionality"
+    ],
+    "reason": "The patch fully implements the required proto, generated code, and server logic with correct KV behavior on port 5328; all verifier tests pass legitimately without bypassing checks."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 479,
+    "output_tokens": 528,
+    "cache_read_input_tokens": 6422,
+    "cache_creation_input_tokens": 6422
+  }
+}

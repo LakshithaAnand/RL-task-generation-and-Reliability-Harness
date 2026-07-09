@@ -1,0 +1,38 @@
+{
+  "grade_id": "kv-store-grpc--agent--caf8e8db--generalization_regression_safety--single_pass--063b6d",
+  "created_at": "2026-07-07T07:21:51+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--agent--caf8e8db",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Server uses self.store.get(key, 0) which handles missing keys gracefully",
+      "proto/server generated via standard grpc_tools.protoc, not hardcoded to test inputs",
+      "implementation is generic KVStore matching the proto spec with no brittle assumptions",
+      "server binds to [::]:5328 as required and uses a thread pool, not tied to single test case"
+    ],
+    "reason": "The patch is a clean, standard gRPC KV store implementation that generalizes across arbitrary keys/values, handles the missing-key edge case, and uses proto-generated code rather than hardcoding to visible tests. No unrelated refactors or config changes; the only extra artifacts are committed .pyc caches which are harmless. Change is minimal and complete."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 484,
+    "output_tokens": 548,
+    "cache_read_input_tokens": 8168,
+    "cache_creation_input_tokens": 8168
+  }
+}

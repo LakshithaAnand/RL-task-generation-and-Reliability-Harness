@@ -1,0 +1,38 @@
+{
+  "grade_id": "prove-plus-comm--agent--5be2f745--generalization_regression_safety--single_pass--4f5743",
+  "created_at": "2026-07-07T07:22:21+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--5be2f745",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "coqc still fails: 'Unable to unify \"S (m' + 0 + 0)\" with \"S (m' + 0)\"' \u2014 proof does not compile",
+      "test_compiled_proof_exists and test_compiled_proof_content failed; no valid plus_comm.vo produced",
+      "diff shows the working file at /workspace/plus_comm.v still contains the broken base case with 'induction m ... rewrite IHm'' path that fails",
+      "stale .aux and .glob artifacts committed from an earlier partial compile, not a successful build"
+    ],
+    "reason": "The proof was never successfully completed or compiled; the final source still fails under coqc, so the fix does not work even on the visible task, let alone generalize. The base-case sub-induction is logically incorrect and brittle."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 283,
+    "cache_creation_input_tokens": 3271,
+    "cache_read_input_tokens": 0
+  }
+}

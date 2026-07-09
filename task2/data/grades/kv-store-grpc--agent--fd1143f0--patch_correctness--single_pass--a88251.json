@@ -1,0 +1,38 @@
+{
+  "grade_id": "kv-store-grpc--agent--fd1143f0--patch_correctness--single_pass--a88251",
+  "created_at": "2026-07-07T07:22:02+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--agent--fd1143f0",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "No /app/server.py was ever created (Server class implementing KVStore logic missing)",
+      "Server was never run in the background as required",
+      "Verifier failed test_server_file_creation, test_real_grpc_server_running, and test_grpc_server_functionality",
+      "Trajectory ended at max_steps after only generating proto and pb2 files"
+    ],
+    "reason": "The attempt completed only the proto file and code generation but never implemented the Server class or ran the server, leaving the core required behavior (functioning KV store RPC server) unimplemented. Three critical tests failed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 209,
+    "cache_creation_input_tokens": 6576,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "grade_id": "kv-store-grpc--agent--9e48088c--step--single_pass--47aac4",
+  "created_at": "2026-07-06T10:02:40+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--agent--9e48088c",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 17,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "neutral",
+    "confidence": 0.7,
+    "evidence": "lsof -i :5328 ... || echo \"Checking if process is alive...\" -> Checking if process is alive...",
+    "reason": "Diagnostic check that produced no useful info (tools unavailable), but the prior test already confirmed the server works; neither helped nor hurt progress."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 151,
+    "output_tokens": 117,
+    "cache_creation_input_tokens": 2886,
+    "cache_read_input_tokens": 0
+  }
+}

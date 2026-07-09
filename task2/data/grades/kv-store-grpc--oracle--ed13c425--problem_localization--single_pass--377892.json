@@ -1,0 +1,37 @@
+{
+  "grade_id": "kv-store-grpc--oracle--ed13c425--problem_localization--single_pass--377892",
+  "created_at": "2026-07-07T07:22:02+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--oracle--ed13c425",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Only ran 'bash /solution/solve.sh' which showed pip install output",
+      "No inspection of files, no diagnostic commands, no examination of proto/server logic",
+      "This is a build-from-scratch task, not a bug fix; agent executed a canned oracle script without any diagnostic reasoning"
+    ],
+    "reason": "The agent performed no localization or diagnostic process; it merely invoked a prebuilt solution script. There is no evidence of understanding the task requirements or connecting anything to specific behavior."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 70,
+    "output_tokens": 193,
+    "cache_creation_input_tokens": 1090,
+    "cache_read_input_tokens": 0
+  }
+}

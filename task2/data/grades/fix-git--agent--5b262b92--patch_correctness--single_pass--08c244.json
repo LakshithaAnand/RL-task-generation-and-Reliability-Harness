@@ -1,0 +1,43 @@
+{
+  "grade_id": "fix-git--agent--5b262b92--patch_correctness--single_pass--08c244",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--agent--5b262b92",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "fix-git--agent--021ebda8",
+  "order_swapped": false,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.97,
+    "evidence_for_A": [
+      "Completed the merge: resolved the conflict in _includes/about.md by taking the Stanford version, committed the merge (40d4dfa)",
+      "master ref updated to the merge commit; working tree clean",
+      "2/2 verifier tests passed including test_about_file"
+    ],
+    "evidence_for_B": [
+      "Left the repo in an unfinished merge state (MERGE_HEAD, MERGE_MSG present)",
+      "about.md still contains unresolved conflict markers (<<<<<<< HEAD ... >>>>>>> d1b919c)",
+      "1/2 tests passed; test_about_file failed"
+    ],
+    "reason": "Attempt A fully found and merged the lost 'Move to Stanford' changes into master, resolving the conflict correctly. Attempt B stopped mid-merge with conflict markers left in about.md, failing the about-file test.",
+    "winner_as_presented": "A"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 16654,
+    "output_tokens": 309,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

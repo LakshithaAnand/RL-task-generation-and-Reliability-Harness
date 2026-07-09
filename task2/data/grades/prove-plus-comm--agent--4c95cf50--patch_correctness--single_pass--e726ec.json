@@ -1,0 +1,38 @@
+{
+  "grade_id": "prove-plus-comm--agent--4c95cf50--patch_correctness--single_pass--e726ec",
+  "created_at": "2026-07-07T07:22:17+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--4c95cf50",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Final proof completes both base and inductive cases: base uses `symmetry` then induction on m with `rewrite IHm'`, inductive case uses `rewrite IHn'; rewrite plus_n_Sm; reflexivity`",
+      "`coqc plus_comm.v` exited 0 in Step 8, producing plus_comm.vo",
+      "All admits removed and replaced with genuine tactics; proof ends with Qed not Admitted",
+      "All 4 verifier tests passed including test_proof_contents and test_compiled_proof_content"
+    ],
+    "reason": "The patch fully completes the commutativity proof with valid Coq tactics, removes both admits, and compiles cleanly via coqc. It addresses the actual root cause (missing base and inductive steps using plus_n_Sm) rather than silencing the check."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 504,
+    "output_tokens": 588,
+    "cache_read_input_tokens": 4691,
+    "cache_creation_input_tokens": 4691
+  }
+}

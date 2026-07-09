@@ -1,0 +1,32 @@
+{
+  "grade_id": "prove-plus-comm--agent--b0b41add--step--single_pass--00baf9",
+  "created_at": "2026-07-07T20:40:09+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--b0b41add",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 7,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "helped",
+    "confidence": 0.7,
+    "evidence": "apply Nat.add_0_r. ... rewrite IHn'. apply plus_n_Sm.",
+    "reason": "Switching from 'exact' (which failed twice, likely due to term-vs-application mismatch) to 'apply' is the correct fix, since 'apply' unifies the goal with the lemma's conclusion. This is a plausible genuine correction, though the action only writes the file without verifying compilation."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 231,
+    "output_tokens": 159,
+    "cache_creation_input_tokens": 1533,
+    "cache_read_input_tokens": 0
+  }
+}

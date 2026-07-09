@@ -1,0 +1,32 @@
+{
+  "grade_id": "regex-log--agent--fa9ded12--step--single_pass--2c522b",
+  "created_at": "2026-07-07T20:42:06+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--fa9ded12",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 11,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "hurt",
+    "confidence": 0.85,
+    "evidence": "The previous version matched ['2024'] on the first line, but this new regex changed to remove the capture group and use \\b[0-9]{4}... starting the date match right after the lookahead, resulting in 'Matches: []' for all lines including the valid ones.",
+    "reason": "The edit anchored the date match position incorrectly (starting immediately after the IPv4 lookahead assertion which is a zero-width assertion at line start), so no valid dates match anymore. This regressed from a partially-working state (matched at least the year group) to matching nothing, moving away from a genuine fix."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 1143,
+    "output_tokens": 210,
+    "cache_creation_input_tokens": 5802,
+    "cache_read_input_tokens": 0
+  }
+}

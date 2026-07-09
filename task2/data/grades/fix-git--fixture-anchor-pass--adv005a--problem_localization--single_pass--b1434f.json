@@ -1,0 +1,37 @@
+{
+  "grade_id": "fix-git--fixture-anchor-pass--adv005a--problem_localization--single_pass--b1434f",
+  "created_at": "2026-07-07T07:29:53+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--fixture-anchor-pass--adv005a",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Step 0: `git reflog | head -5` revealed the checkout moved from detached commit d1b919ce to master, orphaning 'Move to Stanford'",
+      "Step 1 reasoning: 'commit d1b919c Move to Stanford was made on a detached HEAD and orphaned by the checkout'",
+      "Step 2: verified with `git log --oneline -3` showing the recovered commit in master history"
+    ],
+    "reason": "The agent immediately went to the reflog, correctly diagnosed that the lost changes were an orphaned commit made on a detached HEAD, and identified the exact commit (d1b919c) before recovering it. Diagnosis was precise, efficient, and evidence-based with no thrashing."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 2446,
+    "output_tokens": 524,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0
+  }
+}

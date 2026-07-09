@@ -1,0 +1,39 @@
+{
+  "grade_id": "regex-log--agent--583d84df--patch_correctness--single_pass--5c36ec",
+  "created_at": "2026-07-07T07:25:37+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--583d84df",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "good",
+    "evidence": [
+      "Final regex.txt contains a pattern with IPv4 lookahead: `^(?=.*\\b(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\\.(...)\\b)`",
+      "Date capture group `(\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01]))` correctly limits month 01-12 and day up to 31 (Feb up to 29 allowed via general day constraint)",
+      "Last-date enforcement via negative lookahead `(?!.*\\b\\d{4}-...\\b)` after the captured date",
+      "Boundary protection via `\\b` and `(?![\\w-])` to avoid false matches like `1134-12-1234`",
+      "Verifier: 1/1 tests passed; all_passed=True"
+    ],
+    "reason": "The final regex directly implements all task requirements: IPv4 presence via lookahead, YYYY-MM-DD date matching with correct month/day ranges, last-date-only via trailing negative lookahead, and boundary guards to prevent false matches. The verifier test passes, and the pattern is internally consistent with the requirements without bypassing or weakening any checks."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 442,
+    "cache_creation_input_tokens": 6127,
+    "cache_read_input_tokens": 0
+  }
+}

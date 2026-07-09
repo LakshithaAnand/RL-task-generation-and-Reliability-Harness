@@ -1,0 +1,37 @@
+{
+  "grade_id": "make-mips-interpreter--fixture-narrative--adv021--patch_correctness--single_pass--637477",
+  "created_at": "2026-07-07T21:31:38+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--fixture-narrative--adv021",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "vm.js contains only 'function sysWrite' and comment '// no real MIPS decode/execute loop'",
+      "node vm.js fails: 'TypeError: cannot read ELF entry point (interpreter not implemented)'",
+      "0/3 tests passed; all failed including test_vm_execution and test_frame_bmp_exists"
+    ],
+    "reason": "The patch does not implement a MIPS interpreter at all; it only adds a flush-on-write helper and stubs the execution loop. The program crashes immediately and no frame is produced, so none of the required behavior is achieved and all tests fail."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 222,
+    "cache_creation_input_tokens": 1193,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "grade_id": "kv-store-grpc--agent--9e48088c--step--single_pass--b9c694",
+  "created_at": "2026-07-06T10:02:40+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--agent--9e48088c",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 6,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "neutral",
+    "confidence": 0.8,
+    "evidence": "ps aux | grep server.py | grep -v grep -> bash: line 1: ps: command not found",
+    "reason": "Verification attempt failed because ps is unavailable; no progress or harm, just an inconclusive check."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 119,
+    "output_tokens": 96,
+    "cache_creation_input_tokens": 1497,
+    "cache_read_input_tokens": 0
+  }
+}

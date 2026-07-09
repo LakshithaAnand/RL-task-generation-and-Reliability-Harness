@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "task2"
+version = "0.1.0"
+description = "Task 2: RL environment, LLM grader, and grader reliability analysis on Terminal-Bench 2.0 tasks"
+requires-python = ">=3.11"
+# Deliberately lean: stats (Wilson/bootstrap) use only stdlib math/random,
+# so numpy/scipy/pandas are not needed.
+dependencies = [
+    "anthropic>=0.40",
+    "pyyaml",
+]
+
+[project.scripts]
+task2 = "task2.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

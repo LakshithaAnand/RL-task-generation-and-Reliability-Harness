@@ -1,0 +1,37 @@
+{
+  "grade_id": "fix-git--oracle--015877a7--problem_localization--single_pass--c333dc",
+  "created_at": "2026-07-07T07:19:19+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--oracle--015877a7",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Step 0: ran a pre-baked bash /solution/solve.sh that immediately performed a merge and branch switch",
+      "No diagnostic commands (git reflog, git branch, git log, git stash list) were run to locate the lost changes",
+      "Agent final message 'script finished' with no investigation of where the changes were"
+    ],
+    "reason": "The agent executed an oracle solution script without any diagnostic process. There is no evidence it identified where the changes were (reflog/stash/branch), reproduced the problem, or connected the failure to a specific cause before acting."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 604,
+    "output_tokens": 207,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

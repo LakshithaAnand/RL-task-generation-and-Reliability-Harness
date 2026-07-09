@@ -1,0 +1,37 @@
+{
+  "grade_id": "kv-store-grpc--scripted--c424fbc0--generalization_regression_safety--single_pass--febed8",
+  "created_at": "2026-07-07T07:22:14+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--scripted--c424fbc0",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "empty diff: no workspace changes",
+      "agent output 'looks complicated, giving up'",
+      "6/7 tests failed, no proto/server files created"
+    ],
+    "reason": "The agent made no changes at all, so there is no fix to evaluate for robustness. The task is entirely unaddressed, failing generalization by default."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 133,
+    "cache_creation_input_tokens": 1073,
+    "cache_read_input_tokens": 0
+  }
+}

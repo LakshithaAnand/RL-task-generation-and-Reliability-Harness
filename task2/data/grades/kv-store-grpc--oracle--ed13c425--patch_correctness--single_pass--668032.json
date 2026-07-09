@@ -1,0 +1,44 @@
+{
+  "grade_id": "kv-store-grpc--oracle--ed13c425--patch_correctness--single_pass--668032",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--oracle--ed13c425",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "kv-store-grpc--scripted--c424fbc0",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Empty diff, no work done",
+      "Agent gave up: 'looks complicated, giving up'",
+      "Only 1/7 tests passed"
+    ],
+    "evidence_for_B": [
+      "Created kv-store.proto with KVStore service, GetVal/SetVal RPCs and correct message fields",
+      "Generated pb2 and pb2_grpc files",
+      "Implemented Server class extending KVStoreServicer using a dict, port 5328",
+      "All 7/7 tests passed"
+    ],
+    "reason": "Attempt B fully implements the task with correct proto, generated code, and server logic and passes all tests; Attempt A produced no patch and failed nearly all tests.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 6929,
+    "output_tokens": 243,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

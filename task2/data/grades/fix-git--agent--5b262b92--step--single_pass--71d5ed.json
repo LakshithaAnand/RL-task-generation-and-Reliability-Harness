@@ -1,0 +1,32 @@
+{
+  "grade_id": "fix-git--agent--5b262b92--step--single_pass--71d5ed",
+  "created_at": "2026-07-07T20:38:14+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--agent--5b262b92",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 0,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "helped",
+    "confidence": 0.8,
+    "evidence": "git status -> 'On branch master, nothing to commit, working tree clean'",
+    "reason": "Confirms current branch state and that the changes aren't in master's working tree, a reasonable first diagnostic step toward locating the lost changes on another branch/commit."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 234,
+    "output_tokens": 106,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

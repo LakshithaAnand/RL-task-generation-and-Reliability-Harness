@@ -1,0 +1,38 @@
+{
+  "grade_id": "regex-log--scripted--d4429778--patch_correctness--single_pass--5d1b76",
+  "created_at": "2026-07-07T07:28:05+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--scripted--d4429778",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Empty diff: no workspace changes",
+      "Agent echoed 'looks complicated, giving up' and did nothing",
+      "No /app/regex.txt was created",
+      "Verifier: 0/1 tests passed, all_passed=False"
+    ],
+    "reason": "The agent made no code change at all and gave up. The required regex file was never created, so the task's stated behavior was not addressed and the verifier failed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 2028,
+    "output_tokens": 310,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0
+  }
+}

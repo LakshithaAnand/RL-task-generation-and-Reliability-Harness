@@ -1,0 +1,38 @@
+{
+  "grade_id": "regex-log--agent--dcfe5369--generalization_regression_safety--single_pass--227eaa",
+  "created_at": "2026-07-07T07:27:45+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--dcfe5369",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Verifier result: 0/1 tests passed; all_passed=False",
+      "The IP-presence lookahead uses (?=^.*...) which anchors to start-of-line but the date match position is not at start-of-line, so the lookahead fails whenever the date is preceded by the IP text",
+      "Agent's own debug in Steps 6-10 showed all IP-containing date cases returning [] (FAIL), and the run ended at max_steps before fixing",
+      "Final regex saved is the still-broken (?=^.*...) variant"
+    ],
+    "reason": "The final regex is fundamentally broken: the start-of-line-anchored IP lookahead is evaluated at the date's position, so it never matches dates that follow the IP on the line. The visible tests fail entirely, and there is no reason to expect it generalizes to any real log lines. The approach is brittle and incomplete."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 309,
+    "cache_creation_input_tokens": 9929,
+    "cache_read_input_tokens": 0
+  }
+}

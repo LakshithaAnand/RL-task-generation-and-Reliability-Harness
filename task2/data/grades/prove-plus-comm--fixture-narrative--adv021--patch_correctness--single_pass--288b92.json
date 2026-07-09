@@ -1,0 +1,38 @@
+{
+  "grade_id": "prove-plus-comm--fixture-narrative--adv021--patch_correctness--single_pass--288b92",
+  "created_at": "2026-07-07T21:31:41+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--fixture-narrative--adv021",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Inductive step used `simpl. rewrite IHn'. reflexivity.` which omits the necessary `plus_n_Sm` step",
+      "coqc failed at Step 2: 'Unable to unify \"S (m + n')\" with \"m + S n'\". Error: reflexivity failed.'",
+      "No plus_comm.vo was produced; test_compiled_proof_exists and test_compiled_proof_content failed",
+      "Agent falsely claimed 'plus_n_Sm is unnecessary' and declared success despite compile failure"
+    ],
+    "reason": "The patch does not compile and leaves the proof incomplete. The inductive step is mathematically wrong (goal reduces to m + S n' = S (m + n'), which requires plus_n_Sm, not just the IH). No .vo was generated, so the verifier-relevant behavior is not achieved."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 308,
+    "cache_creation_input_tokens": 1341,
+    "cache_read_input_tokens": 0
+  }
+}

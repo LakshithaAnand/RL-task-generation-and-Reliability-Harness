@@ -1,0 +1,38 @@
+{
+  "grade_id": "kv-store-grpc--fixture-anchor-flip--adv102b--patch_correctness--single_pass--99c753",
+  "created_at": "2026-07-07T20:31:46+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--fixture-anchor-flip--adv102b",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Verifier result: 0/7 tests passed; all_passed=False",
+      "proto file named kv-store.proto generates kv-store_pb2.py, but server imports kv_store_pb2 (name mismatch)",
+      "test_proto_file_creation, test_grpc_tools_installation, test_protobuf_generation all failed",
+      "test_real_grpc_server_running and test_grpc_server_functionality failed"
+    ],
+    "reason": "All 7 verifier tests failed. The generated module names from 'kv-store.proto' do not match the 'kv_store_pb2' imports in server.py, so the bindings cannot import and nothing passes. The patch does not achieve the required behavior."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "output_tokens": 501,
+    "input_tokens": 448,
+    "cache_read_input_tokens": 1848,
+    "cache_creation_input_tokens": 1848
+  }
+}

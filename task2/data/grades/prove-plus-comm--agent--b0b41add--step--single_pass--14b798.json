@@ -1,0 +1,32 @@
+{
+  "grade_id": "prove-plus-comm--agent--b0b41add--step--single_pass--14b798",
+  "created_at": "2026-07-07T20:40:09+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--b0b41add",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 5,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "neutral",
+    "confidence": 0.75,
+    "evidence": "The new plus_comm.v is essentially identical to the previous version (same tactics: exact Nat.add_0_r m, rewrite IHn', exact plus_n_Sm m n') just with comments removed.",
+    "reason": "The prior coqc run failed with exit 1, and this rewrite reproduces the same proof logic without diagnosing or changing the failing step, so it doesn't move toward a genuine fix."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 279,
+    "output_tokens": 159,
+    "cache_creation_input_tokens": 1310,
+    "cache_read_input_tokens": 0
+  }
+}

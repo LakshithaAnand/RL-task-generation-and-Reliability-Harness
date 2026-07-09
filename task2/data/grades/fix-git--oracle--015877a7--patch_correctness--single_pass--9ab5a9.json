@@ -1,0 +1,44 @@
+{
+  "grade_id": "fix-git--oracle--015877a7--patch_correctness--single_pass--9ab5a9",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--oracle--015877a7",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "fix-git--scripted--2150153a",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Attempt A gave up immediately with 'looks complicated, giving up'",
+      "Empty diff, no changes made",
+      "0/2 tests passed"
+    ],
+    "evidence_for_B": [
+      "Recovered lost commit (d1b919ce 'Move to Stanford') and merged it into master via recovery-branch",
+      "Updated _includes/about.md to Postdoc at Stanford content and _layouts/default.html to 'Postdoc @ Stanford'",
+      "master ref advanced to merge commit fd551ab",
+      "2/2 tests passed"
+    ],
+    "reason": "Attempt B correctly located the lost commit, created a recovery branch, and merged the changes into master, satisfying the task and passing both tests. Attempt A made no changes and failed all tests.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 7100,
+    "output_tokens": 276,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

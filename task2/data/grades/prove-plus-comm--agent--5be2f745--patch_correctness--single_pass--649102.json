@@ -1,0 +1,37 @@
+{
+  "grade_id": "prove-plus-comm--agent--5be2f745--patch_correctness--single_pass--649102",
+  "created_at": "2026-07-07T07:22:21+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--5be2f745",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Final coqc run failed: 'Unable to unify \"S (m' + 0 + 0)\" with \"S (m' + 0)\"' exit code 1",
+      "No plus_comm.vo produced; test_compiled_proof_exists and test_compiled_proof_content both failed",
+      "The diff's .aux/.glob artifacts appear stale from an earlier build, but the final source in the diff never compiles successfully"
+    ],
+    "reason": "The proof does not compile; the final coqc invocation errors out and no valid .vo is produced. The base case still fails to unify, so the theorem is not actually proven."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 224,
+    "cache_creation_input_tokens": 3201,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "grade_id": "kv-store-grpc--agent--933151ad--patch_correctness--single_pass--210bf5",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--agent--933151ad",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "kv-store-grpc--agent--fd1143f0",
+  "order_swapped": false,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Created /app/server.py with a Server class extending KVStoreServicer implementing GetVal and SetVal using a dict",
+      "Started the server on port 5328 and verified functionality with a test client (SetVal/GetVal returned 42)",
+      "All 7 verifier tests passed"
+    ],
+    "evidence_for_B": [
+      "Never created server.py (attempt ended at max_steps after only generating proto/pb2 files)",
+      "Failed test_server_file_creation, test_real_grpc_server_running, and test_grpc_server_functionality",
+      "No server was started"
+    ],
+    "reason": "Attempt A completed the full task including server implementation and running it, passing all tests. Attempt B stopped before creating server.py, so it is missing the core deliverable and fails multiple tests.",
+    "winner_as_presented": "A"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 15530,
+    "output_tokens": 279,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "grade_id": "regex-log--fixture-anchor-flip--adv402b--patch_correctness--single_pass--c2a19f",
+  "created_at": "2026-07-07T20:34:04+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--fixture-anchor-flip--adv402b",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Verifier result: 0/1 tests passed; test_regex_matches_dates failed",
+      "IPv4 octet alternative 1?\\d?\\d does not strictly forbid leading zeros",
+      "Agent's own sample check passed but the actual verifier failed"
+    ],
+    "reason": "The submitted regex failed the verifier (0/1 tests), so the patch does not correctly solve the stated task despite the agent's local sample appearing to work."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "output_tokens": 449,
+    "input_tokens": 472,
+    "cache_read_input_tokens": 1764,
+    "cache_creation_input_tokens": 1764
+  }
+}

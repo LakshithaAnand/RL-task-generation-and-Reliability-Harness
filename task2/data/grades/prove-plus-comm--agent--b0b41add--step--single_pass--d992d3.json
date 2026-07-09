@@ -1,0 +1,32 @@
+{
+  "grade_id": "prove-plus-comm--agent--b0b41add--step--single_pass--d992d3",
+  "created_at": "2026-07-07T20:40:09+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--b0b41add",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 2,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "helped",
+    "confidence": 0.85,
+    "evidence": "Check plus_0_r ... Nat.add_0_r : forall n : nat, n + 0 = n; plus_n_Sm : forall n m : nat, S (n + m) = n + S m",
+    "reason": "Verifying the exact lemma names and signatures (add_0_r for the base case, plus_n_Sm for the inductive step) is a sensible reconnaissance step that identifies the exact tools needed to complete the proof, and flags the deprecation to avoid using plus_0_r."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 1007,
+    "output_tokens": 184,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "grade_id": "regex-log--agent--583d84df--patch_correctness--single_pass--4192c3",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--583d84df",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "regex-log--agent--2128a233",
+  "order_swapped": false,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.9,
+    "evidence_for_A": [
+      "Verifier passed 1/1 tests",
+      "Captures full date YYYY-MM-DD in a single capture group: (\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01]))",
+      "Uses (?![\\w-]) to prevent alphanumeric/hyphen following the date, satisfying the false-match requirement",
+      "Uses negative lookahead to ensure the matched date is the last date in the line",
+      "Year is 4 digits (\\d{4}) which is more general and matches typical date format requirements"
+    ],
+    "evidence_for_B": [
+      "Verifier failed 0/1 tests",
+      "Capture group only captures the year ((?:19|20)\\d{2}), not the full date, so re.findall returns only the year portion, not the full YYYY-MM-DD",
+      "Restricts year to 19xx/20xx which may reject valid test dates outside that range",
+      "Lacks a lookahead/lookbehind guarding against trailing alphanumeric right after the day component"
+    ],
+    "reason": "Attempt A passes the verifier and correctly captures the full date in a single group while enforcing word-boundary/false-match constraints and last-date-in-line logic. Attempt B fails the verifier, primarily because its capture group only captures the year portion, so re.findall would return only years rather than full dates, and it narrows the year range unnecessarily.",
+    "winner_as_presented": "A"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 9012,
+    "output_tokens": 485,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

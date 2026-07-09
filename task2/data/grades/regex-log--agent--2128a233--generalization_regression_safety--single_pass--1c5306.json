@@ -1,0 +1,38 @@
+{
+  "grade_id": "regex-log--agent--2128a233--generalization_regression_safety--single_pass--1c5306",
+  "created_at": "2026-07-07T07:25:33+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--2128a233",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 2,
+    "label": "poor",
+    "evidence": [
+      "Regex captures only the year group ((?:19|20)\\d{2}) not the full date, so re.findall returns just years like '2023' instead of full 'YYYY-MM-DD' dates",
+      "Only one capturing group around the year means findall would not return the full match; test failed (0/1)",
+      "The date validation allows Feb 30/31 (uses generic 3[01] day pattern) rather than restricting February to 29 days as required",
+      "Agent could not run Python to verify (python/python3 not available), so the regex was never validated before submission"
+    ],
+    "reason": "The submitted regex is fundamentally broken for the task: it wraps only the year in a capturing group, so findall returns partial matches rather than full dates, and it does not enforce the February-29-day constraint. The verifier failed and the agent never validated the solution due to missing Python. This is brittle and does not generalize."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 310,
+    "cache_creation_input_tokens": 3437,
+    "cache_read_input_tokens": 0
+  }
+}

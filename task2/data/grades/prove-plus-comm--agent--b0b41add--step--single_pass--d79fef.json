@@ -1,0 +1,32 @@
+{
+  "grade_id": "prove-plus-comm--agent--b0b41add--step--single_pass--d79fef",
+  "created_at": "2026-07-07T20:40:09+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--b0b41add",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 8,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "neutral",
+    "confidence": 0.7,
+    "evidence": "apply Nat.add_0_r ... Error: Unable to unify \"?M1094 + 0 = ?M1094\" with \"m = m + 0\"",
+    "reason": "The action tested a variant using apply, but it still fails on the base case because the goal orientation (m = m + 0) requires symmetry/rewrite rather than direct apply. It provided diagnostic info (the unification mismatch) but didn't advance to a working proof; the correct fix likely needs 'symmetry; apply Nat.add_0_r' or 'rewrite Nat.add_0_r'."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 166,
+    "output_tokens": 213,
+    "cache_creation_input_tokens": 1687,
+    "cache_read_input_tokens": 0
+  }
+}

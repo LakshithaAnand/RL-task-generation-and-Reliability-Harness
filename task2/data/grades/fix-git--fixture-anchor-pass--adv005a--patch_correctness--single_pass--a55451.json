@@ -1,0 +1,39 @@
+{
+  "grade_id": "fix-git--fixture-anchor-pass--adv005a--patch_correctness--single_pass--a55451",
+  "created_at": "2026-07-07T07:29:56+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--fixture-anchor-pass--adv005a",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "git reflog identified orphaned commit d1b919c 'Move to Stanford' made on detached HEAD",
+      "git branch recovery d1b919c && git merge recovered the lost commit onto master",
+      "git log confirms 'Recover lost changes' merge with d1b919c as parent",
+      "final diff shows about.md updated to Stanford Postdoc and default.html changes applied",
+      "2/2 tests passed (test_about_file, test_layout_file)"
+    ],
+    "reason": "The agent correctly diagnosed the lost changes as an orphaned commit via reflog, recovered it onto a branch, and merged it into master. The verifier-relevant behavior is correct and both tests pass. The fix addresses the actual root cause rather than silencing anything."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 490,
+    "output_tokens": 549,
+    "cache_read_input_tokens": 1617,
+    "cache_creation_input_tokens": 1617
+  }
+}

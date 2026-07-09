@@ -1,0 +1,37 @@
+{
+  "grade_id": "make-mips-interpreter--oracle--a8310008--problem_localization--single_pass--c6594e",
+  "created_at": "2026-07-07T07:28:08+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--oracle--a8310008",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Only action: '$ bash /solution/solve.sh' with exit code 0",
+      "No inspection of doomgeneric_mips ELF or source files",
+      "No reproduction, diagnostics, or reasoning about MIPS instruction decoding or syscalls"
+    ],
+    "reason": "The agent ran a single opaque oracle solve script with no diagnostic process whatsoever\u2014no file inspection, no examination of the ELF or syscalls, no connection of behavior to specific implementation needs. There is no evidence of problem localization."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 597,
+    "output_tokens": 197,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

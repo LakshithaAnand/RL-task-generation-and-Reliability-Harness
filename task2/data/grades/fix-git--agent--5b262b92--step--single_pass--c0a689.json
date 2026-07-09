@@ -1,0 +1,32 @@
+{
+  "grade_id": "fix-git--agent--5b262b92--step--single_pass--c0a689",
+  "created_at": "2026-07-07T20:38:14+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--agent--5b262b92",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 1,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "neutral",
+    "confidence": 0.7,
+    "evidence": "git log --oneline -10 showing commits on master",
+    "reason": "Viewing master's log is reasonable reconnaissance, but the lost changes are likely on another branch or in reflog/stash; this action doesn't yet locate them, though it's a sensible investigative step that doesn't cause harm."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 383,
+    "output_tokens": 120,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

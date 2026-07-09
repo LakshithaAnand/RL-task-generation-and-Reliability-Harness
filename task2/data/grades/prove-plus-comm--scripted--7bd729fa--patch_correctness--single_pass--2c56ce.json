@@ -1,0 +1,38 @@
+{
+  "grade_id": "prove-plus-comm--scripted--7bd729fa--patch_correctness--single_pass--2c56ce",
+  "created_at": "2026-07-07T07:25:25+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--scripted--7bd729fa",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Agent output 'looks complicated, giving up' and made no code changes",
+      "3/4 tests failed including test_compiled_proof_exists, test_proof_contents, test_compiled_proof_content",
+      "No modification to plus_comm.v proof body; diff only shows build artifacts",
+      "The plus_comm.aux shows VernacProof but tests still fail, indicating proof not properly completed/verified"
+    ],
+    "reason": "The agent explicitly gave up and made no substantive change to complete the proof. The task requiring completion of the addition commutativity proof was not addressed, and the verifier confirms the proof was not correctly completed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 231,
+    "cache_creation_input_tokens": 1646,
+    "cache_read_input_tokens": 0
+  }
+}

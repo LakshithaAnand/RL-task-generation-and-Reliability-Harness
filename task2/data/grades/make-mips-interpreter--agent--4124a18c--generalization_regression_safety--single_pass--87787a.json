@@ -1,0 +1,38 @@
+{
+  "grade_id": "make-mips-interpreter--agent--4124a18c--generalization_regression_safety--single_pass--87787a",
+  "created_at": "2026-07-07T07:28:05+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--agent--4124a18c",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Final diff empty: no workspace changes",
+      "vm.js was never created",
+      "All 3 verifier tests failed",
+      "Attempt ended at max_steps after only exploration"
+    ],
+    "reason": "No implementation was produced; the agent only explored files before hitting max steps. With an empty diff and all tests failing, there is nothing robust or generalizable to evaluate."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 147,
+    "cache_creation_input_tokens": 2523,
+    "cache_read_input_tokens": 0
+  }
+}

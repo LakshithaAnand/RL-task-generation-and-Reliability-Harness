@@ -1,0 +1,32 @@
+{
+  "grade_id": "prove-plus-comm--agent--b0b41add--step--single_pass--d3146a",
+  "created_at": "2026-07-07T20:40:09+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--b0b41add",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 12,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "neutral",
+    "confidence": 0.85,
+    "evidence": "cat plus_comm.v ... Qed.",
+    "reason": "The proof was already completed and compiled successfully in the prior step (coqc exit 0, .vo file created). This action merely re-displays the file for verification without advancing the fix, which is already done."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 287,
+    "output_tokens": 106,
+    "cache_creation_input_tokens": 2011,
+    "cache_read_input_tokens": 0
+  }
+}

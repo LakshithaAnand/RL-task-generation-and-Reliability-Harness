@@ -1,0 +1,44 @@
+{
+  "grade_id": "prove-plus-comm--agent--4c95cf50--patch_correctness--single_pass--53f3b3",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--4c95cf50",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "prove-plus-comm--agent--5be2f745",
+  "order_swapped": false,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Final proof compiles successfully (coqc exit code 0), verified by .vo file existence",
+      "Correctly used symmetry in base case to avoid the m + 0 unification problem, then completed with induction on m",
+      "Inductive case correctly uses rewrite IHn', rewrite plus_n_Sm, reflexivity",
+      "All 4 verifier tests passed including compiled proof existence and content"
+    ],
+    "evidence_for_B": [
+      "Base case induction on m fails to compile with unification error 'S (m' + 0 + 0)' with 'S (m' + 0)'",
+      "Never resolved the compilation error; final diff still contains the broken base-case induction",
+      "No .vo file produced; 2/4 tests failed including test_compiled_proof_exists"
+    ],
+    "reason": "Attempt A produced a complete, compiling proof (verified by successful coqc and passing all tests), correctly handling the base case via symmetry. Attempt B's final patch still fails to compile due to an unresolved unification error in the base case, so no compiled proof exists.",
+    "winner_as_presented": "A"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 7569,
+    "output_tokens": 369,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "grade_id": "fix-git--agent--021ebda8--generalization_regression_safety--single_pass--585240",
+  "created_at": "2026-07-07T07:18:56+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--agent--021ebda8",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Merge left unresolved conflict markers in _includes/about.md (<<<<<<< HEAD ... ======= ... >>>>>>> d1b919c)",
+      "test_about_file failed because the conflict was never resolved",
+      "Merge was left incomplete (MERGE_HEAD/MERGE_MSG present, no commit)",
+      "The 'Stanford' about.md content was not preserved cleanly, so the user's intended change is broken"
+    ],
+    "reason": "The attempt found the lost commit correctly but the merge left an unresolved conflict in about.md and was never completed. The working tree contains conflict markers, breaking the file content and failing the about test. This is not a safe or complete fix; the site is left in a broken, uncommitted mid-merge state."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 276,
+    "cache_creation_input_tokens": 7364,
+    "cache_read_input_tokens": 0
+  }
+}

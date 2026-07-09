@@ -1,0 +1,45 @@
+{
+  "grade_id": "regex-log--agent--583d84df--patch_correctness--single_pass--f28d51",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--583d84df",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "regex-log--agent--2128a233",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.95,
+    "evidence_for_A": [
+      "Verifier: 0/1 tests passed",
+      "Date regex uses '\\b' after the day which fails the requirement that dates not be followed by alphanumeric OR hyphen (only handles word chars, and the leading (?:19|20) year restriction is not required by task and may miss valid years)",
+      "Uses '\\b((?:19|20)\\d{2})' restricting years to 19xx/20xx which is arbitrary and could reject valid test years"
+    ],
+    "evidence_for_B": [
+      "Verifier: 1/1 tests passed",
+      "Uses '(?![\\w-])' after date to prevent alphanumeric AND hyphen following the date, matching the task's false-match requirement (e.g., 1134-12-1234)",
+      "Full 4-octet IPv4 with no-leading-zero octets and word boundaries",
+      "Negative lookahead ensures only the last date on a line is matched",
+      "Uses \\d{4} for year without arbitrary century restriction"
+    ],
+    "reason": "Attempt B's patch passes the verifier and correctly handles the alphanumeric/hyphen boundary constraint via (?![\\w-]), the last-date-only requirement, and IPv4 validation. Attempt A failed the test, only guarded word boundaries (not hyphens) after the date, and imposed an arbitrary year restriction.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 9012,
+    "output_tokens": 461,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

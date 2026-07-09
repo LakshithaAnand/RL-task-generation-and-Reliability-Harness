@@ -1,0 +1,39 @@
+{
+  "grade_id": "prove-plus-comm--agent--4c95cf50--padded--patch_correctness--single_pass--43d342",
+  "created_at": "2026-07-07T07:36:53+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--4c95cf50--padded",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Replaced both `admit.` placeholders with real proof steps",
+      "Base case: `symmetry; induction m ... reflexivity / simpl; rewrite IHm'; reflexivity`",
+      "Inductive case: `simpl; rewrite IHn'; rewrite plus_n_Sm; reflexivity`",
+      "Final `coqc plus_comm.v` returned exit code 0 with no admits",
+      "plus_comm.vo produced and all 4 verifier tests passed"
+    ],
+    "reason": "The patch genuinely completes the commutativity proof using valid Coq tactics (no admits, no Admitted, no axioms). It compiles cleanly and addresses the actual root cause, correctly using plus_n_Sm and inner induction for the base case."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 484,
+    "output_tokens": 547,
+    "cache_read_input_tokens": 6093,
+    "cache_creation_input_tokens": 6093
+  }
+}

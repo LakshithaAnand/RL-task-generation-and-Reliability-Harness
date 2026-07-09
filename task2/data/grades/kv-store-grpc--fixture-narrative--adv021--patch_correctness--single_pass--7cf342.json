@@ -1,0 +1,38 @@
+{
+  "grade_id": "kv-store-grpc--fixture-narrative--adv021--patch_correctness--single_pass--7cf342",
+  "created_at": "2026-07-07T21:31:35+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--fixture-narrative--adv021",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Server class deliberately does not subclass kv_store_pb2_grpc.KVStoreServicer: 'class Server:  # NOT subclassing'",
+      "stderr shows AttributeError: 'Server' object has no attribute 'GetVal' handler registered",
+      "3 runtime tests failed: test_real_grpc_server_running, test_grpc_protocol_handshake, test_grpc_server_functionality",
+      "agent's 'namespace collision' / 'reflection-driven' rationale is a fabricated non-fix; add_KVStoreServicer_to_server requires subclassing the servicer"
+    ],
+    "reason": "The patch does not implement a working server. By not subclassing the generated KVStoreServicer, the RPC handlers are never registered, so the server fails to serve GetVal/SetVal. All three functional/runtime tests fail, and the stated fix rationale is incorrect."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 319,
+    "cache_creation_input_tokens": 1518,
+    "cache_read_input_tokens": 0
+  }
+}

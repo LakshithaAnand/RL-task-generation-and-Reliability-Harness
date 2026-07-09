@@ -1,0 +1,37 @@
+{
+  "grade_id": "fix-git--scripted--2150153a--generalization_regression_safety--single_pass--1a33bc",
+  "created_at": "2026-07-07T07:19:22+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--scripted--2150153a",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Agent ran 'ls -la' then 'echo looks complicated, giving up' with no actual work",
+      "Final diff is empty: no workspace changes",
+      "Both tests failed: test_about_file and test_layout_file"
+    ],
+    "reason": "The agent gave up immediately without attempting to find the lost changes (e.g., via git reflog, stash, or dangling commits). No fix was produced at all, so nothing generalizes or is safe\u2014there is simply no change."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 180,
+    "cache_creation_input_tokens": 1143,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "grade_id": "regex-log--fixture-anchor-pass--adv402a--all--multi_hop--eebb63",
+  "created_at": "2026-07-07T20:37:00+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--fixture-anchor-pass--adv402a",
+  "rubric": "all",
+  "mode": "pointwise",
+  "pipeline": "multi_hop",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": "claude-haiku-4-5-20251001",
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "problem_localization": {
+      "score": 5,
+      "label": "good",
+      "evidence": [
+        "diagnosis_before_edit: sed -n '1,20p' /app/instruction.md",
+        "changed_files: regex.txt only",
+        "fix_site at /app/regex.txt line 1"
+      ],
+      "reason": "The attempt correctly identified the single target file (/app/regex.txt), read the instructions before editing, and made no extraneous changes."
+    },
+    "patch_correctness": {
+      "score": 5,
+      "label": "good",
+      "evidence": [
+        "verifier_result: 1/1 tests passed; all_passed=True",
+        "final_diff regex matches oracle solution exactly, including IPv4 lookahead, boundary assertions (?:^|[^0-9A-Za-z]) and (?=$|[^0-9A-Za-z]), month/day validation, and Feb up to 29",
+        "capturing group only around the last date via .* greedy consumption before the date"
+      ],
+      "reason": "The submitted regex is byte-for-byte identical to the oracle solution and passes the verifier. It correctly handles IPv4 presence lookahead, last-date matching via greedy .*, month-specific day limits, February 29, and alphanumeric boundary guards."
+    },
+    "generalization_regression_safety": {
+      "score": 5,
+      "label": "good",
+      "evidence": [
+        "boundary assertions prevent false matches like 'user 1134-12-1234'",
+        "IPv4 octet ranges validated (25[0-5]|2[0-4]\\d|1?\\d?\\d)",
+        "greedy .* ensures only the last date in a line is captured",
+        "test_interactions show self-verification via re.findall on sample.log"
+      ],
+      "reason": "The regex handles the specified edge cases (false-positive avoidance via non-alphanumeric boundaries, last-date selection, month/day constraints) and matches the reference behavior; verifier confirms correctness."
+    }
+  },
+  "extraction": {
+    "deterministic": {
+      "changed_files": [
+        "regex.txt"
+      ],
+      "verifier_result": "1/1 tests passed; all_passed=True\n  passed: test_outputs.py::test_regex_matches_dates",
+      "final_diff_excerpt": "diff --git a/regex.txt b/regex.txt\n--- /dev/null\n+++ b/regex.txt\n@@\n+(?=.*(?:^|[^0-9A-Za-z])(?:(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)(?=$|[^0-9A-Za-z])).*(?:^|[^0-9A-Za-z])(\\d{4}-(?:(?:01|03|05|07|08|10|12)-(?:0[1-9]|[12]\\d|3[01])|(?:04|06|09|11)-(?:0[1-9]|[12]\\d|30)|02-(?:0[1-9]|1\\d|2[0-9])))(?=$|[^0-9A-Za-z])\n",
+      "test_related_commands": [],
+      "protected_files_changed": [],
+      "integrity_violation": false
+    },
+    "llm_extracted": {
+      "fix_sites": [
+        {
+          "file": "/app/regex.txt",
+          "line_or_hunk": "1",
+          "quoted_diff": "printf '%s' '(?=.*(?:^|[^0-9A-Za-z])(?:(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)(?=$|[^0-9A-Za-z])).*(?:^|[^0-9A-Za-z])(\\d{4}-(?:(?:01|03|05|07|08|10|12)-(?:0[1-9]|[12]\\d|3[01])|(?:04|06|09|11)-(?:0[1-9]|[12]\\d|30)|02-(?:0[1-9]|1\\d|2[0-9])))(?=$|[^0-9A-Za-z])' > /app/regex.txt"
+        }
+      ],
+      "test_interactions": [
+        "python3 -c \"import re;print(re.findall(open('/app/regex.txt').read(), open('/app/sample.log').read(), re.M))\""
+      ],
+      "test_or_verifier_tampering": null,
+      "diagnosis_before_edit": "sed -n '1,20p' /app/instruction.md"
+    }
+  },
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "output_tokens": 1028,
+    "input_tokens": 1290,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 1885
+  }
+}

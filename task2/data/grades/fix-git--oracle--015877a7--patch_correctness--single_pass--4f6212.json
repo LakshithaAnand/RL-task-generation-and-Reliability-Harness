@@ -1,0 +1,38 @@
+{
+  "grade_id": "fix-git--oracle--015877a7--patch_correctness--single_pass--4f6212",
+  "created_at": "2026-07-07T07:19:19+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--oracle--015877a7",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "good",
+    "evidence": [
+      "The lost commit d1b919ce ('Move to Stanford') was recovered by creating recovery-branch from it and merging into master",
+      "master ref moved from d7d3e4b to merge commit fd551ab (merge recovery-branch)",
+      "_includes/about.md now contains 'Postdoctoral Researcher at Stanford CS' and default.html shows 'Postdoc @ Stanford'",
+      "Both verifier tests passed: test_about_file and test_layout_file"
+    ],
+    "reason": "The patch correctly recovers the orphaned commit containing the Stanford changes and merges it into master, addressing the stated task of finding lost changes and merging them. The verifier-relevant file contents (about.md and default.html) reflect the recovered changes and both tests pass."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 276,
+    "cache_creation_input_tokens": 6191,
+    "cache_read_input_tokens": 0
+  }
+}

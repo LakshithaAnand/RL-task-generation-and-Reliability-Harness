@@ -1,0 +1,74 @@
+{
+  "grade_id": "make-mips-interpreter--agent--4124a18c--all--multi_hop--67ee2d",
+  "created_at": "2026-07-07T07:33:13+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--agent--4124a18c",
+  "rubric": "all",
+  "mode": "pointwise",
+  "pipeline": "multi_hop",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": "claude-haiku-4-5-20251001",
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "problem_localization": {
+      "score": 1,
+      "label": "poor",
+      "evidence": [
+        "changed_files: []",
+        "final_diff_excerpt: (empty diff: no workspace changes)",
+        "diagnosis_before_edit only shows ls/head/od inspection commands",
+        "fix_sites: []"
+      ],
+      "reason": "The attempt only ran a few inspection commands (ls, head, od) and never produced any edits. There is no evidence of localizing the problem beyond initial file inspection; no vm.js or memory extraction logic was created."
+    },
+    "patch_correctness": {
+      "score": 1,
+      "label": "poor",
+      "evidence": [
+        "verifier_result: 0/3 tests passed; all_passed=False",
+        "failed: test_vm_execution, test_frame_bmp_exists, test_frame_bmp_similar_to_reference",
+        "empty diff: no workspace changes"
+      ],
+      "reason": "No implementation was delivered. All three tests failed and no vm.js was created, so the required MIPS interpreter and DOOM frame output do not exist."
+    },
+    "generalization_regression_safety": {
+      "score": 1,
+      "label": "poor",
+      "evidence": [
+        "changed_files: []",
+        "integrity_violation: false",
+        "no test tampering detected"
+      ],
+      "reason": "No code was produced, so there is nothing to generalize or evaluate for regression safety. While no integrity violations occurred, the absence of any solution means the task objective is entirely unmet."
+    }
+  },
+  "extraction": {
+    "deterministic": {
+      "changed_files": [],
+      "verifier_result": "0/3 tests passed; all_passed=False\n  failed: test_outputs.py::test_vm_execution\n  failed: test_outputs.py::test_frame_bmp_exists\n  failed: test_outputs.py::test_frame_bmp_similar_to_reference",
+      "final_diff_excerpt": "(empty diff: no workspace changes)",
+      "test_related_commands": [],
+      "protected_files_changed": [],
+      "integrity_violation": false
+    },
+    "llm_extracted": {
+      "fix_sites": [],
+      "test_interactions": [],
+      "test_or_verifier_tampering": null,
+      "diagnosis_before_edit": "$ ls -la /app/ | head -20\n$ head -c 100 /app/doomgeneric_mips | od -A x -t x1z -v\n$ ls -la /app/doomgeneric/ | head -20\n$ ls -la /app/doomgeneric/doomgeneric/ | head -20"
+    }
+  },
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 2195,
+    "output_tokens": 614,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 29461
+  }
+}

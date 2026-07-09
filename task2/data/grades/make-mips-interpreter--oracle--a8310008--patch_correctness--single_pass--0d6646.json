@@ -1,0 +1,37 @@
+{
+  "grade_id": "make-mips-interpreter--oracle--a8310008--patch_correctness--single_pass--0d6646",
+  "created_at": "2026-07-07T07:28:11+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--oracle--a8310008",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Created vm.js MIPS interpreter with ELF parsing (make_json.js parses ELF header, sections, symbols) and memory extraction (memory.js)",
+      "All 3 verifier tests passed: test_vm_execution, test_frame_bmp_exists, test_frame_bmp_similar_to_reference; all_passed=True",
+      "test_frame_bmp_similar_to_reference confirms the rendered first frame matches reference, not just that a file exists"
+    ],
+    "reason": "The solution implements the required MIPS interpreter with syscall handling and ELF loading. It boots doom and renders/saves the first frame correctly, verified by a similarity check against a reference frame rather than mere existence. All verifier tests pass legitimately without bypassing checks."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 487,
+    "output_tokens": 554,
+    "cache_read_input_tokens": 7813,
+    "cache_creation_input_tokens": 7813
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "grade_id": "kv-store-grpc--agent--933151ad--patch_correctness--single_pass--6d3c37",
+  "created_at": "2026-07-07T07:19:26+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--agent--933151ad",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Created /app/kv-store.proto with KVStore service, GetVal/SetVal RPCs and correct message fields (key string, value int, val int)",
+      "Generated kv_store_pb2.py and kv_store_pb2_grpc.py via grpc_tools.protoc",
+      "server.py implements Server(KVStoreServicer) with dict-based store, GetVal and SetVal, binds port 5328 and runs in background",
+      "Manual test client: SetVal('test',42)->42, GetVal('test')->42",
+      "Verifier: 7/7 tests passed including grpc handshake and functionality"
+    ],
+    "reason": "The patch fully implements all required behavior: proto definition, generated code, server logic on the correct port, and running server. All verifier tests pass and behavior matches the task requirements."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 494,
+    "output_tokens": 568,
+    "cache_read_input_tokens": 9450,
+    "cache_creation_input_tokens": 9450
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "grade_id": "prove-plus-comm--agent--4c95cf50--patch_correctness--single_pass--c4bff5",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--4c95cf50",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "prove-plus-comm--agent--5be2f745",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Base case incorrectly does induction on m without symmetry, leading to unification error S (m' + 0 + 0) with S (m' + 0)",
+      "Final diff fails to compile; no .vo produced",
+      "2/4 tests passed, compiled proof missing"
+    ],
+    "evidence_for_B": [
+      "Used symmetry in base case to correctly orient the goal, avoiding the mismatch",
+      "Inductive case uses IHn' and plus_n_Sm correctly",
+      "coqc succeeded (exit 0), plus_comm.vo generated",
+      "4/4 tests passed"
+    ],
+    "reason": "Attempt B produces a valid, compiling proof that addresses the missing steps correctly, while Attempt A's final patch fails to compile due to an incorrect base-case strategy.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 7569,
+    "output_tokens": 283,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "grade_id": "regex-log--agent--2128a233--patch_correctness--single_pass--f32026",
+  "created_at": "2026-07-07T07:25:33+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--2128a233",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Verifier result: 0/1 tests passed; all_passed=False; failed: test_regex_matches_dates",
+      "The regex only captures the year group ((?:19|20)\\d{2}) in parentheses, so re.findall returns only the year (e.g. '2023') rather than the full date YYYY-MM-DD",
+      "The month and day portions are outside the capturing group: -(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01]) are non-captured",
+      "February day constraint is not enforced per-month; day allows up to 31 for all months rather than 29 for February",
+      "Agent never validated the regex because python was unavailable in the environment"
+    ],
+    "reason": "The patch fails the verifier. The main defect is that only the year is inside a capturing group, so findall returns just the year instead of the full date. It also does not enforce February's 29-day limit or per-month day validity. The change does not produce correct verifier-relevant behavior."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 538,
+    "output_tokens": 686,
+    "cache_read_input_tokens": 3367,
+    "cache_creation_input_tokens": 3367
+  }
+}

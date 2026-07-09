@@ -1,0 +1,42 @@
+{
+  "grade_id": "make-mips-interpreter--oracle--a8310008--patch_correctness--single_pass--cc4423",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--oracle--a8310008",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "make-mips-interpreter--agent--4124a18c",
+  "order_swapped": false,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Passed all 3 verifier tests including frame BMP creation and similarity to reference",
+      "Implemented ELF parsing, memory loading, and interpreter scaffolding (make_json.js, memory.js)"
+    ],
+    "evidence_for_B": [
+      "Empty diff: no workspace changes produced",
+      "Attempt hit max_steps without writing vm.js",
+      "0/3 tests passed"
+    ],
+    "reason": "Attempt A produced a working solution that passes all verifier tests including correct first-frame rendering, while Attempt B produced no code at all (empty diff) and failed every test.",
+    "winner_as_presented": "A"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 9986,
+    "output_tokens": 222,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "grade_id": "regex-log--agent--fa9ded12--patch_correctness--single_pass--23d506",
+  "created_at": "2026-07-07T07:27:49+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--fa9ded12",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "good",
+    "evidence": [
+      "Final regex in /app/regex.txt uses lookahead for IPv4 validation (no leading zeros, octets 0-255), captures the date, and negative lookahead to ensure only the last date matches",
+      "Agent verified word boundaries prevent false matches: 'abc2024-01-01', '2024-01-01abc', 'user1134-12-1234' all correctly rejected",
+      "February handled specially (01-29) via alternation; 30-day months (04,06,09,11) capped at 30; 31-day months at 31 \u2014 tested 2024-02-30, 2024-04-31, 2024-06-31 all rejected",
+      "Multiple-dates-per-line correctly returns only last date (e.g. '2024-01-01 2024-06-15 2024-12-31' -> 2024-12-31)",
+      "Lines without IPv4 correctly yield no match; MULTILINE across lines works",
+      "Verifier: 1/1 tests passed, all_passed=True"
+    ],
+    "reason": "The regex directly addresses all stated requirements (IPv4 presence, last-date-only, no leading zeros, Feb max 29, month-specific day limits, word boundaries to avoid false matches). Extensive testing confirms correct behavior across positive and negative cases, and the single verifier test passes. The patch solves the task rather than bypassing it."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 456,
+    "cache_creation_input_tokens": 18978,
+    "cache_read_input_tokens": 0
+  }
+}

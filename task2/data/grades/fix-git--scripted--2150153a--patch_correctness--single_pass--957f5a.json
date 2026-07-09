@@ -1,0 +1,37 @@
+{
+  "grade_id": "fix-git--scripted--2150153a--patch_correctness--single_pass--957f5a",
+  "created_at": "2026-07-07T07:19:22+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--scripted--2150153a",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Empty diff: no workspace changes made",
+      "Agent output 'looks complicated, giving up' after only listing the directory",
+      "0/2 tests passed; test_about_file and test_layout_file both failed"
+    ],
+    "reason": "The agent made no code changes whatsoever, explicitly giving up after one step. The task of recovering lost changes and merging them into master was not addressed at all, and both verifier tests failed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 161,
+    "cache_creation_input_tokens": 1073,
+    "cache_read_input_tokens": 0
+  }
+}

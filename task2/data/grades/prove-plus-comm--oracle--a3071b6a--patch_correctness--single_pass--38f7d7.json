@@ -1,0 +1,38 @@
+{
+  "grade_id": "prove-plus-comm--oracle--a3071b6a--patch_correctness--single_pass--38f7d7",
+  "created_at": "2026-07-07T07:25:21+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--oracle--a3071b6a",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 5,
+    "label": "good",
+    "evidence": [
+      "Base case: replaced admit with 'rewrite <- plus_n_O. reflexivity.'",
+      "Inductive case: replaced admit with 'rewrite IHn'. rewrite plus_n_Sm. reflexivity.'",
+      "Proof ends with Qed rather than Admitted",
+      "coqc produced plus_comm.vo and .aux shows proof_check_time and vo_compile_time confirming successful compilation"
+    ],
+    "reason": "The patch correctly completes the commutativity proof using standard Coq lemmas (plus_n_O for the base case, plus_n_Sm with the inductive hypothesis for the step case), removing both admits. It compiles to a real .vo and ends with Qed, genuinely proving the theorem."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 511,
+    "output_tokens": 571,
+    "cache_read_input_tokens": 2698,
+    "cache_creation_input_tokens": 2698
+  }
+}

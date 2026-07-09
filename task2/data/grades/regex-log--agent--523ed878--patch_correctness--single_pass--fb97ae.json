@@ -1,0 +1,39 @@
+{
+  "grade_id": "regex-log--agent--523ed878--patch_correctness--single_pass--fb97ae",
+  "created_at": "2026-07-07T07:25:37+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--agent--523ed878",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Verifier result: 0/1 tests passed; all_passed=False",
+      "test_regex_matches_dates failed",
+      "Agent could not run python to test the regex (python/python3 not found), so never validated the pattern",
+      "Regex uses capturing groups for month/day components, which causes re.findall to return tuples rather than the full date string",
+      "Day pattern allows up to 31 rather than restricting February to 29"
+    ],
+    "reason": "The final regex fails the verifier. Multiple capturing groups mean re.findall returns tuples instead of the intended date matches, and day validation is not correct. The agent never tested the solution since python was unavailable, and the test explicitly failed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 497,
+    "output_tokens": 543,
+    "cache_read_input_tokens": 3208,
+    "cache_creation_input_tokens": 3208
+  }
+}

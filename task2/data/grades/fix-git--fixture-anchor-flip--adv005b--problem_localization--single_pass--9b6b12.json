@@ -1,0 +1,37 @@
+{
+  "grade_id": "fix-git--fixture-anchor-flip--adv005b--problem_localization--single_pass--9b6b12",
+  "created_at": "2026-07-07T07:29:46+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--fixture-anchor-flip--adv005b",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 4,
+    "label": "good",
+    "evidence": [
+      "Step 0: `git reflog | head -5` immediately revealed HEAD@{1} 'commit: Move to Stanford' at d1b919c orphaned by checkout from detached HEAD",
+      "Step 1 reasoning: 'commit d1b919c Move to Stanford was made on a detached HEAD and orphaned by the checkout' \u2014 correctly connected the failure to the specific orphaned commit",
+      "Step 2: verified with `git log --oneline -3` that master contains the recovered work"
+    ],
+    "reason": "The agent went straight to the correct diagnostic tool (git reflog), correctly identified the exact orphaned commit and its root cause (detached HEAD checkout orphaning 'Move to Stanford'), and confirmed the recovery. No thrashing, minimal and appropriate steps. Slight caveat: it didn't inspect the actual file contents to verify these were the user's intended changes before merging, and the `-X theirs` choice was made without examining conflicts, but the core localization was accurate and efficient."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 1053,
+    "output_tokens": 361,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

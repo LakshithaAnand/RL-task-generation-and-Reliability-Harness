@@ -1,0 +1,42 @@
+{
+  "grade_id": "kv-store-grpc--agent--933151ad--patch_correctness--single_pass--c811fc",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "kv-store-grpc",
+  "attempt_id": "kv-store-grpc--agent--933151ad",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "kv-store-grpc--agent--fd1143f0",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.97,
+    "evidence_for_A": [
+      "Created proto file and generated pb2/pb2_grpc files"
+    ],
+    "evidence_for_B": [
+      "Created /app/server.py implementing Server(KVStoreServicer) with dict store, GetVal/SetVal methods",
+      "Server binds to port 5328 and runs in background",
+      "Verified via test client: SetVal returned 42, GetVal returned 42",
+      "All 7 verifier tests passed"
+    ],
+    "reason": "Attempt A ran out of steps and never created server.py or started the server, failing 3 tests including server functionality. Attempt B completed all required steps: proto, generated code, server implementation, and running server, passing all 7 tests.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 15530,
+    "output_tokens": 244,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

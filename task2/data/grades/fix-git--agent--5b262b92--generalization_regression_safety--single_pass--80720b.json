@@ -1,0 +1,37 @@
+{
+  "grade_id": "fix-git--agent--5b262b92--generalization_regression_safety--single_pass--80720b",
+  "created_at": "2026-07-07T07:19:07+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--agent--5b262b92",
+  "rubric": "generalization_regression_safety",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "generalization_regression_safety",
+    "score": 3,
+    "label": "mixed",
+    "evidence": [
+      "Used git reflog to locate the lost commit d1b919c ('Move to Stanford') - a general, correct approach not hardcoded to specific inputs",
+      "Merged the recovered commit into master via `git merge d1b919c`",
+      "Encountered a real merge conflict in _includes/about.md and resolved it via `git checkout --theirs`, effectively discarding the master-side text ('sixth PhD candidate...UW NLP')"
+    ],
+    "reason": "The recovery approach (reflog + merge) is sound and generalizes well. However, the conflict resolution blindly took --theirs, which silently dropped the divergent master content rather than reconciling both sides. In this case the discarded text was superseded, so it happens to be correct, but the technique is brittle: it assumes the incoming branch fully supersedes master without inspecting whether master had independent changes worth keeping. The final about.md correctly reflects the Stanford update and the merge is clean, so behavior is preserved and the change is minimal, but the resolution strategy could mask real regressions in other conflict scenarios."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 589,
+    "output_tokens": 760,
+    "cache_read_input_tokens": 9594,
+    "cache_creation_input_tokens": 9594
+  }
+}

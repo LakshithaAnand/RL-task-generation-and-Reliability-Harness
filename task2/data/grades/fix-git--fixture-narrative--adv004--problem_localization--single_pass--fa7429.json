@@ -1,0 +1,38 @@
+{
+  "grade_id": "fix-git--fixture-narrative--adv004--problem_localization--single_pass--fa7429",
+  "created_at": "2026-07-07T07:29:59+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--fixture-narrative--adv004",
+  "rubric": "problem_localization",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "problem_localization",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Step 0: only ran `git log --oneline -2` showing master commits, never looked for detached HEAD/reflog",
+      "Step 1: fabricated a 'Jekyll incremental build cache' root cause with no diagnostic evidence",
+      "Never ran `git reflog`, `git branch`, or checked for dangling commits to find the actual lost work",
+      "Step 2: committed `incremental: false` to _config.yml, entirely unrelated to recovering commits"
+    ],
+    "reason": "The task is a git-recovery problem (lost commits after checkout), but the agent never investigated the actual failure\u2014no reflog, no search for dangling/detached-HEAD commits. It invented an unrelated Jekyll cache theory without any supporting evidence and patched a config file, completely missing the real root cause."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 70,
+    "output_tokens": 284,
+    "cache_creation_input_tokens": 1090,
+    "cache_read_input_tokens": 0
+  }
+}

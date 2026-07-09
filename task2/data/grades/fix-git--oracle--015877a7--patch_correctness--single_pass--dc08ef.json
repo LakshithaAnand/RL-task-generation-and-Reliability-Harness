@@ -1,0 +1,43 @@
+{
+  "grade_id": "fix-git--oracle--015877a7--patch_correctness--single_pass--dc08ef",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--oracle--015877a7",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "fix-git--scripted--2150153a",
+  "order_swapped": false,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Recovered lost commit via recovery-branch and merged it into master (merge commit fd551ab)",
+      "about.md now reads 'I am a Postdoctoral Researcher at Stanford CS.' and layout shows 'Postdoc @ Stanford'",
+      "2/2 tests passed; all_passed=True"
+    ],
+    "evidence_for_B": [
+      "Empty diff: no workspace changes",
+      "Agent explicitly gave up ('looks complicated, giving up')",
+      "0/2 tests passed"
+    ],
+    "reason": "Attempt A found the orphaned changes and merged them into master, satisfying both tests, while Attempt B made no changes and failed all tests.",
+    "winner_as_presented": "A"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 7100,
+    "output_tokens": 248,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

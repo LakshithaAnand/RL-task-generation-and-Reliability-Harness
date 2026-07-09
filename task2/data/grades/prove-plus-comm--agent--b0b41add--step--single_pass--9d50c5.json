@@ -1,0 +1,32 @@
+{
+  "grade_id": "prove-plus-comm--agent--b0b41add--step--single_pass--9d50c5",
+  "created_at": "2026-07-07T20:40:09+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--agent--b0b41add",
+  "rubric": "step",
+  "mode": "step",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": 4,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "label": "helped",
+    "confidence": 0.7,
+    "evidence": "coqc plus_comm.v ... Error: Syntax error: [ltac_use_default] expected after [tactic]",
+    "reason": "The action compiled the completed proof and surfaced a real syntax error (missing parentheses in `exact Nat.add_0_r m` / `exact plus_n_Sm m n'`), giving concrete feedback to fix; the overall proof structure is correct and this diagnostic advances toward the fix."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 159,
+    "output_tokens": 165,
+    "cache_creation_input_tokens": 1289,
+    "cache_read_input_tokens": 0
+  }
+}

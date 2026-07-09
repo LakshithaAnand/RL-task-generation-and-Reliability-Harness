@@ -1,0 +1,39 @@
+{
+  "grade_id": "fix-git--fixture-narrative--adv004--patch_correctness--single_pass--8f8b34",
+  "created_at": "2026-07-07T07:29:59+00:00",
+  "task_name": "fix-git",
+  "attempt_id": "fix-git--fixture-narrative--adv004",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Task was to find lost changes (detached HEAD/dangling commits) and merge into master",
+      "Agent never searched for lost commits (no git reflog, git fsck, or checkout of the changes)",
+      "Only change was appending 'incremental: false' and 'future: true' to _config.yml",
+      "Both tests failed: test_about_file and test_layout_file",
+      "The fabricated 'Jekyll cache' root cause does not recover any actual file changes"
+    ],
+    "reason": "The patch does not address the stated task of recovering and merging lost changes. It fabricates an unrelated root cause and edits config instead of finding the missing work, leaving the target files (about, layout) unchanged. Both verifier tests failed."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 254,
+    "cache_creation_input_tokens": 1210,
+    "cache_read_input_tokens": 0
+  }
+}

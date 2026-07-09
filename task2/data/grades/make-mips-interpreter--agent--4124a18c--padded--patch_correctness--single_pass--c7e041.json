@@ -1,0 +1,38 @@
+{
+  "grade_id": "make-mips-interpreter--agent--4124a18c--padded--patch_correctness--single_pass--c7e041",
+  "created_at": "2026-07-07T07:36:50+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--agent--4124a18c--padded",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "poor",
+    "evidence": [
+      "Final diff is empty: no vm.js was ever created",
+      "Attempt ended at max_steps after only exploratory commands (ls, file, od)",
+      "Step 5 stated intent to create vm.js but no file was written",
+      "All 3 verifier tests failed; all_passed=False"
+    ],
+    "reason": "No code change was made at all. The attempt only explored the filesystem and never implemented the MIPS interpreter, so the task's required behavior is entirely unaddressed and all tests fail."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 66,
+    "output_tokens": 184,
+    "cache_creation_input_tokens": 3365,
+    "cache_read_input_tokens": 0
+  }
+}

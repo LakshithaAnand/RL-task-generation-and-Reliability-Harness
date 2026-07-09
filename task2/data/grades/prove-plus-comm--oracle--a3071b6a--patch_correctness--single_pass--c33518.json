@@ -1,0 +1,43 @@
+{
+  "grade_id": "prove-plus-comm--oracle--a3071b6a--patch_correctness--single_pass--c33518",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "prove-plus-comm",
+  "attempt_id": "prove-plus-comm--oracle--a3071b6a",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "prove-plus-comm--scripted--7bd729fa",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.98,
+    "evidence_for_A": [
+      "Attempt A did not modify plus_comm.v at all; agent gave up ('looks complicated, giving up')",
+      "Only stray .aux/.glob artifacts appear, no actual proof completion",
+      "1/4 tests passed"
+    ],
+    "evidence_for_B": [
+      "Replaced both admit placeholders with real tactics: base case uses 'rewrite <- plus_n_O; reflexivity', inductive case uses 'rewrite IHn'; rewrite plus_n_Sm; reflexivity'",
+      "Proof ends with Qed and compiles to plus_comm.vo",
+      "4/4 tests passed, addressing the root cause (incomplete proof)"
+    ],
+    "reason": "Attempt B correctly completes the induction proof with valid Coq tactics and compiles successfully, while Attempt A made no code change and abandoned the task.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 4021,
+    "output_tokens": 307,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

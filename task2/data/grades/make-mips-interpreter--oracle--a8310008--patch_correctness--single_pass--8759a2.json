@@ -1,0 +1,43 @@
+{
+  "grade_id": "make-mips-interpreter--oracle--a8310008--patch_correctness--single_pass--8759a2",
+  "created_at": "2026-07-07T07:35:53+00:00",
+  "task_name": "make-mips-interpreter",
+  "attempt_id": "make-mips-interpreter--oracle--a8310008",
+  "rubric": "patch_correctness",
+  "mode": "pairwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": "make-mips-interpreter--agent--4124a18c",
+  "order_swapped": true,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "winner": "A",
+    "confidence": 0.97,
+    "evidence_for_A": [
+      "Empty diff: no workspace changes, so no patch was produced at all",
+      "Ran out of steps before writing any code",
+      "0/3 tests passed"
+    ],
+    "evidence_for_B": [
+      "Produced actual working code (ELF parser, memory extraction, VM components)",
+      "3/3 tests passed including frame BMP creation and reference similarity",
+      "Correctly parses MIPS ELF, loads sections, handles symbols"
+    ],
+    "reason": "Attempt A produced no patch and failed all tests. Attempt B implemented a working MIPS interpreter that passes all three verifier tests, correctly booting doom and producing the expected frame.",
+    "winner_as_presented": "B"
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": false,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 9986,
+    "output_tokens": 238,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

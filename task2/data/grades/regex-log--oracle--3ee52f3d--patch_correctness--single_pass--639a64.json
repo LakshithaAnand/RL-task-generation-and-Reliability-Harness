@@ -1,0 +1,38 @@
+{
+  "grade_id": "regex-log--oracle--3ee52f3d--patch_correctness--single_pass--639a64",
+  "created_at": "2026-07-07T07:27:58+00:00",
+  "task_name": "regex-log",
+  "attempt_id": "regex-log--oracle--3ee52f3d",
+  "rubric": "patch_correctness",
+  "mode": "pointwise",
+  "pipeline": "single_pass",
+  "grader_model": "claude-opus-4-8",
+  "extractor_model": null,
+  "attempt_b_id": null,
+  "order_swapped": null,
+  "step_index": null,
+  "prescreen": "clean",
+  "llm_called": true,
+  "result": {
+    "rubric": "patch_correctness",
+    "score": 1,
+    "label": "good",
+    "evidence": [
+      "regex uses greedy .* before capture group to match last date in line",
+      "IPv4 lookahead validates octets with word-boundary-like guards (?:^|[^0-9A-Za-z]) and (?=$|[^0-9A-Za-z])",
+      "date validation handles month-specific day ranges and Feb up to 29 (02-(?:0[1-9]|1\\d|2[0-9]))",
+      "verifier reports 1/1 tests passed, all_passed=True"
+    ],
+    "reason": "The regex correctly addresses all stated requirements: valid date format with month/day constraints, IPv4 presence check, last-date matching via greedy .*, and non-alphanumeric boundary guards. The verifier passed and the logic is internally consistent with the task."
+  },
+  "extraction": null,
+  "malformed": false,
+  "retried": true,
+  "raw_response": "",
+  "usage": {
+    "input_tokens": 842,
+    "output_tokens": 897,
+    "cache_read_input_tokens": 1190,
+    "cache_creation_input_tokens": 1190
+  }
+}
