@@ -1,0 +1,45 @@
+{
+  "base_image": "tb-seed-tabulate:bf58e37e6b35",
+  "generated_at": "2026-07-08T16:49:50+00:00",
+  "n_assembled": 5,
+  "n_survivors_in": 5,
+  "seed": "tabulate",
+  "stage": "assembly",
+  "tasks": [
+    {
+      "candidate_id": "c02-boundary_flip-L2446",
+      "n_held_out_tests": 18,
+      "task_dir": "tasks/generated/tabulate-c02-boundary_flip-L2446",
+      "task_name": "tbgen/tabulate-c02-boundary_flip-L2446",
+      "verbosity": "explicit"
+    },
+    {
+      "candidate_id": "c03-boundary_flip-L1458",
+      "n_held_out_tests": 2,
+      "task_dir": "tasks/generated/tabulate-c03-boundary_flip-L1458",
+      "task_name": "tbgen/tabulate-c03-boundary_flip-L1458",
+      "verbosity": "symptom_only"
+    },
+    {
+      "candidate_id": "c05-inverted_condition-L121",
+      "n_held_out_tests": 5,
+      "task_dir": "tasks/generated/tabulate-c05-inverted_condition-L121",
+      "task_name": "tbgen/tabulate-c05-inverted_condition-L121",
+      "verbosity": "explicit"
+    },
+    {
+      "candidate_id": "c06-inverted_condition-L846",
+      "n_held_out_tests": 192,
+      "task_dir": "tasks/generated/tabulate-c06-inverted_condition-L846",
+      "task_name": "tbgen/tabulate-c06-inverted_condition-L846",
+      "verbosity": "symptom_only"
+    },
+    {
+      "candidate_id": "c07-inverted_condition-L2393",
+      "n_held_out_tests": 4,
+      "task_dir": "tasks/generated/tabulate-c07-inverted_condition-L2393",
+      "task_name": "tbgen/tabulate-c07-inverted_condition-L2393",
+      "verbosity": "explicit"
+    }
+  ]
+}

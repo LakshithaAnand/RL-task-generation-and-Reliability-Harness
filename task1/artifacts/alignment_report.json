@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-07-08T16:50:00+00:00",
+  "n_aligned": 5,
+  "n_tasks": 5,
+  "results": [
+    {
+      "aligned": true,
+      "candidate_id": "c02-boundary_flip-L2446",
+      "coverage": {
+        "R1": [
+          "V1",
+          "V2"
+        ]
+      },
+      "coverage_map_consistent": true,
+      "reason": "1 requirement(s) <-> 2 check(s), fully traceable",
+      "requirements": [
+        "R1"
+      ],
+      "task_name": "tbgen/tabulate-c02-boundary_flip-L2446",
+      "uncovered_requirements": [],
+      "unstated_checks": [],
+      "verdict": "accept",
+      "verifier_checks": [
+        "V1",
+        "V2"
+      ]
+    },
+    {
+      "aligned": true,
+      "candidate_id": "c03-boundary_flip-L1458",
+      "coverage": {
+        "R1": [
+          "V1"
+        ]
+      },
+      "coverage_map_consistent": true,
+      "reason": "1 requirement(s) <-> 1 check(s), fully traceable",
+      "requirements": [
+        "R1"
+      ],
+      "task_name": "tbgen/tabulate-c03-boundary_flip-L1458",
+      "uncovered_requirements": [],
+      "unstated_checks": [],
+      "verdict": "accept",
+      "verifier_checks": [
+        "V1"
+      ]
+    },
+    {
+      "aligned": true,
+      "candidate_id": "c05-inverted_condition-L121",
+      "coverage": {
+        "R1": [
+          "V1",
+          "V2"
+        ]
+      },
+      "coverage_map_consistent": true,
+      "reason": "1 requirement(s) <-> 2 check(s), fully traceable",
+      "requirements": [
+        "R1"
+      ],
+      "task_name": "tbgen/tabulate-c05-inverted_condition-L121",
+      "uncovered_requirements": [],
+      "unstated_checks": [],
+      "verdict": "accept",
+      "verifier_checks": [
+        "V1",
+        "V2"
+      ]
+    },
+    {
+      "aligned": true,
+      "candidate_id": "c06-inverted_condition-L846",
+      "coverage": {
+        "R1": [
+          "V1",
+          "V2"
+        ]
+      },
+      "coverage_map_consistent": true,
+      "reason": "1 requirement(s) <-> 2 check(s), fully traceable",
+      "requirements": [
+        "R1"
+      ],
+      "task_name": "tbgen/tabulate-c06-inverted_condition-L846",
+      "uncovered_requirements": [],
+      "unstated_checks": [],
+      "verdict": "accept",
+      "verifier_checks": [
+        "V1",
+        "V2"
+      ]
+    },
+    {
+      "aligned": true,
+      "candidate_id": "c07-inverted_condition-L2393",
+      "coverage": {
+        "R1": [
+          "V1"
+        ]
+      },
+      "coverage_map_consistent": true,
+      "reason": "1 requirement(s) <-> 1 check(s), fully traceable",
+      "requirements": [
+        "R1"
+      ],
+      "task_name": "tbgen/tabulate-c07-inverted_condition-L2393",
+      "uncovered_requirements": [],
+      "unstated_checks": [],
+      "verdict": "accept",
+      "verifier_checks": [
+        "V1"
+      ]
+    }
+  ],
+  "stage": "alignment"
+}

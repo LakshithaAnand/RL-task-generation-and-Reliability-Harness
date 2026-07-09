@@ -1,0 +1,418 @@
+{
+  "acceptance_rate": 0.625,
+  "candidates_accepted": 5,
+  "candidates_in": 8,
+  "candidates_rejected": [
+    "c01-boundary_flip-L2472",
+    "c04-boundary_flip-L2509",
+    "c08-inverted_condition-L2139"
+  ],
+  "generated_at": "2026-07-08T16:54:27+00:00",
+  "n_deduped": 160,
+  "n_raw_entries": 480,
+  "per_stage": {
+    "alignment": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 5,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "assembly": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 5,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "assurance_card": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 5,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "eligibility": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 1,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "empirical_difficulty": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 5,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "failure_establishment": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 5,
+        "reject": 3,
+        "rejects": [
+          {
+            "item": "c01-boundary_flip-L2472",
+            "reason": "mutated suite timed out (mutation likely introduced an infinite loop; a hang is not a clean pass->fail flip)"
+          },
+          {
+            "item": "c04-boundary_flip-L2509",
+            "reason": "no test flipped (suite still green)"
+          },
+          {
+            "item": "c08-inverted_condition-L2139",
+            "reason": "no test flipped (suite still green)"
+          }
+        ]
+      }
+    },
+    "integrity_nearmiss": {
+      "sub_item": {
+        "accept": 14,
+        "reject": 1,
+        "rejects": [
+          {
+            "item": "c07-inverted_condition-L2393:nearmiss:assert_true",
+            "reason": "assertion_gaming: verifier ACCEPT"
+          }
+        ]
+      },
+      "task_level": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "integrity_shortcut": {
+      "sub_item": {
+        "accept": 35,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "metadata_tag": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 5,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "mutation": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 8,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "solvability": {
+      "sub_item": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      },
+      "task_level": {
+        "accept": 5,
+        "reject": 0,
+        "rejects": []
+      }
+    },
+    "verifier_synthesis": {
+      "sub_item": {
+        "accept": 7,
+        "reject": 56,
+        "rejects": [
+          {
+            "item": "c02-boundary_flip-L2446:edge:rows0_headers",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c02-boundary_flip-L2446:edge:rows0_bare",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c02-boundary_flip-L2446:edge:rows1",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c02-boundary_flip-L2446:edge:rows2",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c02-boundary_flip-L2446:edge:cols1",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c02-boundary_flip-L2446:edge:single_value",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c02-boundary_flip-L2446:edge:firstrow_only",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c02-boundary_flip-L2446:edge:empty_string_cell",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:rows0_headers",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:rows0_bare",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:rows1",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:rows2",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:cols1",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:single_value",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:firstrow_only",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:empty_string_cell",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:wrap_exact",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:wrap_words",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:wrap_longword_grid",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c03-boundary_flip-L1458:edge:wrap_width1",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:align_left",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:align_right",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:align_center",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:align_decimal",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:pipe_center",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:pipe_default",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:html",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:unsafehtml",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:html_headers",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:fmt_github",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:fmt_rst",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c05-inverted_condition-L121:edge:fmt_grid",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:align_left",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:align_right",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:align_center",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:align_decimal",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:pipe_left_right",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:pipe_default",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:html",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:html_headers",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:fmt_github",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:fmt_rst",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c06-inverted_condition-L846:edge:fmt_grid",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:align_left",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:align_right",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:align_center",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:align_decimal",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:pipe_left_right",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:pipe_center",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:pipe_default",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:html",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:unsafehtml",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:html_headers",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:fmt_github",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:fmt_rst",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          },
+          {
+            "item": "c07-inverted_condition-L2393:edge:fmt_grid",
+            "reason": "broken output == oracle output (does not reveal the defect)"
+          }
+        ]
+      },
+      "task_level": {
+        "accept": 0,
+        "reject": 0,
+        "rejects": []
+      }
+    }
+  },
+  "stage_order": [
+    "eligibility",
+    "mutation",
+    "failure_establishment",
+    "assembly",
+    "verifier_synthesis",
+    "alignment",
+    "solvability",
+    "integrity_shortcut",
+    "integrity_nearmiss",
+    "metadata_tag",
+    "empirical_difficulty",
+    "assurance_card"
+  ],
+  "top_rejecting_gate": "failure_establishment",
+  "top_rejecting_gate_rejects": 3
+}

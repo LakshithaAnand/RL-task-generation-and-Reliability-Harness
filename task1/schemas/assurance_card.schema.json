@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Assurance Card",
+  "description": "Machine-readable, per-task evidence aggregate: every gate's verdict, the attack results, the hardening history, and the residual risks. Cards ship with the task.",
+  "type": "object",
+  "required": [
+    "card_version",
+    "generated_at",
+    "task",
+    "provenance",
+    "failure_establishment",
+    "solvability",
+    "spec_coverage",
+    "verifier_synthesis",
+    "shortcut_battery",
+    "near_miss_battery",
+    "independent_handcheck",
+    "difficulty",
+    "diversity",
+    "evidence_provenance",
+    "residual_risks"
+  ],
+  "properties": {
+    "card_version": { "type": "integer" },
+    "generated_at": { "type": "string" },
+    "task": {
+      "type": "object",
+      "required": ["name", "folder", "instruction_verbosity"]
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["seed_repo", "seed_commit", "mutation_template", "rng_seed", "candidate_id", "file", "line"]
+    },
+    "failure_establishment": {
+      "type": "object",
+      "required": ["verdict", "n_flipped_tests", "flipped_tests"]
+    },
+    "solvability": {
+      "type": "object",
+      "required": ["verdict", "oracle_reward", "nop_reward", "harness"]
+    },
+    "spec_coverage": {
+      "type": "object",
+      "required": ["requirements", "verifier_checks", "coverage", "alignment"]
+    },
+    "verifier_synthesis": {
+      "type": "object",
+      "required": ["n_admitted", "n_discarded", "admission_rule", "provenance_labels", "caveat"]
+    },
+    "shortcut_battery": {
+      "type": "object",
+      "required": ["registry_version", "probes"]
+    },
+    "near_miss_battery": {
+      "type": "object",
+      "required": ["provenance", "n", "n_reject", "rejection_rate", "table", "residual_open_ids"]
+    },
+    "independent_handcheck": {
+      "type": "object",
+      "required": ["covered", "script", "note"]
+    },
+    "difficulty": {
+      "type": "object",
+      "required": ["structural_preliminary", "signals", "caveat", "empirical_solve_rate"]
+    },
+    "diversity": {
+      "type": "object",
+      "required": ["category", "skill_type", "repo"]
+    },
+    "evidence_provenance": {
+      "type": "object",
+      "required": ["live", "precomputed_or_authored"]
+    },
+    "residual_risks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    }
+  }
+}

@@ -1,0 +1,57 @@
+# Seed repo configuration for the task generation pipeline.
+# Compressed scope (2026-07-08): ONE active seed, two fallbacks commented out.
+# Kill rule: if a seed fights the Docker build > ~15 min, switch to a fallback.
+
+schema_version = 1
+rng_seed = 42
+
+[limits]
+max_repo_mb = 50               # working tree, excluding .git
+max_test_seconds = 120         # in-container full-suite wall clock
+docker_build_timeout_seconds = 900
+container_run_timeout_seconds = 420
+
+[mutation]
+n_candidates = 8               # 6-8 per compressed scope; 4 per template
+[mutation.per_template]
+boundary_flip = 4
+inverted_condition = 4
+
+[assembly]
+org = "tbgen"                  # org/name required; invalid org => SILENT skip (Stage 0 finding)
+# Difficulty knob: instruction verbosity, assigned round-robin over sorted
+# survivors. "explicit" names the affected function/area; "symptom_only"
+# describes only observable wrong behavior.
+verbosity_cycle = ["explicit", "symptom_only"]
+agent_timeout_sec = 900.0
+verifier_timeout_sec = 300.0
+build_timeout_sec = 600.0
+
+[[seeds]]
+name = "tabulate"
+url = "https://github.com/astanin/python-tabulate.git"
+tag = "v0.9.0"
+commit = "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8"
+source_dir = "tabulate"        # package source (mutation surface)
+test_dir = "test"              # repo's own developer tests
+expected_license = "MIT"
+
+# --- Fallbacks (enable one and disable tabulate if the kill rule fires) ---
+
+# [[seeds]]
+# name = "humanize"
+# url = "https://github.com/python-humanize/humanize.git"
+# tag = "4.9.0"
+# commit = "35e2d21b4b3030c03f106344cbdb851a2dbbbbb3"
+# source_dir = "src/humanize"
+# test_dir = "tests"
+# expected_license = "MIT"
+
+# [[seeds]]
+# name = "jsonschema"
+# url = "https://github.com/python-jsonschema/jsonschema.git"
+# tag = "v4.26.0"
+# commit = "a7277432b0f7bcd0551f6e589d30457017125df4"
+# source_dir = "jsonschema"
+# test_dir = "jsonschema/tests"
+# expected_license = "MIT"

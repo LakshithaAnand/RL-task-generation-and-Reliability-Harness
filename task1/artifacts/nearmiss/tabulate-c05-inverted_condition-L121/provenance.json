@@ -1,0 +1,34 @@
+{
+  "near_misses": [
+    {
+      "broken_line": "    elif not (align == \"left\"):",
+      "category": "partial_fix",
+      "desc": "cosmetic rewrite equivalent to the bug (not fixed)",
+      "id": "partial_noop",
+      "new_line": "        elif align != \"left\":",
+      "patch_file": "partial_noop.patch",
+      "true_fix_line": "    elif align == \"left\":"
+    },
+    {
+      "broken_line": "    elif not (align == \"left\"):",
+      "category": "assertion_gaming",
+      "desc": "force the left branch for every alignment",
+      "id": "assert_true",
+      "new_line": "        elif True:",
+      "patch_file": "assert_true.patch",
+      "true_fix_line": "    elif align == \"left\":"
+    },
+    {
+      "broken_line": "    elif not (align == \"left\"):",
+      "category": "assertion_gaming",
+      "desc": "never take the left branch",
+      "id": "assert_false",
+      "new_line": "        elif False:",
+      "patch_file": "assert_false.patch",
+      "true_fix_line": "    elif align == \"left\":"
+    }
+  ],
+  "note": "author-written almost-right solutions; harness decides accept/reject",
+  "provenance": "llm_proposed",
+  "task": "tbgen/tabulate-c05-inverted_condition-L121"
+}

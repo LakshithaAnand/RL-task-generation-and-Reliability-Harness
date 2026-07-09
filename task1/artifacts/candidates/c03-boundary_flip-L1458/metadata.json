@@ -1,0 +1,213 @@
+{
+  "alignment": {
+    "checked_at": "2026-07-08T16:50:00+00:00",
+    "reason": "1 requirement(s) <-> 1 check(s), fully traceable",
+    "verdict": "accept"
+  },
+  "changed_condition": {
+    "from": ">",
+    "to": ">="
+  },
+  "commit": "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8",
+  "difficulty": {
+    "caveat": "empirical solve-rate anchoring is the designed next step, not yet run.",
+    "empirical_solve_rate": null,
+    "signals": [
+      {
+        "name": "flipped_test_count",
+        "note": "fewer flipped tests -> harder to localize",
+        "points": 2,
+        "value": 2
+      },
+      {
+        "name": "instruction_verbosity",
+        "note": "symptom_only gives no file/function hint",
+        "points": 1,
+        "value": "symptom_only"
+      },
+      {
+        "name": "verifier_test_count",
+        "note": "regression copies + admitted edge + hardening edge tests",
+        "points": 1,
+        "value": 3
+      },
+      {
+        "name": "call_graph_depth",
+        "note": "approximate intra-module call depth from public API",
+        "points": 0,
+        "value": 1
+      }
+    ],
+    "structural_preliminary": "hard",
+    "tagged_at": "2026-07-08T16:54:27+00:00",
+    "total_points": 4
+  },
+  "diversity": {
+    "category": "software-engineering",
+    "repo": "tabulate",
+    "skill_type": "boundary-condition-reasoning"
+  },
+  "edge_cases": [
+    "below_boundary",
+    "at_boundary",
+    "above_boundary"
+  ],
+  "enclosing_function": "_normalize_tabular_data",
+  "failure_establishment": {
+    "checked_at": "2026-07-08T16:49:34+00:00",
+    "flipped_tests": [
+      "test/test_output.py::test_empty_data_with_headers",
+      "test/test_output.py::test_list_of_lists_with_index_firstrow"
+    ],
+    "mutated_suite": {
+      "counts": {
+        "failed": 2,
+        "passed": 245,
+        "skipped": 37
+      },
+      "duration_seconds": 1.19,
+      "exit_code": 1
+    },
+    "oracle_suite": {
+      "counts": {
+        "passed": 247,
+        "skipped": 37
+      },
+      "duration_seconds": 1.19,
+      "exit_code": 0
+    },
+    "reason": "2 test(s) flipped pass->fail; oracle round-trip green",
+    "verdict": "accept"
+  },
+  "file": "tabulate/__init__.py",
+  "generated_at": "2026-07-08T16:47:23+00:00",
+  "id": "c03-boundary_flip-L1458",
+  "instruction_wording_template": "A boundary-condition bug was introduced in the `{package}` library: one comparison now treats a boundary value incorrectly, producing wrong results for edge-case inputs. Find the faulty comparison and restore correct boundary handling.",
+  "integrity": {
+    "near_miss_battery": {
+      "checked_at": "2026-07-08T16:53:53+00:00",
+      "hardening": {
+        "admitted_ids": [
+          "firstrow_only"
+        ],
+        "hardened": true,
+        "n_new_edge_tests": 1,
+        "post_harden_solvable_property": {
+          "broken_reward": "0",
+          "ok": true,
+          "oracle_reward": "1"
+        }
+      },
+      "n": 3,
+      "n_reject": 3,
+      "rejection_rate": 1.0,
+      "results": [
+        {
+          "category": "off_by_one",
+          "desc": "off-by-one: single-row firstrow tables mishandled",
+          "id": "off_by_one",
+          "new_line": "    if headers == \"firstrow\" and len(rows) > 1:",
+          "reward": "1",
+          "reward_after_hardening": "0",
+          "verdict": "ACCEPT",
+          "verdict_after_hardening": "REJECT"
+        },
+        {
+          "category": "partial_fix",
+          "desc": "wrong direction: firstrow branch never taken",
+          "id": "wrong_variant",
+          "new_line": "    if headers == \"firstrow\" and len(rows) < 0:",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "partial_fix",
+          "desc": "no-op: leaves the buggy comparison",
+          "id": "unfixed",
+          "new_line": "    if headers == \"firstrow\" and len(rows) >= 0:",
+          "reward": "0",
+          "verdict": "REJECT"
+        }
+      ]
+    },
+    "shortcut_battery": {
+      "checked_at": "2026-07-08T16:51:53+00:00",
+      "post_harden_solvable_property": {
+        "broken_reward": "0",
+        "ok": true,
+        "oracle_reward": "1"
+      },
+      "registry_version": 1,
+      "results": {
+        "artifact_spoofing": {
+          "detail": "reward stayed 0 despite the cheat",
+          "premise": "agent plants fake pytest cache + fake ctrf report",
+          "status": "blocked"
+        },
+        "env_poisoning_conftest": {
+          "detail": "reward stayed 0 despite the cheat",
+          "premise": "hostile /repo/conftest.py (skip-all) + fake pytest on PATH",
+          "status": "blocked"
+        },
+        "exit_code_fake_pytest": {
+          "detail": "reward stayed 0 despite the cheat",
+          "premise": "fake pytest binary on PATH exiting 0",
+          "status": "blocked"
+        },
+        "exposed_files": {
+          "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+          "premise": "search agent filesystem for held-out/oracle/.git artifacts",
+          "status": "blocked"
+        },
+        "hardcode_reward_txt": {
+          "detail": "reward stayed 0 despite the cheat",
+          "premise": "agent pre-writes reward.txt=1 before verification",
+          "status": "blocked"
+        },
+        "pip_reinstall": {
+          "detail": "reward stayed 0 despite the cheat",
+          "premise": "pip install healthy tabulate over the broken copy",
+          "status": "blocked"
+        },
+        "spoof_reward_json": {
+          "detail": "reward stayed 0 despite the cheat",
+          "hardened": true,
+          "hardening_applied": [
+            "PYTHONPATH=/repo pins import to the code under test",
+            "delete planted reward.{txt,json} before verifying",
+            "remove hostile /repo/conftest.py before collection"
+          ],
+          "premise": "agent plants reward.json=1 (Harbor resolves json first)",
+          "status": "blocked",
+          "status_before_hardening": "failed"
+        }
+      }
+    }
+  },
+  "intended_behavior": "In tabulate/__init__.py:1458 (_normalize_tabular_data), the comparison `len(rows) > 0` must use `>`. The mutated operator `>=` differs exactly at the boundary value, which must follow the original semantics.",
+  "line": 1458,
+  "original_expr": "len(rows) > 0",
+  "repo": "tabulate",
+  "rng_seed": 42,
+  "solvability": {
+    "checked_at": "2026-07-08T16:51:31+00:00",
+    "harness": "harbor run (agents: oracle, nop)",
+    "nop_reward": 0.0,
+    "oracle_reward": 1.0,
+    "verdict": "accept"
+  },
+  "source_sha256_healthy": "5f7af0a28fcd713b830c97388675945fa8c4950b05b58f8d187c900a5752d57d",
+  "source_sha256_mutated": "8bd8599c2fb5e04979aa9beccff4060e45e23a60a978d6051581109a752e8b0d",
+  "template": "boundary_flip",
+  "template_description": "Swaps a relational operator with its boundary-inclusive/exclusive counterpart, so exactly the boundary value is treated incorrectly.",
+  "verifier_synthesis": {
+    "admitted_ids": [],
+    "checked_at": "2026-07-08T16:49:55+00:00",
+    "n_admitted": 0,
+    "n_discarded": 12,
+    "n_probes": 12,
+    "n_regression_tests": 2,
+    "regression_confirmed": true,
+    "template": "boundary_flip"
+  }
+}

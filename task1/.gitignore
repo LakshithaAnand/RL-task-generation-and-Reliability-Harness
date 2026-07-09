@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+build/
+dist/
+dist.tar.gz
+
+# Virtualenv / uv
+.venv/
+.python-version
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Harbor job outputs (run artifacts; not source)
+jobs/
+
+# Pipeline artifacts that are large and reproducible from pinned config.
+# Evidence artifacts (reports, funnel, candidates) ARE committed.
+artifacts/repos/
+artifacts/build/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Secrets — replay mode must run with zero API keys; never commit any
+.env
+.env.*
+!.env.example
+.env

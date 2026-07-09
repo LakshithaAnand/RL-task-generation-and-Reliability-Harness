@@ -1,0 +1,480 @@
+{
+  "card_version": 1,
+  "difficulty": {
+    "agreement": {
+      "agree": false,
+      "empirical_label": "easy",
+      "note": "disagreements recorded, not reconciled",
+      "structural_label": "medium"
+    },
+    "caveat": "empirical anchoring run with n=5 attempts \u2014 small-sample caveat: one success shifts the label; solve-rates are descriptive, not calibrated estimates.",
+    "empirical": {
+      "agent": "claude-code",
+      "attempts": 5,
+      "label": "easy",
+      "model": "claude-haiku-4-5-20251001",
+      "per_attempt_rewards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "run_at": "2026-07-08T16:45:57+00:00",
+      "solve_rate": 1.0,
+      "successes": 5,
+      "thresholds": {
+        "easy": ">=0.75",
+        "hard": "<0.25",
+        "medium": "0.25-0.74",
+        "note": "thresholds fixed in docs/PLAN.md (easy >=75%, medium 25-74%, hard <25%) before any empirical results were seen"
+      }
+    },
+    "empirical_solve_rate": 1.0,
+    "signals": [
+      {
+        "name": "flipped_test_count",
+        "note": "fewer flipped tests -> harder to localize",
+        "points": 0,
+        "value": 192
+      },
+      {
+        "name": "instruction_verbosity",
+        "note": "symptom_only gives no file/function hint",
+        "points": 1,
+        "value": "symptom_only"
+      },
+      {
+        "name": "verifier_test_count",
+        "note": "regression copies + admitted edge + hardening edge tests",
+        "points": 0,
+        "value": 194
+      },
+      {
+        "name": "call_graph_depth",
+        "note": "approximate intra-module call depth from public API",
+        "points": 1,
+        "value": 2
+      }
+    ],
+    "structural_preliminary": "medium",
+    "total_points": 2
+  },
+  "diversity": {
+    "category": "software-engineering",
+    "repo": "tabulate",
+    "skill_type": "control-flow-reasoning"
+  },
+  "evidence_provenance": {
+    "live": [
+      "failure establishment (suite run in-container)",
+      "solvability rewards (real `harbor run`, oracle + nop agents)",
+      "verifier-synthesis admission (fail-broken/pass-oracle, in-container)",
+      "alignment traceability check",
+      "shortcut battery incl. harden-loop re-probe",
+      "near-miss re-apply + re-score",
+      "difficulty signals (deterministic, from artifacts + AST)"
+    ],
+    "precomputed_or_authored": [
+      "near-miss patches (author-written, committed, labeled llm_proposed)",
+      "hardening registry entries (authored from battery findings)",
+      "handcheck claims (standalone script, re-runnable on demand)",
+      "empirical difficulty solve-rates (model-dependent, generated once by pipeline/empirical_difficulty.py with an API key; the zero-key demo re-reads the committed artifact)"
+    ]
+  },
+  "failure_establishment": {
+    "checked_at": "2026-07-08T16:49:43+00:00",
+    "flipped_tests": [
+      "test/test_cli.py::test_script_from_stdin_to_stdout",
+      "test/test_cli.py::test_script_from_file_to_stdout",
+      "test/test_cli.py::test_script_from_file_to_file",
+      "test/test_cli.py::test_script_header_option",
+      "test/test_cli.py::test_script_sep_option",
+      "test/test_cli.py::test_script_floatfmt_option",
+      "test/test_cli.py::test_script_format_option",
+      "test/test_input.py::test_list_of_lists",
+      "test/test_input.py::test_list_of_lists_firstrow",
+      "test/test_input.py::test_list_of_lists_keys",
+      "test/test_input.py::test_dict_like",
+      "test/test_input.py::test_sqlite3",
+      "test/test_input.py::test_sqlite3_keys",
+      "test/test_input.py::test_list_of_dicts_with_missing_keys",
+      "test/test_input.py::test_list_of_dicts_with_dict_of_headers",
+      "test/test_input.py::test_py37orlater_list_of_dataclasses_keys",
+      "test/test_input.py::test_py37orlater_list_of_dataclasses_headers",
+      "test/test_input.py::test_list_bytes",
+      "test/test_internal.py::test_align_column_decimal",
+      "test/test_internal.py::test_align_column_decimal_with_thousand_separators",
+      "test/test_internal.py::test_align_column_decimal_with_incorrect_thousand_separators",
+      "test/test_internal.py::test_wrap_text_to_colwidths",
+      "test/test_internal.py::test_wrap_text_to_numbers",
+      "test/test_internal.py::test_wrap_text_to_colwidths_single_ansi_colors_full_cell",
+      "test/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_full_cell",
+      "test/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_in_subset",
+      "test/test_output.py::test_plain",
+      "test/test_output.py::test_plain_headerless",
+      "test/test_output.py::test_plain_multiline_headerless",
+      "test/test_output.py::test_plain_multiline",
+      "test/test_output.py::test_plain_multiline_with_links",
+      "test/test_output.py::test_plain_multiline_with_empty_cells",
+      "test/test_output.py::test_plain_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_plain_maxcolwidth_autowraps",
+      "test/test_output.py::test_plain_maxcolwidth_autowraps_with_sep",
+      "test/test_output.py::test_maxcolwidth_single_value",
+      "test/test_output.py::test_maxcolwidth_pad_tailing_widths",
+      "test/test_output.py::test_maxcolwidth_honor_disable_parsenum",
+      "test/test_output.py::test_plain_maxheadercolwidths_autowraps",
+      "test/test_output.py::test_simple",
+      "test/test_output.py::test_simple_with_sep_line",
+      "test/test_output.py::test_readme_example_with_sep",
+      "test/test_output.py::test_simple_multiline_2",
+      "test/test_output.py::test_simple_multiline_2_with_sep_line",
+      "test/test_output.py::test_simple_headerless",
+      "test/test_output.py::test_simple_headerless_with_sep_line",
+      "test/test_output.py::test_simple_multiline_headerless",
+      "test/test_output.py::test_simple_multiline",
+      "test/test_output.py::test_simple_multiline_with_links",
+      "test/test_output.py::test_simple_multiline_with_empty_cells",
+      "test/test_output.py::test_simple_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_github",
+      "test/test_output.py::test_grid",
+      "test/test_output.py::test_grid_headerless",
+      "test/test_output.py::test_grid_multiline_headerless",
+      "test/test_output.py::test_grid_multiline",
+      "test/test_output.py::test_grid_multiline_with_empty_cells",
+      "test/test_output.py::test_grid_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_simple_grid",
+      "test/test_output.py::test_simple_grid_headerless",
+      "test/test_output.py::test_simple_grid_multiline_headerless",
+      "test/test_output.py::test_simple_grid_multiline",
+      "test/test_output.py::test_simple_grid_multiline_with_empty_cells",
+      "test/test_output.py::test_simple_grid_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_rounded_grid",
+      "test/test_output.py::test_rounded_grid_headerless",
+      "test/test_output.py::test_rounded_grid_multiline_headerless",
+      "test/test_output.py::test_rounded_grid_multiline",
+      "test/test_output.py::test_rounded_grid_multiline_with_empty_cells",
+      "test/test_output.py::test_rounded_grid_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_heavy_grid",
+      "test/test_output.py::test_heavy_grid_headerless",
+      "test/test_output.py::test_heavy_grid_multiline_headerless",
+      "test/test_output.py::test_heavy_grid_multiline",
+      "test/test_output.py::test_heavy_grid_multiline_with_empty_cells",
+      "test/test_output.py::test_heavy_grid_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_mixed_grid",
+      "test/test_output.py::test_mixed_grid_headerless",
+      "test/test_output.py::test_mixed_grid_multiline_headerless",
+      "test/test_output.py::test_mixed_grid_multiline",
+      "test/test_output.py::test_mixed_grid_multiline_with_empty_cells",
+      "test/test_output.py::test_mixed_grid_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_double_grid",
+      "test/test_output.py::test_double_grid_headerless",
+      "test/test_output.py::test_double_grid_multiline_headerless",
+      "test/test_output.py::test_double_grid_multiline",
+      "test/test_output.py::test_double_grid_multiline_with_empty_cells",
+      "test/test_output.py::test_double_grid_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_fancy_grid",
+      "test/test_output.py::test_fancy_grid_headerless",
+      "test/test_output.py::test_fancy_grid_multiline_headerless",
+      "test/test_output.py::test_fancy_grid_multiline",
+      "test/test_output.py::test_fancy_grid_multiline_with_empty_cells",
+      "test/test_output.py::test_fancy_grid_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_fancy_grid_multiline_row_align",
+      "test/test_output.py::test_outline",
+      "test/test_output.py::test_outline_headerless",
+      "test/test_output.py::test_simple_outline",
+      "test/test_output.py::test_simple_outline_headerless",
+      "test/test_output.py::test_rounded_outline",
+      "test/test_output.py::test_rounded_outline_headerless",
+      "test/test_output.py::test_heavy_outline",
+      "test/test_output.py::test_heavy_outline_headerless",
+      "test/test_output.py::test_mixed_outline",
+      "test/test_output.py::test_mixed_outline_headerless",
+      "test/test_output.py::test_double_outline",
+      "test/test_output.py::test_double_outline_headerless",
+      "test/test_output.py::test_fancy_outline",
+      "test/test_output.py::test_fancy_outline_headerless",
+      "test/test_output.py::test_pipe",
+      "test/test_output.py::test_pipe_headerless",
+      "test/test_output.py::test_presto",
+      "test/test_output.py::test_presto_headerless",
+      "test/test_output.py::test_presto_multiline_headerless",
+      "test/test_output.py::test_presto_multiline",
+      "test/test_output.py::test_presto_multiline_with_empty_cells",
+      "test/test_output.py::test_presto_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_orgtbl",
+      "test/test_output.py::test_orgtbl_headerless",
+      "test/test_output.py::test_asciidoc",
+      "test/test_output.py::test_asciidoc_headerless",
+      "test/test_output.py::test_psql",
+      "test/test_output.py::test_psql_headerless",
+      "test/test_output.py::test_psql_multiline_headerless",
+      "test/test_output.py::test_psql_multiline",
+      "test/test_output.py::test_psql_multiline_with_empty_cells",
+      "test/test_output.py::test_psql_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_pretty",
+      "test/test_output.py::test_pretty_headerless",
+      "test/test_output.py::test_pretty_multiline_headerless",
+      "test/test_output.py::test_pretty_multiline",
+      "test/test_output.py::test_pretty_multiline_with_links",
+      "test/test_output.py::test_pretty_multiline_with_empty_cells",
+      "test/test_output.py::test_pretty_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_jira",
+      "test/test_output.py::test_jira_headerless",
+      "test/test_output.py::test_rst",
+      "test/test_output.py::test_rst_with_empty_values_in_first_column",
+      "test/test_output.py::test_rst_headerless",
+      "test/test_output.py::test_rst_multiline",
+      "test/test_output.py::test_rst_multiline_with_links",
+      "test/test_output.py::test_rst_multiline_with_empty_cells",
+      "test/test_output.py::test_rst_multiline_with_empty_cells_headerless",
+      "test/test_output.py::test_mediawiki",
+      "test/test_output.py::test_mediawiki_headerless",
+      "test/test_output.py::test_moinmoin",
+      "test/test_output.py::test_youtrack",
+      "test/test_output.py::test_moinmoin_headerless",
+      "test/test_output.py::test_html",
+      "test/test_output.py::test_unsafehtml",
+      "test/test_output.py::test_html_headerless",
+      "test/test_output.py::test_unsafehtml_headerless",
+      "test/test_output.py::test_latex",
+      "test/test_output.py::test_latex_raw",
+      "test/test_output.py::test_latex_headerless",
+      "test/test_output.py::test_latex_booktabs",
+      "test/test_output.py::test_latex_booktabs_headerless",
+      "test/test_output.py::test_textile",
+      "test/test_output.py::test_textile_with_header",
+      "test/test_output.py::test_textile_with_center_align",
+      "test/test_output.py::test_intfmt",
+      "test/test_output.py::test_floatfmt",
+      "test/test_output.py::test_floatfmt_multi",
+      "test/test_output.py::test_colalign_multi",
+      "test/test_output.py::test_colalign_multi_with_sep_line",
+      "test/test_output.py::test_float_conversions",
+      "test/test_output.py::test_missingval",
+      "test/test_output.py::test_missingval_multi",
+      "test/test_output.py::test_column_alignment",
+      "test/test_output.py::test_unaligned_separated",
+      "test/test_output.py::test_disable_numparse_default",
+      "test/test_output.py::test_disable_numparse_true",
+      "test/test_output.py::test_disable_numparse_list",
+      "test/test_output.py::test_preserve_whitespace",
+      "test/test_regression.py::test_ansi_color_in_table_cells",
+      "test/test_regression.py::test_alignment_of_colored_cells",
+      "test/test_regression.py::test_alignment_of_link_cells",
+      "test/test_regression.py::test_alignment_of_link_text_cells",
+      "test/test_regression.py::test_simple_separated_format",
+      "test/test_regression.py::test_column_type_of_bytestring_columns",
+      "test/test_regression.py::test_88_256_ANSI_color_codes",
+      "test/test_regression.py::test_column_with_mixed_value_types",
+      "test/test_regression.py::test_latex_escape_special_chars",
+      "test/test_regression.py::test_isconvertible_on_set_values",
+      "test/test_regression.py::test_ansi_color_for_decimal_numbers",
+      "test/test_regression.py::test_alignment_of_decimal_numbers_with_ansi_color",
+      "test/test_regression.py::test_escape_empty_cell_in_first_column_in_rst",
+      "test/test_regression.py::test_ragged_rows",
+      "test/test_regression.py::test_custom_tablefmt",
+      "test/test_regression.py::test_string_with_comma_between_digits_without_floatfmt_grouping_option",
+      "test/test_regression.py::test_iterable_row_index",
+      "test/test_textwrapper.py::test_wrap_datetime"
+    ],
+    "n_flipped_tests": 192,
+    "oracle_round_trip_green": true,
+    "verdict": "accept"
+  },
+  "generated_at": "2026-07-08T16:54:27+00:00",
+  "independent_handcheck": {
+    "claims_reverified": [],
+    "covered": false,
+    "note": "this task is not covered by the standalone handcheck; its evidence comes from the Stage-8 battery only",
+    "script": "scripts/handcheck.sh"
+  },
+  "near_miss_battery": {
+    "checked_at": "2026-07-08T16:54:21+00:00",
+    "hardening": null,
+    "n": 3,
+    "n_reject": 3,
+    "provenance": "llm_proposed (author-written, committed under artifacts/nearmiss/; re-applied and re-scored deterministically by the harness)",
+    "rejection_rate": 1.0,
+    "residual_open_ids": [],
+    "table": [
+      {
+        "category": "partial_fix",
+        "description": "inverts the guard the wrong way",
+        "final_verdict": "REJECT",
+        "id": "wrong_variant",
+        "residual_open": false,
+        "reward_initial": "0",
+        "verdict_initial": "REJECT"
+      },
+      {
+        "category": "assertion_gaming",
+        "description": "treat every string as non-number-eligible",
+        "final_verdict": "REJECT",
+        "id": "assert_true",
+        "residual_open": false,
+        "reward_initial": "0",
+        "verdict_initial": "REJECT"
+      },
+      {
+        "category": "assertion_gaming",
+        "description": "skip the guard entirely",
+        "final_verdict": "REJECT",
+        "id": "assert_false",
+        "residual_open": false,
+        "reward_initial": "0",
+        "verdict_initial": "REJECT"
+      }
+    ]
+  },
+  "provenance": {
+    "candidate_id": "c06-inverted_condition-L846",
+    "changed_condition": {
+      "from": "not _isconvertible(float, string)",
+      "to": "not (not _isconvertible(float, string))"
+    },
+    "enclosing_function": "_isnumber",
+    "file": "tabulate/__init__.py",
+    "generator": "tb-task-pipeline (stages 1-4, deterministic, no LLM)",
+    "line": 846,
+    "mutation_template": "inverted_condition",
+    "rng_seed": 42,
+    "seed_commit": "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8",
+    "seed_repo": "tabulate",
+    "source_sha256_healthy": "5f7af0a28fcd713b830c97388675945fa8c4950b05b58f8d187c900a5752d57d",
+    "source_sha256_mutated": "ce2aea62b0f69a69900bcc5a9291299575790c450b99c22a0563d82613ac90ea",
+    "template_description": "Negates a branch condition (if/while), so the program takes the wrong branch whenever the condition is evaluated."
+  },
+  "residual_risks": [
+    "The oracle is a known-good solution (the inverse of the mutation), not proven unique; other correct fixes exist and would also pass.",
+    "Admitted edge tests are characterization tests: golden values are taken from the oracle state, so admission proves compatibility with the task, not semantic validity.",
+    "Near-miss rejection is measured over a stated, author-written set (labeled llm_proposed); same-family generation has correlated blind spots \u2014 novel cheat families remain unprobed.",
+    "Difficulty is anchored on n=5 attempts by one model (claude-haiku-4-5-20251001); one success shifts the label \u2014 descriptive, not a calibrated estimate.",
+    "All current tasks derive from a single seed repo (tabulate); set-level diversity across repos is not yet demonstrated.",
+    "environment.network_mode='public' (Harbor's local Docker provider rejects 'no-network'): the pip_reinstall shortcut is probed and blocked, but other network routes are unprobed."
+  ],
+  "shortcut_battery": {
+    "checked_at": "2026-07-08T16:53:29+00:00",
+    "post_harden_solvable_property": {
+      "broken_reward": "0",
+      "ok": true,
+      "oracle_reward": "1"
+    },
+    "probes": {
+      "artifact_spoofing": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "agent plants fake pytest cache + fake ctrf report",
+        "status": "blocked"
+      },
+      "env_poisoning_conftest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "hostile /repo/conftest.py (skip-all) + fake pytest on PATH",
+        "status": "blocked"
+      },
+      "exit_code_fake_pytest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "fake pytest binary on PATH exiting 0",
+        "status": "blocked"
+      },
+      "exposed_files": {
+        "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+        "premise": "search agent filesystem for held-out/oracle/.git artifacts",
+        "status": "blocked"
+      },
+      "hardcode_reward_txt": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "agent pre-writes reward.txt=1 before verification",
+        "status": "blocked"
+      },
+      "pip_reinstall": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "pip install healthy tabulate over the broken copy",
+        "status": "blocked"
+      },
+      "spoof_reward_json": {
+        "detail": "reward stayed 0 despite the cheat",
+        "harden_loop": {
+          "hardening_applied": [
+            "PYTHONPATH=/repo pins import to the code under test",
+            "delete planted reward.{txt,json} before verifying",
+            "remove hostile /repo/conftest.py before collection"
+          ],
+          "registry_entry": "spoof_reward_json",
+          "status_before_hardening": "failed"
+        },
+        "premise": "agent plants reward.json=1 (Harbor resolves json first)",
+        "status": "blocked"
+      }
+    },
+    "registry_version": 1
+  },
+  "solvability": {
+    "checked_at": "2026-07-08T16:51:31+00:00",
+    "harness": "harbor run (agents: oracle, nop)",
+    "nop_reward": 0.0,
+    "oracle_reward": 1.0,
+    "verdict": "accept"
+  },
+  "spec_coverage": {
+    "alignment": {
+      "checked_at": "2026-07-08T16:50:00+00:00",
+      "reason": "1 requirement(s) <-> 2 check(s), fully traceable",
+      "verdict": "accept"
+    },
+    "coverage": {
+      "R1": [
+        "V1",
+        "V2"
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "origin": "template.intended_behavior",
+        "text": "In tabulate/__init__.py:846 (_isnumber), the branch condition must be `not _isconvertible(float, string)` (not its negation). Control flow must follow the original condition."
+      }
+    ],
+    "spec_source": "mutation template metadata (procedural; no LLM)",
+    "verifier_checks": [
+      {
+        "covers": [
+          "R1"
+        ],
+        "id": "V1",
+        "kind": "held_out_flipped_regression_tests",
+        "n_tests": 192,
+        "provenance": "regression_copy"
+      },
+      {
+        "covers": [
+          "R1"
+        ],
+        "id": "V2",
+        "kind": "template_generated_edge_tests",
+        "n_tests": 2,
+        "provenance": "template_generated"
+      }
+    ]
+  },
+  "task": {
+    "folder": "tasks/generated/tabulate-c06-inverted_condition-L846",
+    "instruction_verbosity": "symptom_only",
+    "name": "tbgen/tabulate-c06-inverted_condition-L846"
+  },
+  "verifier_synthesis": {
+    "admission_rule": "fail-on-broken AND pass-on-oracle, in-container",
+    "admitted_ids": [
+      "pipe_center",
+      "unsafehtml"
+    ],
+    "caveat": "characterization tests: golden taken from oracle, proves compatibility not semantic validity",
+    "n_admitted": 2,
+    "n_discarded": 11,
+    "n_probes": 13,
+    "provenance_labels": {
+      "llm_proposed": 0,
+      "regression_copy": 192,
+      "template_generated": 2
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "categories": [
+    "assertion_gaming",
+    "off_by_one",
+    "partial_fix"
+  ],
+  "generated_at": "2026-07-08T16:54:27+00:00",
+  "overall_rejection_rate": 0.933,
+  "results": {
+    "tbgen/tabulate-c02-boundary_flip-L2446": {
+      "hardening": null,
+      "n": 3,
+      "n_reject": 3,
+      "rejection_rate": 1.0,
+      "results": [
+        {
+          "category": "off_by_one",
+          "desc": "off-by-one: reset omitted when exactly one code is active",
+          "id": "off_by_one",
+          "new_line": "        if len(self._active_codes) > 1:",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "partial_fix",
+          "desc": "wrong direction: reset never emitted",
+          "id": "wrong_variant",
+          "new_line": "        if len(self._active_codes) < 0:",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "partial_fix",
+          "desc": "no-op: agent claims a fix but leaves the buggy comparison",
+          "id": "unfixed",
+          "new_line": "        if len(self._active_codes) >= 0:",
+          "reward": "0",
+          "verdict": "REJECT"
+        }
+      ]
+    },
+    "tbgen/tabulate-c03-boundary_flip-L1458": {
+      "hardening": {
+        "admitted_ids": [
+          "firstrow_only"
+        ],
+        "hardened": true,
+        "n_new_edge_tests": 1,
+        "post_harden_solvable_property": {
+          "broken_reward": "0",
+          "ok": true,
+          "oracle_reward": "1"
+        }
+      },
+      "n": 3,
+      "n_reject": 3,
+      "rejection_rate": 1.0,
+      "results": [
+        {
+          "category": "off_by_one",
+          "desc": "off-by-one: single-row firstrow tables mishandled",
+          "id": "off_by_one",
+          "new_line": "    if headers == \"firstrow\" and len(rows) > 1:",
+          "reward": "1",
+          "reward_after_hardening": "0",
+          "verdict": "ACCEPT",
+          "verdict_after_hardening": "REJECT"
+        },
+        {
+          "category": "partial_fix",
+          "desc": "wrong direction: firstrow branch never taken",
+          "id": "wrong_variant",
+          "new_line": "    if headers == \"firstrow\" and len(rows) < 0:",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "partial_fix",
+          "desc": "no-op: leaves the buggy comparison",
+          "id": "unfixed",
+          "new_line": "    if headers == \"firstrow\" and len(rows) >= 0:",
+          "reward": "0",
+          "verdict": "REJECT"
+        }
+      ]
+    },
+    "tbgen/tabulate-c05-inverted_condition-L121": {
+      "hardening": null,
+      "n": 3,
+      "n_reject": 3,
+      "rejection_rate": 1.0,
+      "results": [
+        {
+          "category": "partial_fix",
+          "desc": "cosmetic rewrite equivalent to the bug (not fixed)",
+          "id": "partial_noop",
+          "new_line": "        elif align != \"left\":",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "assertion_gaming",
+          "desc": "force the left branch for every alignment",
+          "id": "assert_true",
+          "new_line": "        elif True:",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "assertion_gaming",
+          "desc": "never take the left branch",
+          "id": "assert_false",
+          "new_line": "        elif False:",
+          "reward": "0",
+          "verdict": "REJECT"
+        }
+      ]
+    },
+    "tbgen/tabulate-c06-inverted_condition-L846": {
+      "hardening": null,
+      "n": 3,
+      "n_reject": 3,
+      "rejection_rate": 1.0,
+      "results": [
+        {
+          "category": "partial_fix",
+          "desc": "inverts the guard the wrong way",
+          "id": "wrong_variant",
+          "new_line": "    if _isconvertible(float, string):",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "assertion_gaming",
+          "desc": "treat every string as non-number-eligible",
+          "id": "assert_true",
+          "new_line": "    if True:",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "assertion_gaming",
+          "desc": "skip the guard entirely",
+          "id": "assert_false",
+          "new_line": "    if False:",
+          "reward": "0",
+          "verdict": "REJECT"
+        }
+      ]
+    },
+    "tbgen/tabulate-c07-inverted_condition-L2393": {
+      "hardening": {
+        "hardened": false,
+        "reason": "no distinguishing edge test found"
+      },
+      "n": 3,
+      "n_reject": 2,
+      "rejection_rate": 0.667,
+      "results": [
+        {
+          "category": "partial_fix",
+          "desc": "cosmetic rewrite equivalent to the bug (not fixed)",
+          "id": "partial_noop",
+          "new_line": "        if fmt.lineabove != _html_begin_table_without_header:",
+          "reward": "0",
+          "verdict": "REJECT"
+        },
+        {
+          "category": "assertion_gaming",
+          "desc": "always wrap output as JupyterHTMLStr",
+          "id": "assert_true",
+          "new_line": "        if True:",
+          "reward": "1",
+          "verdict": "ACCEPT"
+        },
+        {
+          "category": "assertion_gaming",
+          "desc": "never wrap output as JupyterHTMLStr",
+          "id": "assert_false",
+          "new_line": "        if False:",
+          "reward": "0",
+          "verdict": "REJECT"
+        }
+      ]
+    }
+  },
+  "stage": "integrity_nearmiss",
+  "total_near_misses": 15,
+  "total_rejected": 14
+}

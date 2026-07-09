@@ -1,0 +1,29 @@
+FUNNEL REPORT
+generated: 2026-07-08T16:54:27+00:00
+source: artifacts/funnel.jsonl (480 raw entries; 160 unique stage:item after last-wins dedup, so pipeline re-runs are not double counted)
+
+Task-level funnel (each item is one candidate; a reject removes it):
+  eligibility              1 in -> 1 accepted, 0 rejected
+  mutation                 8 in -> 8 accepted, 0 rejected
+  failure_establishment    8 in -> 5 accepted, 3 rejected
+      REJECT c01-boundary_flip-L2472: mutated suite timed out (mutation likely introduced an infinite loop; a hang is not a clean pass->fail flip)
+      REJECT c04-boundary_flip-L2509: no test flipped (suite still green)
+      REJECT c08-inverted_condition-L2139: no test flipped (suite still green)
+  assembly                 5 in -> 5 accepted, 0 rejected
+  alignment                5 in -> 5 accepted, 0 rejected
+  solvability              5 in -> 5 accepted, 0 rejected
+  metadata_tag             5 in -> 5 accepted, 0 rejected
+  empirical_difficulty     5 in -> 5 accepted, 0 rejected
+  assurance_card           5 in -> 5 accepted, 0 rejected
+
+  candidates generated : 8
+  candidates surviving : 5
+  acceptance rate      : 5/8 (62.5%)
+  top-rejecting gate (reported, not predicted): failure_establishment (3 rejects)
+
+Sub-item audits (verdicts on probes/tests, not task rejections):
+  verifier_synthesis      63 items -> 7 accept, 56 reject   [edge-test admission rule (per probe)]
+       56x REJECT: broken output == oracle output (does not reveal the defect)  [c02-boundary_flip-L2446:edge:rows0_headers, c02-boundary_flip-L2446:edge:rows0_bare, c02-boundary_flip-L2446:edge:rows1, ...]
+  integrity_shortcut      35 items -> 35 accept, 0 reject   [shortcut battery (per probe)]
+  integrity_nearmiss      15 items -> 14 accept, 1 reject   [near-miss battery (per near-miss patch)]
+        1x REJECT: assertion_gaming: verifier ACCEPT  [c07-inverted_condition-L2393:nearmiss:assert_true]

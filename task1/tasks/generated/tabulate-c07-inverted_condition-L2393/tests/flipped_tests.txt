@@ -1,0 +1,4 @@
+/tests/verifier_tests/test_output.py::test_html
+/tests/verifier_tests/test_output.py::test_unsafehtml
+/tests/verifier_tests/test_output.py::test_html_headerless
+/tests/verifier_tests/test_output.py::test_unsafehtml_headerless

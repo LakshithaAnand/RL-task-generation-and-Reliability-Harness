@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-08",
+  "entries": [
+    {
+      "id": "spoof_reward_json",
+      "discovered": "2026-07-08",
+      "description": "Agent plants /logs/verifier/reward.json with {\"reward\": 1} before the verifier runs. Harbor resolves reward.json before reward.txt, so the planted file wins over the verifier's genuine reward.txt verdict. Found by the Stage-8 shortcut battery (status 'failed' on all five tasks before hardening).",
+      "scaffold_change": "tests/test.sh rewritten to the hardened form (pipeline/hardening.py): deletes any pre-existing /logs/verifier/reward.{json,txt} before verifying, removes a hostile /repo/conftest.py before collection, and pins PYTHONPATH=/repo so imports resolve to the code under test. Only this script's verdict can set the reward. Followed by a broken=0/oracle=1 re-confirmation so the defense cannot silently break solvability.",
+      "guarding_probe": "spoof_reward_json",
+      "applicability_precondition": "The verifier communicates its verdict via files under /logs/verifier/ that the agent can pre-create, and the harness resolves reward.json before reward.txt. Not applicable to verifiers that return rewards out-of-band."
+    }
+  ]
+}

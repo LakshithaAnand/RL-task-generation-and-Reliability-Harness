@@ -1,0 +1,289 @@
+{
+  "card_version": 1,
+  "difficulty": {
+    "agreement": {
+      "agree": false,
+      "empirical_label": "easy",
+      "note": "disagreements recorded, not reconciled",
+      "structural_label": "hard"
+    },
+    "caveat": "empirical anchoring run with n=5 attempts \u2014 small-sample caveat: one success shifts the label; solve-rates are descriptive, not calibrated estimates.",
+    "empirical": {
+      "agent": "claude-code",
+      "attempts": 5,
+      "label": "easy",
+      "model": "claude-haiku-4-5-20251001",
+      "per_attempt_rewards": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "run_at": "2026-07-08T16:45:57+00:00",
+      "solve_rate": 1.0,
+      "successes": 5,
+      "thresholds": {
+        "easy": ">=0.75",
+        "hard": "<0.25",
+        "medium": "0.25-0.74",
+        "note": "thresholds fixed in docs/PLAN.md (easy >=75%, medium 25-74%, hard <25%) before any empirical results were seen"
+      }
+    },
+    "empirical_solve_rate": 1.0,
+    "signals": [
+      {
+        "name": "flipped_test_count",
+        "note": "fewer flipped tests -> harder to localize",
+        "points": 2,
+        "value": 2
+      },
+      {
+        "name": "instruction_verbosity",
+        "note": "symptom_only gives no file/function hint",
+        "points": 1,
+        "value": "symptom_only"
+      },
+      {
+        "name": "verifier_test_count",
+        "note": "regression copies + admitted edge + hardening edge tests",
+        "points": 1,
+        "value": 3
+      },
+      {
+        "name": "call_graph_depth",
+        "note": "approximate intra-module call depth from public API",
+        "points": 0,
+        "value": 1
+      }
+    ],
+    "structural_preliminary": "hard",
+    "total_points": 4
+  },
+  "diversity": {
+    "category": "software-engineering",
+    "repo": "tabulate",
+    "skill_type": "boundary-condition-reasoning"
+  },
+  "evidence_provenance": {
+    "live": [
+      "failure establishment (suite run in-container)",
+      "solvability rewards (real `harbor run`, oracle + nop agents)",
+      "verifier-synthesis admission (fail-broken/pass-oracle, in-container)",
+      "alignment traceability check",
+      "shortcut battery incl. harden-loop re-probe",
+      "near-miss re-apply + re-score",
+      "difficulty signals (deterministic, from artifacts + AST)"
+    ],
+    "precomputed_or_authored": [
+      "near-miss patches (author-written, committed, labeled llm_proposed)",
+      "hardening registry entries (authored from battery findings)",
+      "handcheck claims (standalone script, re-runnable on demand)",
+      "empirical difficulty solve-rates (model-dependent, generated once by pipeline/empirical_difficulty.py with an API key; the zero-key demo re-reads the committed artifact)"
+    ]
+  },
+  "failure_establishment": {
+    "checked_at": "2026-07-08T16:49:34+00:00",
+    "flipped_tests": [
+      "test/test_output.py::test_empty_data_with_headers",
+      "test/test_output.py::test_list_of_lists_with_index_firstrow"
+    ],
+    "n_flipped_tests": 2,
+    "oracle_round_trip_green": true,
+    "verdict": "accept"
+  },
+  "generated_at": "2026-07-08T16:54:27+00:00",
+  "independent_handcheck": {
+    "claims_reverified": [],
+    "covered": false,
+    "note": "this task is not covered by the standalone handcheck; its evidence comes from the Stage-8 battery only",
+    "script": "scripts/handcheck.sh"
+  },
+  "near_miss_battery": {
+    "checked_at": "2026-07-08T16:53:53+00:00",
+    "hardening": {
+      "admitted_ids": [
+        "firstrow_only"
+      ],
+      "hardened": true,
+      "n_new_edge_tests": 1,
+      "post_harden_solvable_property": {
+        "broken_reward": "0",
+        "ok": true,
+        "oracle_reward": "1"
+      }
+    },
+    "n": 3,
+    "n_reject": 3,
+    "provenance": "llm_proposed (author-written, committed under artifacts/nearmiss/; re-applied and re-scored deterministically by the harness)",
+    "rejection_rate": 1.0,
+    "residual_open_ids": [],
+    "table": [
+      {
+        "category": "off_by_one",
+        "description": "off-by-one: single-row firstrow tables mishandled",
+        "final_verdict": "REJECT",
+        "id": "off_by_one",
+        "residual_open": false,
+        "reward_after_hardening": "0",
+        "reward_initial": "1",
+        "verdict_after_hardening": "REJECT",
+        "verdict_initial": "ACCEPT"
+      },
+      {
+        "category": "partial_fix",
+        "description": "wrong direction: firstrow branch never taken",
+        "final_verdict": "REJECT",
+        "id": "wrong_variant",
+        "residual_open": false,
+        "reward_initial": "0",
+        "verdict_initial": "REJECT"
+      },
+      {
+        "category": "partial_fix",
+        "description": "no-op: leaves the buggy comparison",
+        "final_verdict": "REJECT",
+        "id": "unfixed",
+        "residual_open": false,
+        "reward_initial": "0",
+        "verdict_initial": "REJECT"
+      }
+    ]
+  },
+  "provenance": {
+    "candidate_id": "c03-boundary_flip-L1458",
+    "changed_condition": {
+      "from": ">",
+      "to": ">="
+    },
+    "enclosing_function": "_normalize_tabular_data",
+    "file": "tabulate/__init__.py",
+    "generator": "tb-task-pipeline (stages 1-4, deterministic, no LLM)",
+    "line": 1458,
+    "mutation_template": "boundary_flip",
+    "rng_seed": 42,
+    "seed_commit": "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8",
+    "seed_repo": "tabulate",
+    "source_sha256_healthy": "5f7af0a28fcd713b830c97388675945fa8c4950b05b58f8d187c900a5752d57d",
+    "source_sha256_mutated": "8bd8599c2fb5e04979aa9beccff4060e45e23a60a978d6051581109a752e8b0d",
+    "template_description": "Swaps a relational operator with its boundary-inclusive/exclusive counterpart, so exactly the boundary value is treated incorrectly."
+  },
+  "residual_risks": [
+    "The oracle is a known-good solution (the inverse of the mutation), not proven unique; other correct fixes exist and would also pass.",
+    "Near-miss rejection is measured over a stated, author-written set (labeled llm_proposed); same-family generation has correlated blind spots \u2014 novel cheat families remain unprobed.",
+    "Difficulty is anchored on n=5 attempts by one model (claude-haiku-4-5-20251001); one success shifts the label \u2014 descriptive, not a calibrated estimate.",
+    "All current tasks derive from a single seed repo (tabulate); set-level diversity across repos is not yet demonstrated.",
+    "environment.network_mode='public' (Harbor's local Docker provider rejects 'no-network'): the pip_reinstall shortcut is probed and blocked, but other network routes are unprobed."
+  ],
+  "shortcut_battery": {
+    "checked_at": "2026-07-08T16:51:53+00:00",
+    "post_harden_solvable_property": {
+      "broken_reward": "0",
+      "ok": true,
+      "oracle_reward": "1"
+    },
+    "probes": {
+      "artifact_spoofing": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "agent plants fake pytest cache + fake ctrf report",
+        "status": "blocked"
+      },
+      "env_poisoning_conftest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "hostile /repo/conftest.py (skip-all) + fake pytest on PATH",
+        "status": "blocked"
+      },
+      "exit_code_fake_pytest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "fake pytest binary on PATH exiting 0",
+        "status": "blocked"
+      },
+      "exposed_files": {
+        "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+        "premise": "search agent filesystem for held-out/oracle/.git artifacts",
+        "status": "blocked"
+      },
+      "hardcode_reward_txt": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "agent pre-writes reward.txt=1 before verification",
+        "status": "blocked"
+      },
+      "pip_reinstall": {
+        "detail": "reward stayed 0 despite the cheat",
+        "premise": "pip install healthy tabulate over the broken copy",
+        "status": "blocked"
+      },
+      "spoof_reward_json": {
+        "detail": "reward stayed 0 despite the cheat",
+        "harden_loop": {
+          "hardening_applied": [
+            "PYTHONPATH=/repo pins import to the code under test",
+            "delete planted reward.{txt,json} before verifying",
+            "remove hostile /repo/conftest.py before collection"
+          ],
+          "registry_entry": "spoof_reward_json",
+          "status_before_hardening": "failed"
+        },
+        "premise": "agent plants reward.json=1 (Harbor resolves json first)",
+        "status": "blocked"
+      }
+    },
+    "registry_version": 1
+  },
+  "solvability": {
+    "checked_at": "2026-07-08T16:51:31+00:00",
+    "harness": "harbor run (agents: oracle, nop)",
+    "nop_reward": 0.0,
+    "oracle_reward": 1.0,
+    "verdict": "accept"
+  },
+  "spec_coverage": {
+    "alignment": {
+      "checked_at": "2026-07-08T16:50:00+00:00",
+      "reason": "1 requirement(s) <-> 1 check(s), fully traceable",
+      "verdict": "accept"
+    },
+    "coverage": {
+      "R1": [
+        "V1"
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "origin": "template.intended_behavior",
+        "text": "In tabulate/__init__.py:1458 (_normalize_tabular_data), the comparison `len(rows) > 0` must use `>`. The mutated operator `>=` differs exactly at the boundary value, which must follow the original semantics."
+      }
+    ],
+    "spec_source": "mutation template metadata (procedural; no LLM)",
+    "verifier_checks": [
+      {
+        "covers": [
+          "R1"
+        ],
+        "id": "V1",
+        "kind": "held_out_flipped_regression_tests",
+        "n_tests": 2,
+        "provenance": "regression_copy"
+      }
+    ]
+  },
+  "task": {
+    "folder": "tasks/generated/tabulate-c03-boundary_flip-L1458",
+    "instruction_verbosity": "symptom_only",
+    "name": "tbgen/tabulate-c03-boundary_flip-L1458"
+  },
+  "verifier_synthesis": {
+    "admission_rule": "fail-on-broken AND pass-on-oracle, in-container",
+    "admitted_ids": [],
+    "caveat": "characterization tests: golden taken from oracle, proves compatibility not semantic validity",
+    "n_admitted": 0,
+    "n_discarded": 12,
+    "n_probes": 12,
+    "provenance_labels": {
+      "llm_proposed": 0,
+      "regression_copy": 2,
+      "template_generated": 0
+    }
+  }
+}

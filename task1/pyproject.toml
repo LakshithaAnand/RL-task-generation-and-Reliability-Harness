@@ -1,0 +1,23 @@
+[project]
+name = "tb-task-pipeline"
+version = "0.0.0"
+description = "Synthetic task generation pipeline for Terminal-Bench 2.0 / Harbor — verifiable reward with an executable assurance case."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pipeline"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

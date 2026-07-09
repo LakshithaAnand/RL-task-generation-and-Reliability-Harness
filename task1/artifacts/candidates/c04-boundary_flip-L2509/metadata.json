@@ -1,0 +1,41 @@
+{
+  "changed_condition": {
+    "from": ">",
+    "to": ">="
+  },
+  "commit": "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8",
+  "edge_cases": [
+    "below_boundary",
+    "at_boundary",
+    "above_boundary"
+  ],
+  "enclosing_function": "_wrap_chunks",
+  "failure_establishment": {
+    "checked_at": "2026-07-08T16:49:37+00:00",
+    "flipped_tests": [],
+    "mutated_suite": {
+      "counts": {
+        "passed": 247,
+        "skipped": 37
+      },
+      "duration_seconds": 1.19,
+      "exit_code": 0
+    },
+    "oracle_suite": null,
+    "reason": "no test flipped (suite still green)",
+    "verdict": "reject"
+  },
+  "file": "tabulate/__init__.py",
+  "generated_at": "2026-07-08T16:47:23+00:00",
+  "id": "c04-boundary_flip-L2509",
+  "instruction_wording_template": "A boundary-condition bug was introduced in the `{package}` library: one comparison now treats a boundary value incorrectly, producing wrong results for edge-case inputs. Find the faulty comparison and restore correct boundary handling.",
+  "intended_behavior": "In tabulate/__init__.py:2509 (_wrap_chunks), the comparison `self._len(indent) + self._len(self.placeholder.lstrip()) > self.width` must use `>`. The mutated operator `>=` differs exactly at the boundary value, which must follow the original semantics.",
+  "line": 2509,
+  "original_expr": "self._len(indent) + self._len(self.placeholder.lstrip()) > self.width",
+  "repo": "tabulate",
+  "rng_seed": 42,
+  "source_sha256_healthy": "5f7af0a28fcd713b830c97388675945fa8c4950b05b58f8d187c900a5752d57d",
+  "source_sha256_mutated": "562518682ebc436e89be310af78bc8db26bcbcc7e63daf7e7f9e48affa7d56ac",
+  "template": "boundary_flip",
+  "template_description": "Swaps a relational operator with its boundary-inclusive/exclusive counterpart, so exactly the boundary value is treated incorrectly."
+}

@@ -1,0 +1,2 @@
+/tests/verifier_tests/test_output.py::test_empty_data_with_headers
+/tests/verifier_tests/test_output.py::test_list_of_lists_with_index_firstrow

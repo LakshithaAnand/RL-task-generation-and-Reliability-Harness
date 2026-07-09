@@ -1,0 +1,11 @@
+--- a/tabulate/__init__.py
++++ b/tabulate/__init__.py
+@@ -2469,7 +2469,7 @@
+             # take each charcter's width into account
+             chunk = reversed_chunks[-1]
+             i = 1
+-            while self._len(chunk[:i]) <= space_left:
++            while self._len(chunk[:i]) < space_left:
+                 i = i + 1
+             cur_line.append(chunk[: i - 1])
+             reversed_chunks[-1] = chunk[i - 1 :]

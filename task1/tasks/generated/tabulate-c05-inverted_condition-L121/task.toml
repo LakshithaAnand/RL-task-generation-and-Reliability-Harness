@@ -1,0 +1,42 @@
+schema_version = "1.3"
+artifacts = []
+
+[task]
+name = "tbgen/tabulate-c05-inverted_condition-L121"
+description = "Fix a small introduced defect in the tabulate library so behavior matches its documented semantics."
+keywords = ["defect-fix", "python", "inverted_condition"]
+[[task.authors]]
+name = "tb-task-pipeline"
+email = "laksaadarsh@gmail.com"
+
+[metadata]
+category = "software-engineering"
+candidate_id = "c05-inverted_condition-L121"
+mutation_template = "inverted_condition"
+seed_repo = "tabulate"
+seed_commit = "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8"
+instruction_verbosity = "explicit"
+held_out_test_count = 5
+generator = "tb-task-pipeline (stages 1-4, deterministic, no LLM)"
+
+[verifier]
+timeout_sec = 300.0
+collect = []
+
+[verifier.env]
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+# "no-network" would close the reinstall-healthy-package shortcut, but Harbor's
+# local Docker provider cannot enforce it (rejects the task). Residual risk is
+# documented and probed by the Stage-8 shortcut battery.
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"
+mcp_servers = []
+
+[environment.env]
+
+[solution.env]

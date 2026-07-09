@@ -1,0 +1,109 @@
+{
+  "alignment": {
+    "checked_at": "2026-07-08T16:50:00+00:00",
+    "reason": "1 requirement(s) <-> 2 check(s), fully traceable",
+    "verdict": "accept"
+  },
+  "candidate_id": "c02-boundary_flip-L2446",
+  "coverage": {
+    "R1": [
+      "V1",
+      "V2"
+    ]
+  },
+  "edge_cases_planned_stage5": [
+    "below_boundary",
+    "at_boundary",
+    "above_boundary"
+  ],
+  "generated_at": "2026-07-08T16:49:50+00:00",
+  "instruction": {
+    "leak_check": "passed",
+    "verbosity": "explicit"
+  },
+  "requirements": [
+    {
+      "id": "R1",
+      "origin": "template.intended_behavior",
+      "text": "In tabulate/__init__.py:2446 (_update_lines), the comparison `len(self._active_codes) > 0` must use `>`. The mutated operator `>=` differs exactly at the boundary value, which must follow the original semantics."
+    }
+  ],
+  "spec_source": "mutation template metadata (procedural; no LLM)",
+  "task_name": "tbgen/tabulate-c02-boundary_flip-L2446",
+  "verifier_checks": [
+    {
+      "covers": [
+        "R1"
+      ],
+      "execution": "tests/test.sh",
+      "id": "V1",
+      "kind": "held_out_flipped_regression_tests",
+      "node_ids": [
+        "/tests/verifier_tests/test_internal.py::test_wrap_text_to_colwidths",
+        "/tests/verifier_tests/test_internal.py::test_wrap_text_to_numbers",
+        "/tests/verifier_tests/test_internal.py::test_wrap_text_to_colwidths_single_ansi_colors_full_cell",
+        "/tests/verifier_tests/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_full_cell",
+        "/tests/verifier_tests/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_in_subset",
+        "/tests/verifier_tests/test_output.py::test_plain_maxcolwidth_autowraps",
+        "/tests/verifier_tests/test_output.py::test_plain_maxcolwidth_autowraps_with_sep",
+        "/tests/verifier_tests/test_output.py::test_maxcolwidth_single_value",
+        "/tests/verifier_tests/test_output.py::test_maxcolwidth_pad_tailing_widths",
+        "/tests/verifier_tests/test_output.py::test_maxcolwidth_honor_disable_parsenum",
+        "/tests/verifier_tests/test_output.py::test_plain_maxheadercolwidths_autowraps",
+        "/tests/verifier_tests/test_textwrapper.py::test_wrap_multiword_non_wide",
+        "/tests/verifier_tests/test_textwrapper.py::test_wrap_multiword_non_wide_with_hypens",
+        "/tests/verifier_tests/test_textwrapper.py::test_wrap_longword_non_wide",
+        "/tests/verifier_tests/test_textwrapper.py::test_wrap_full_line_color",
+        "/tests/verifier_tests/test_textwrapper.py::test_wrap_color_in_single_line",
+        "/tests/verifier_tests/test_textwrapper.py::test_wrap_color_line_splillover",
+        "/tests/verifier_tests/test_textwrapper.py::test_wrap_datetime"
+      ],
+      "provenance": "regression_copy"
+    },
+    {
+      "covers": [
+        "R1"
+      ],
+      "execution": "tests/test.sh",
+      "id": "V2",
+      "kind": "template_generated_edge_tests",
+      "node_ids": [
+        "/tests/edge/test_edge_boundary_flip.py::test_edge_boundary_flip_wrap_exact",
+        "/tests/edge/test_edge_boundary_flip.py::test_edge_boundary_flip_wrap_words",
+        "/tests/edge/test_edge_boundary_flip.py::test_edge_boundary_flip_wrap_longword_grid",
+        "/tests/edge/test_edge_boundary_flip.py::test_edge_boundary_flip_wrap_width1"
+      ],
+      "per_test": [
+        {
+          "code": "T([[\"abcdef\"]], maxcolwidths=[3])",
+          "edge": "at_boundary",
+          "id": "wrap_exact"
+        },
+        {
+          "code": "T([[\"a bb ccc dddd\"]], maxcolwidths=[4])",
+          "edge": "above_boundary",
+          "id": "wrap_words"
+        },
+        {
+          "code": "T([[\"verylongword\"]], maxcolwidths=[5], tablefmt=\"grid\")",
+          "edge": "above_boundary",
+          "id": "wrap_longword_grid"
+        },
+        {
+          "code": "T([[\"abc\"]], maxcolwidths=[1])",
+          "edge": "below_boundary",
+          "id": "wrap_width1"
+        }
+      ],
+      "provenance": "template_generated"
+    }
+  ],
+  "verifier_synthesis": {
+    "admission_rule": "fail-on-broken AND pass-on-oracle, in-container",
+    "caveat": "characterization tests: golden taken from oracle, proves compatibility not semantic validity",
+    "n_admitted": 4,
+    "n_discarded": 8,
+    "regression_copies_confirmed": true,
+    "updated_at": "2026-07-08T16:49:53+00:00"
+  }
+}

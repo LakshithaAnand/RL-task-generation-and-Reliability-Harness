@@ -1,0 +1,34 @@
+{
+  "near_misses": [
+    {
+      "broken_line": "        if len(self._active_codes) >= 0:",
+      "category": "off_by_one",
+      "desc": "off-by-one: reset omitted when exactly one code is active",
+      "id": "off_by_one",
+      "new_line": "        if len(self._active_codes) > 1:",
+      "patch_file": "off_by_one.patch",
+      "true_fix_line": "        if len(self._active_codes) > 0:"
+    },
+    {
+      "broken_line": "        if len(self._active_codes) >= 0:",
+      "category": "partial_fix",
+      "desc": "wrong direction: reset never emitted",
+      "id": "wrong_variant",
+      "new_line": "        if len(self._active_codes) < 0:",
+      "patch_file": "wrong_variant.patch",
+      "true_fix_line": "        if len(self._active_codes) > 0:"
+    },
+    {
+      "broken_line": "        if len(self._active_codes) >= 0:",
+      "category": "partial_fix",
+      "desc": "no-op: agent claims a fix but leaves the buggy comparison",
+      "id": "unfixed",
+      "new_line": "        if len(self._active_codes) >= 0:",
+      "patch_file": "unfixed.patch",
+      "true_fix_line": "        if len(self._active_codes) > 0:"
+    }
+  ],
+  "note": "author-written almost-right solutions; harness decides accept/reject",
+  "provenance": "llm_proposed",
+  "task": "tbgen/tabulate-c02-boundary_flip-L2446"
+}

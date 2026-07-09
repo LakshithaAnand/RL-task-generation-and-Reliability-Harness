@@ -1,0 +1,34 @@
+{
+  "near_misses": [
+    {
+      "broken_line": "        if not (fmt.lineabove == _html_begin_table_without_header):",
+      "category": "partial_fix",
+      "desc": "cosmetic rewrite equivalent to the bug (not fixed)",
+      "id": "partial_noop",
+      "new_line": "        if fmt.lineabove != _html_begin_table_without_header:",
+      "patch_file": "partial_noop.patch",
+      "true_fix_line": "        if fmt.lineabove == _html_begin_table_without_header:"
+    },
+    {
+      "broken_line": "        if not (fmt.lineabove == _html_begin_table_without_header):",
+      "category": "assertion_gaming",
+      "desc": "always wrap output as JupyterHTMLStr",
+      "id": "assert_true",
+      "new_line": "        if True:",
+      "patch_file": "assert_true.patch",
+      "true_fix_line": "        if fmt.lineabove == _html_begin_table_without_header:"
+    },
+    {
+      "broken_line": "        if not (fmt.lineabove == _html_begin_table_without_header):",
+      "category": "assertion_gaming",
+      "desc": "never wrap output as JupyterHTMLStr",
+      "id": "assert_false",
+      "new_line": "        if False:",
+      "patch_file": "assert_false.patch",
+      "true_fix_line": "        if fmt.lineabove == _html_begin_table_without_header:"
+    }
+  ],
+  "note": "author-written almost-right solutions; harness decides accept/reject",
+  "provenance": "llm_proposed",
+  "task": "tbgen/tabulate-c07-inverted_condition-L2393"
+}

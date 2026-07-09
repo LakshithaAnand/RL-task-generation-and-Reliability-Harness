@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-08T16:51:31+00:00",
+  "n_passed": 5,
+  "n_tasks": 5,
+  "results": [
+    {
+      "candidate_id": "c02-boundary_flip-L2446",
+      "nop_reward": 0.0,
+      "oracle_reward": 1.0,
+      "reason": "oracle 1.0 and nop 0.0 through the real harness",
+      "task_name": "tbgen/tabulate-c02-boundary_flip-L2446",
+      "verdict": "accept"
+    },
+    {
+      "candidate_id": "c03-boundary_flip-L1458",
+      "nop_reward": 0.0,
+      "oracle_reward": 1.0,
+      "reason": "oracle 1.0 and nop 0.0 through the real harness",
+      "task_name": "tbgen/tabulate-c03-boundary_flip-L1458",
+      "verdict": "accept"
+    },
+    {
+      "candidate_id": "c05-inverted_condition-L121",
+      "nop_reward": 0.0,
+      "oracle_reward": 1.0,
+      "reason": "oracle 1.0 and nop 0.0 through the real harness",
+      "task_name": "tbgen/tabulate-c05-inverted_condition-L121",
+      "verdict": "accept"
+    },
+    {
+      "candidate_id": "c06-inverted_condition-L846",
+      "nop_reward": 0.0,
+      "oracle_reward": 1.0,
+      "reason": "oracle 1.0 and nop 0.0 through the real harness",
+      "task_name": "tbgen/tabulate-c06-inverted_condition-L846",
+      "verdict": "accept"
+    },
+    {
+      "candidate_id": "c07-inverted_condition-L2393",
+      "nop_reward": 0.0,
+      "oracle_reward": 1.0,
+      "reason": "oracle 1.0 and nop 0.0 through the real harness",
+      "task_name": "tbgen/tabulate-c07-inverted_condition-L2393",
+      "verdict": "accept"
+    }
+  ],
+  "stage": "solvability"
+}

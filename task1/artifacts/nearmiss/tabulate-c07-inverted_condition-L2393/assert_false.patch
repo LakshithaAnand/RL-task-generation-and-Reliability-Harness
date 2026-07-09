@@ -1,0 +1,11 @@
+--- a/tabulate/__init__.py
++++ b/tabulate/__init__.py
+@@ -2390,7 +2390,7 @@
+ 
+     if headers or rows:
+         output = "\n".join(lines)
+-        if not (fmt.lineabove == _html_begin_table_without_header):
++        if False:
+             return JupyterHTMLStr(output)
+         else:
+             return output

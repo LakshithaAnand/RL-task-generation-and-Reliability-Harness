@@ -1,0 +1,34 @@
+{
+  "near_misses": [
+    {
+      "broken_line": "    if not (not _isconvertible(float, string)):",
+      "category": "partial_fix",
+      "desc": "inverts the guard the wrong way",
+      "id": "wrong_variant",
+      "new_line": "    if _isconvertible(float, string):",
+      "patch_file": "wrong_variant.patch",
+      "true_fix_line": "    if not _isconvertible(float, string):"
+    },
+    {
+      "broken_line": "    if not (not _isconvertible(float, string)):",
+      "category": "assertion_gaming",
+      "desc": "treat every string as non-number-eligible",
+      "id": "assert_true",
+      "new_line": "    if True:",
+      "patch_file": "assert_true.patch",
+      "true_fix_line": "    if not _isconvertible(float, string):"
+    },
+    {
+      "broken_line": "    if not (not _isconvertible(float, string)):",
+      "category": "assertion_gaming",
+      "desc": "skip the guard entirely",
+      "id": "assert_false",
+      "new_line": "    if False:",
+      "patch_file": "assert_false.patch",
+      "true_fix_line": "    if not _isconvertible(float, string):"
+    }
+  ],
+  "note": "author-written almost-right solutions; harness decides accept/reject",
+  "provenance": "llm_proposed",
+  "task": "tbgen/tabulate-c06-inverted_condition-L846"
+}

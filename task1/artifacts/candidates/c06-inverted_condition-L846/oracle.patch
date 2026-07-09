@@ -1,0 +1,11 @@
+--- a/tabulate/__init__.py
++++ b/tabulate/__init__.py
+@@ -843,7 +843,7 @@
+     >>> _isnumber("inf")
+     True
+     """
+-    if not (not _isconvertible(float, string)):
++    if not _isconvertible(float, string):
+         return False
+     elif isinstance(string, (str, bytes)) and (
+         math.isinf(float(string)) or math.isnan(float(string))

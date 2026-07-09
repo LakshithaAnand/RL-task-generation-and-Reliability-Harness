@@ -1,0 +1,38 @@
+{
+  "changed_condition": {
+    "from": "<=",
+    "to": "<"
+  },
+  "commit": "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8",
+  "edge_cases": [
+    "below_boundary",
+    "at_boundary",
+    "above_boundary"
+  ],
+  "enclosing_function": "_handle_long_word",
+  "failure_establishment": {
+    "checked_at": "2026-07-08T16:49:27+00:00",
+    "flipped_tests": [],
+    "mutated_suite": {
+      "counts": {},
+      "duration_seconds": null,
+      "exit_code": 124
+    },
+    "oracle_suite": null,
+    "reason": "mutated suite timed out (mutation likely introduced an infinite loop; a hang is not a clean pass->fail flip)",
+    "verdict": "reject"
+  },
+  "file": "tabulate/__init__.py",
+  "generated_at": "2026-07-08T16:47:23+00:00",
+  "id": "c01-boundary_flip-L2472",
+  "instruction_wording_template": "A boundary-condition bug was introduced in the `{package}` library: one comparison now treats a boundary value incorrectly, producing wrong results for edge-case inputs. Find the faulty comparison and restore correct boundary handling.",
+  "intended_behavior": "In tabulate/__init__.py:2472 (_handle_long_word), the comparison `self._len(chunk[:i]) <= space_left` must use `<=`. The mutated operator `<` differs exactly at the boundary value, which must follow the original semantics.",
+  "line": 2472,
+  "original_expr": "self._len(chunk[:i]) <= space_left",
+  "repo": "tabulate",
+  "rng_seed": 42,
+  "source_sha256_healthy": "5f7af0a28fcd713b830c97388675945fa8c4950b05b58f8d187c900a5752d57d",
+  "source_sha256_mutated": "9c3229d3c4871d936eb974fc9cd27797a1ccda23df7a8c445a61c975c91512f8",
+  "template": "boundary_flip",
+  "template_description": "Swaps a relational operator with its boundary-inclusive/exclusive counterpart, so exactly the boundary value is treated incorrectly."
+}

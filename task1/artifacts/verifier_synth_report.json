@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-07-08T16:50:00+00:00",
+  "n_tasks": 5,
+  "results": [
+    {
+      "admitted_ids": [
+        "wrap_exact",
+        "wrap_words",
+        "wrap_longword_grid",
+        "wrap_width1"
+      ],
+      "candidate_id": "c02-boundary_flip-L2446",
+      "n_admitted": 4,
+      "n_discarded": 8,
+      "regression_confirmed": true,
+      "template": "boundary_flip"
+    },
+    {
+      "admitted_ids": [],
+      "candidate_id": "c03-boundary_flip-L1458",
+      "n_admitted": 0,
+      "n_discarded": 12,
+      "regression_confirmed": true,
+      "template": "boundary_flip"
+    },
+    {
+      "admitted_ids": [
+        "pipe_left_right"
+      ],
+      "candidate_id": "c05-inverted_condition-L121",
+      "n_admitted": 1,
+      "n_discarded": 12,
+      "regression_confirmed": true,
+      "template": "inverted_condition"
+    },
+    {
+      "admitted_ids": [
+        "pipe_center",
+        "unsafehtml"
+      ],
+      "candidate_id": "c06-inverted_condition-L846",
+      "n_admitted": 2,
+      "n_discarded": 11,
+      "regression_confirmed": true,
+      "template": "inverted_condition"
+    },
+    {
+      "admitted_ids": [],
+      "candidate_id": "c07-inverted_condition-L2393",
+      "n_admitted": 0,
+      "n_discarded": 13,
+      "regression_confirmed": true,
+      "template": "inverted_condition"
+    }
+  ],
+  "stage": "verifier_synthesis",
+  "total_admitted": 7,
+  "total_discarded": 56
+}

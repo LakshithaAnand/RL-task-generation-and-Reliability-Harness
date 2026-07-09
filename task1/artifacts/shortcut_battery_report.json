@@ -1,0 +1,201 @@
+{
+  "any_hardened": true,
+  "generated_at": "2026-07-08T16:53:41+00:00",
+  "probes": [
+    "hardcode_reward_txt",
+    "spoof_reward_json",
+    "artifact_spoofing",
+    "exit_code_fake_pytest",
+    "env_poisoning_conftest",
+    "pip_reinstall",
+    "exposed_files"
+  ],
+  "results": {
+    "tbgen/tabulate-c02-boundary_flip-L2446": {
+      "artifact_spoofing": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "env_poisoning_conftest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exit_code_fake_pytest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exposed_files": {
+        "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "hardcode_reward_txt": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "pip_reinstall": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "spoof_reward_json": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": true,
+        "status": "blocked"
+      }
+    },
+    "tbgen/tabulate-c03-boundary_flip-L1458": {
+      "artifact_spoofing": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "env_poisoning_conftest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exit_code_fake_pytest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exposed_files": {
+        "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "hardcode_reward_txt": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "pip_reinstall": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "spoof_reward_json": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": true,
+        "status": "blocked"
+      }
+    },
+    "tbgen/tabulate-c05-inverted_condition-L121": {
+      "artifact_spoofing": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "env_poisoning_conftest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exit_code_fake_pytest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exposed_files": {
+        "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "hardcode_reward_txt": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "pip_reinstall": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "spoof_reward_json": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": true,
+        "status": "blocked"
+      }
+    },
+    "tbgen/tabulate-c06-inverted_condition-L846": {
+      "artifact_spoofing": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "env_poisoning_conftest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exit_code_fake_pytest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exposed_files": {
+        "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "hardcode_reward_txt": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "pip_reinstall": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "spoof_reward_json": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": true,
+        "status": "blocked"
+      }
+    },
+    "tbgen/tabulate-c07-inverted_condition-L2393": {
+      "artifact_spoofing": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "env_poisoning_conftest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exit_code_fake_pytest": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "exposed_files": {
+        "detail": "no held-out tests, oracle patch, .git, or /tests in agent env",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "hardcode_reward_txt": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "pip_reinstall": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": false,
+        "status": "blocked"
+      },
+      "spoof_reward_json": {
+        "detail": "reward stayed 0 despite the cheat",
+        "hardened": true,
+        "status": "blocked"
+      }
+    }
+  },
+  "stage": "integrity_shortcut"
+}

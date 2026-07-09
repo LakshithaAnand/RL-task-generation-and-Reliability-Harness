@@ -1,0 +1,40 @@
+{
+  "changed_condition": {
+    "from": "isinstance(intfmt, str)",
+    "to": "not (isinstance(intfmt, str))"
+  },
+  "commit": "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8",
+  "edge_cases": [
+    "condition_true_path",
+    "condition_false_path"
+  ],
+  "enclosing_function": "tabulate",
+  "failure_establishment": {
+    "checked_at": "2026-07-08T16:49:50+00:00",
+    "flipped_tests": [],
+    "mutated_suite": {
+      "counts": {
+        "passed": 247,
+        "skipped": 37
+      },
+      "duration_seconds": 1.19,
+      "exit_code": 0
+    },
+    "oracle_suite": null,
+    "reason": "no test flipped (suite still green)",
+    "verdict": "reject"
+  },
+  "file": "tabulate/__init__.py",
+  "generated_at": "2026-07-08T16:47:23+00:00",
+  "id": "c08-inverted_condition-L2139",
+  "instruction_wording_template": "A logic bug was introduced in the `{package}` library: one branch condition is inverted, so the code takes the wrong path in a specific situation. Find the inverted condition and correct it.",
+  "intended_behavior": "In tabulate/__init__.py:2139 (tabulate), the branch condition must be `isinstance(intfmt, str)` (not its negation). Control flow must follow the original condition.",
+  "line": 2139,
+  "original_expr": "isinstance(intfmt, str)",
+  "repo": "tabulate",
+  "rng_seed": 42,
+  "source_sha256_healthy": "5f7af0a28fcd713b830c97388675945fa8c4950b05b58f8d187c900a5752d57d",
+  "source_sha256_mutated": "3bcf55579da282e9863d53f2f411d2e82056d4697f589802359f38ed5605d486",
+  "template": "inverted_condition",
+  "template_description": "Negates a branch condition (if/while), so the program takes the wrong branch whenever the condition is evaluated."
+}

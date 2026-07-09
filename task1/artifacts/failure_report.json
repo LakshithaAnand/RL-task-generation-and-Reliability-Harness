@@ -1,0 +1,403 @@
+{
+  "baseline": {
+    "counts": {
+      "passed": 247,
+      "skipped": 37
+    },
+    "duration_seconds": 1.23,
+    "exit_code": 0,
+    "ok": true
+  },
+  "generated_at": "2026-07-08T16:49:50+00:00",
+  "image": "tb-seed-tabulate:bf58e37e6b35",
+  "n_candidates": 8,
+  "n_survivors": 5,
+  "results": [
+    {
+      "id": "c01-boundary_flip-L2472",
+      "mutated_suite": {
+        "counts": {},
+        "duration_seconds": null,
+        "exit_code": 124
+      },
+      "reason": "mutated suite timed out (mutation likely introduced an infinite loop; a hang is not a clean pass->fail flip)",
+      "verdict": "reject"
+    },
+    {
+      "flipped_tests": [
+        "test/test_internal.py::test_wrap_text_to_colwidths",
+        "test/test_internal.py::test_wrap_text_to_numbers",
+        "test/test_internal.py::test_wrap_text_to_colwidths_single_ansi_colors_full_cell",
+        "test/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_full_cell",
+        "test/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_in_subset",
+        "test/test_output.py::test_plain_maxcolwidth_autowraps",
+        "test/test_output.py::test_plain_maxcolwidth_autowraps_with_sep",
+        "test/test_output.py::test_maxcolwidth_single_value",
+        "test/test_output.py::test_maxcolwidth_pad_tailing_widths",
+        "test/test_output.py::test_maxcolwidth_honor_disable_parsenum",
+        "test/test_output.py::test_plain_maxheadercolwidths_autowraps",
+        "test/test_textwrapper.py::test_wrap_multiword_non_wide",
+        "test/test_textwrapper.py::test_wrap_multiword_non_wide_with_hypens",
+        "test/test_textwrapper.py::test_wrap_longword_non_wide",
+        "test/test_textwrapper.py::test_wrap_full_line_color",
+        "test/test_textwrapper.py::test_wrap_color_in_single_line",
+        "test/test_textwrapper.py::test_wrap_color_line_splillover",
+        "test/test_textwrapper.py::test_wrap_datetime"
+      ],
+      "id": "c02-boundary_flip-L2446",
+      "mutated_suite": {
+        "counts": {
+          "failed": 18,
+          "passed": 229,
+          "skipped": 37
+        },
+        "duration_seconds": 1.19,
+        "exit_code": 1
+      },
+      "oracle_suite": {
+        "counts": {
+          "passed": 247,
+          "skipped": 37
+        },
+        "duration_seconds": 1.19,
+        "exit_code": 0
+      },
+      "reason": "18 test(s) flipped pass->fail; oracle round-trip green",
+      "verdict": "accept"
+    },
+    {
+      "flipped_tests": [
+        "test/test_output.py::test_empty_data_with_headers",
+        "test/test_output.py::test_list_of_lists_with_index_firstrow"
+      ],
+      "id": "c03-boundary_flip-L1458",
+      "mutated_suite": {
+        "counts": {
+          "failed": 2,
+          "passed": 245,
+          "skipped": 37
+        },
+        "duration_seconds": 1.19,
+        "exit_code": 1
+      },
+      "oracle_suite": {
+        "counts": {
+          "passed": 247,
+          "skipped": 37
+        },
+        "duration_seconds": 1.19,
+        "exit_code": 0
+      },
+      "reason": "2 test(s) flipped pass->fail; oracle round-trip green",
+      "verdict": "accept"
+    },
+    {
+      "id": "c04-boundary_flip-L2509",
+      "mutated_suite": {
+        "counts": {
+          "passed": 247,
+          "skipped": 37
+        },
+        "duration_seconds": 1.19,
+        "exit_code": 0
+      },
+      "reason": "no test flipped (suite still green)",
+      "verdict": "reject"
+    },
+    {
+      "flipped_tests": [
+        "test/test_output.py::test_pipe",
+        "test/test_output.py::test_pipe_headerless",
+        "test/test_regression.py::test_ansi_color_in_table_cells",
+        "test/test_regression.py::test_88_256_ANSI_color_codes",
+        "test/test_regression.py::test_empty_pipe_table_with_columns"
+      ],
+      "id": "c05-inverted_condition-L121",
+      "mutated_suite": {
+        "counts": {
+          "failed": 5,
+          "passed": 242,
+          "skipped": 37
+        },
+        "duration_seconds": 1.26,
+        "exit_code": 1
+      },
+      "oracle_suite": {
+        "counts": {
+          "passed": 247,
+          "skipped": 37
+        },
+        "duration_seconds": 1.21,
+        "exit_code": 0
+      },
+      "reason": "5 test(s) flipped pass->fail; oracle round-trip green",
+      "verdict": "accept"
+    },
+    {
+      "flipped_tests": [
+        "test/test_cli.py::test_script_from_stdin_to_stdout",
+        "test/test_cli.py::test_script_from_file_to_stdout",
+        "test/test_cli.py::test_script_from_file_to_file",
+        "test/test_cli.py::test_script_header_option",
+        "test/test_cli.py::test_script_sep_option",
+        "test/test_cli.py::test_script_floatfmt_option",
+        "test/test_cli.py::test_script_format_option",
+        "test/test_input.py::test_list_of_lists",
+        "test/test_input.py::test_list_of_lists_firstrow",
+        "test/test_input.py::test_list_of_lists_keys",
+        "test/test_input.py::test_dict_like",
+        "test/test_input.py::test_sqlite3",
+        "test/test_input.py::test_sqlite3_keys",
+        "test/test_input.py::test_list_of_dicts_with_missing_keys",
+        "test/test_input.py::test_list_of_dicts_with_dict_of_headers",
+        "test/test_input.py::test_py37orlater_list_of_dataclasses_keys",
+        "test/test_input.py::test_py37orlater_list_of_dataclasses_headers",
+        "test/test_input.py::test_list_bytes",
+        "test/test_internal.py::test_align_column_decimal",
+        "test/test_internal.py::test_align_column_decimal_with_thousand_separators",
+        "test/test_internal.py::test_align_column_decimal_with_incorrect_thousand_separators",
+        "test/test_internal.py::test_wrap_text_to_colwidths",
+        "test/test_internal.py::test_wrap_text_to_numbers",
+        "test/test_internal.py::test_wrap_text_to_colwidths_single_ansi_colors_full_cell",
+        "test/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_full_cell",
+        "test/test_internal.py::test_wrap_text_to_colwidths_multi_ansi_colors_in_subset",
+        "test/test_output.py::test_plain",
+        "test/test_output.py::test_plain_headerless",
+        "test/test_output.py::test_plain_multiline_headerless",
+        "test/test_output.py::test_plain_multiline",
+        "test/test_output.py::test_plain_multiline_with_links",
+        "test/test_output.py::test_plain_multiline_with_empty_cells",
+        "test/test_output.py::test_plain_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_plain_maxcolwidth_autowraps",
+        "test/test_output.py::test_plain_maxcolwidth_autowraps_with_sep",
+        "test/test_output.py::test_maxcolwidth_single_value",
+        "test/test_output.py::test_maxcolwidth_pad_tailing_widths",
+        "test/test_output.py::test_maxcolwidth_honor_disable_parsenum",
+        "test/test_output.py::test_plain_maxheadercolwidths_autowraps",
+        "test/test_output.py::test_simple",
+        "test/test_output.py::test_simple_with_sep_line",
+        "test/test_output.py::test_readme_example_with_sep",
+        "test/test_output.py::test_simple_multiline_2",
+        "test/test_output.py::test_simple_multiline_2_with_sep_line",
+        "test/test_output.py::test_simple_headerless",
+        "test/test_output.py::test_simple_headerless_with_sep_line",
+        "test/test_output.py::test_simple_multiline_headerless",
+        "test/test_output.py::test_simple_multiline",
+        "test/test_output.py::test_simple_multiline_with_links",
+        "test/test_output.py::test_simple_multiline_with_empty_cells",
+        "test/test_output.py::test_simple_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_github",
+        "test/test_output.py::test_grid",
+        "test/test_output.py::test_grid_headerless",
+        "test/test_output.py::test_grid_multiline_headerless",
+        "test/test_output.py::test_grid_multiline",
+        "test/test_output.py::test_grid_multiline_with_empty_cells",
+        "test/test_output.py::test_grid_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_simple_grid",
+        "test/test_output.py::test_simple_grid_headerless",
+        "test/test_output.py::test_simple_grid_multiline_headerless",
+        "test/test_output.py::test_simple_grid_multiline",
+        "test/test_output.py::test_simple_grid_multiline_with_empty_cells",
+        "test/test_output.py::test_simple_grid_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_rounded_grid",
+        "test/test_output.py::test_rounded_grid_headerless",
+        "test/test_output.py::test_rounded_grid_multiline_headerless",
+        "test/test_output.py::test_rounded_grid_multiline",
+        "test/test_output.py::test_rounded_grid_multiline_with_empty_cells",
+        "test/test_output.py::test_rounded_grid_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_heavy_grid",
+        "test/test_output.py::test_heavy_grid_headerless",
+        "test/test_output.py::test_heavy_grid_multiline_headerless",
+        "test/test_output.py::test_heavy_grid_multiline",
+        "test/test_output.py::test_heavy_grid_multiline_with_empty_cells",
+        "test/test_output.py::test_heavy_grid_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_mixed_grid",
+        "test/test_output.py::test_mixed_grid_headerless",
+        "test/test_output.py::test_mixed_grid_multiline_headerless",
+        "test/test_output.py::test_mixed_grid_multiline",
+        "test/test_output.py::test_mixed_grid_multiline_with_empty_cells",
+        "test/test_output.py::test_mixed_grid_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_double_grid",
+        "test/test_output.py::test_double_grid_headerless",
+        "test/test_output.py::test_double_grid_multiline_headerless",
+        "test/test_output.py::test_double_grid_multiline",
+        "test/test_output.py::test_double_grid_multiline_with_empty_cells",
+        "test/test_output.py::test_double_grid_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_fancy_grid",
+        "test/test_output.py::test_fancy_grid_headerless",
+        "test/test_output.py::test_fancy_grid_multiline_headerless",
+        "test/test_output.py::test_fancy_grid_multiline",
+        "test/test_output.py::test_fancy_grid_multiline_with_empty_cells",
+        "test/test_output.py::test_fancy_grid_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_fancy_grid_multiline_row_align",
+        "test/test_output.py::test_outline",
+        "test/test_output.py::test_outline_headerless",
+        "test/test_output.py::test_simple_outline",
+        "test/test_output.py::test_simple_outline_headerless",
+        "test/test_output.py::test_rounded_outline",
+        "test/test_output.py::test_rounded_outline_headerless",
+        "test/test_output.py::test_heavy_outline",
+        "test/test_output.py::test_heavy_outline_headerless",
+        "test/test_output.py::test_mixed_outline",
+        "test/test_output.py::test_mixed_outline_headerless",
+        "test/test_output.py::test_double_outline",
+        "test/test_output.py::test_double_outline_headerless",
+        "test/test_output.py::test_fancy_outline",
+        "test/test_output.py::test_fancy_outline_headerless",
+        "test/test_output.py::test_pipe",
+        "test/test_output.py::test_pipe_headerless",
+        "test/test_output.py::test_presto",
+        "test/test_output.py::test_presto_headerless",
+        "test/test_output.py::test_presto_multiline_headerless",
+        "test/test_output.py::test_presto_multiline",
+        "test/test_output.py::test_presto_multiline_with_empty_cells",
+        "test/test_output.py::test_presto_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_orgtbl",
+        "test/test_output.py::test_orgtbl_headerless",
+        "test/test_output.py::test_asciidoc",
+        "test/test_output.py::test_asciidoc_headerless",
+        "test/test_output.py::test_psql",
+        "test/test_output.py::test_psql_headerless",
+        "test/test_output.py::test_psql_multiline_headerless",
+        "test/test_output.py::test_psql_multiline",
+        "test/test_output.py::test_psql_multiline_with_empty_cells",
+        "test/test_output.py::test_psql_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_pretty",
+        "test/test_output.py::test_pretty_headerless",
+        "test/test_output.py::test_pretty_multiline_headerless",
+        "test/test_output.py::test_pretty_multiline",
+        "test/test_output.py::test_pretty_multiline_with_links",
+        "test/test_output.py::test_pretty_multiline_with_empty_cells",
+        "test/test_output.py::test_pretty_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_jira",
+        "test/test_output.py::test_jira_headerless",
+        "test/test_output.py::test_rst",
+        "test/test_output.py::test_rst_with_empty_values_in_first_column",
+        "test/test_output.py::test_rst_headerless",
+        "test/test_output.py::test_rst_multiline",
+        "test/test_output.py::test_rst_multiline_with_links",
+        "test/test_output.py::test_rst_multiline_with_empty_cells",
+        "test/test_output.py::test_rst_multiline_with_empty_cells_headerless",
+        "test/test_output.py::test_mediawiki",
+        "test/test_output.py::test_mediawiki_headerless",
+        "test/test_output.py::test_moinmoin",
+        "test/test_output.py::test_youtrack",
+        "test/test_output.py::test_moinmoin_headerless",
+        "test/test_output.py::test_html",
+        "test/test_output.py::test_unsafehtml",
+        "test/test_output.py::test_html_headerless",
+        "test/test_output.py::test_unsafehtml_headerless",
+        "test/test_output.py::test_latex",
+        "test/test_output.py::test_latex_raw",
+        "test/test_output.py::test_latex_headerless",
+        "test/test_output.py::test_latex_booktabs",
+        "test/test_output.py::test_latex_booktabs_headerless",
+        "test/test_output.py::test_textile",
+        "test/test_output.py::test_textile_with_header",
+        "test/test_output.py::test_textile_with_center_align",
+        "test/test_output.py::test_intfmt",
+        "test/test_output.py::test_floatfmt",
+        "test/test_output.py::test_floatfmt_multi",
+        "test/test_output.py::test_colalign_multi",
+        "test/test_output.py::test_colalign_multi_with_sep_line",
+        "test/test_output.py::test_float_conversions",
+        "test/test_output.py::test_missingval",
+        "test/test_output.py::test_missingval_multi",
+        "test/test_output.py::test_column_alignment",
+        "test/test_output.py::test_unaligned_separated",
+        "test/test_output.py::test_disable_numparse_default",
+        "test/test_output.py::test_disable_numparse_true",
+        "test/test_output.py::test_disable_numparse_list",
+        "test/test_output.py::test_preserve_whitespace",
+        "test/test_regression.py::test_ansi_color_in_table_cells",
+        "test/test_regression.py::test_alignment_of_colored_cells",
+        "test/test_regression.py::test_alignment_of_link_cells",
+        "test/test_regression.py::test_alignment_of_link_text_cells",
+        "test/test_regression.py::test_simple_separated_format",
+        "test/test_regression.py::test_column_type_of_bytestring_columns",
+        "test/test_regression.py::test_88_256_ANSI_color_codes",
+        "test/test_regression.py::test_column_with_mixed_value_types",
+        "test/test_regression.py::test_latex_escape_special_chars",
+        "test/test_regression.py::test_isconvertible_on_set_values",
+        "test/test_regression.py::test_ansi_color_for_decimal_numbers",
+        "test/test_regression.py::test_alignment_of_decimal_numbers_with_ansi_color",
+        "test/test_regression.py::test_escape_empty_cell_in_first_column_in_rst",
+        "test/test_regression.py::test_ragged_rows",
+        "test/test_regression.py::test_custom_tablefmt",
+        "test/test_regression.py::test_string_with_comma_between_digits_without_floatfmt_grouping_option",
+        "test/test_regression.py::test_iterable_row_index",
+        "test/test_textwrapper.py::test_wrap_datetime"
+      ],
+      "id": "c06-inverted_condition-L846",
+      "mutated_suite": {
+        "counts": {
+          "failed": 192,
+          "passed": 55,
+          "skipped": 37
+        },
+        "duration_seconds": 0.84,
+        "exit_code": 1
+      },
+      "oracle_suite": {
+        "counts": {
+          "passed": 247,
+          "skipped": 37
+        },
+        "duration_seconds": 1.18,
+        "exit_code": 0
+      },
+      "reason": "192 test(s) flipped pass->fail; oracle round-trip green",
+      "verdict": "accept"
+    },
+    {
+      "flipped_tests": [
+        "test/test_output.py::test_html",
+        "test/test_output.py::test_unsafehtml",
+        "test/test_output.py::test_html_headerless",
+        "test/test_output.py::test_unsafehtml_headerless"
+      ],
+      "id": "c07-inverted_condition-L2393",
+      "mutated_suite": {
+        "counts": {
+          "failed": 4,
+          "passed": 243,
+          "skipped": 37
+        },
+        "duration_seconds": 1.2,
+        "exit_code": 1
+      },
+      "oracle_suite": {
+        "counts": {
+          "passed": 247,
+          "skipped": 37
+        },
+        "duration_seconds": 1.19,
+        "exit_code": 0
+      },
+      "reason": "4 test(s) flipped pass->fail; oracle round-trip green",
+      "verdict": "accept"
+    },
+    {
+      "id": "c08-inverted_condition-L2139",
+      "mutated_suite": {
+        "counts": {
+          "passed": 247,
+          "skipped": 37
+        },
+        "duration_seconds": 1.19,
+        "exit_code": 0
+      },
+      "reason": "no test flipped (suite still green)",
+      "verdict": "reject"
+    }
+  ],
+  "seed": "tabulate",
+  "stage": "failure_establishment",
+  "survivors": [
+    "c02-boundary_flip-L2446",
+    "c03-boundary_flip-L1458",
+    "c05-inverted_condition-L121",
+    "c06-inverted_condition-L846",
+    "c07-inverted_condition-L2393"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "alignment": {
+    "checked_at": "2026-07-08T16:50:00+00:00",
+    "reason": "1 requirement(s) <-> 2 check(s), fully traceable",
+    "verdict": "accept"
+  },
+  "candidate_id": "c05-inverted_condition-L121",
+  "coverage": {
+    "R1": [
+      "V1",
+      "V2"
+    ]
+  },
+  "edge_cases_planned_stage5": [
+    "condition_true_path",
+    "condition_false_path"
+  ],
+  "generated_at": "2026-07-08T16:49:50+00:00",
+  "instruction": {
+    "leak_check": "passed",
+    "verbosity": "explicit"
+  },
+  "requirements": [
+    {
+      "id": "R1",
+      "origin": "template.intended_behavior",
+      "text": "In tabulate/__init__.py:121 (_pipe_segment_with_colons), the branch condition must be `align == \"left\"` (not its negation). Control flow must follow the original condition."
+    }
+  ],
+  "spec_source": "mutation template metadata (procedural; no LLM)",
+  "task_name": "tbgen/tabulate-c05-inverted_condition-L121",
+  "verifier_checks": [
+    {
+      "covers": [
+        "R1"
+      ],
+      "execution": "tests/test.sh",
+      "id": "V1",
+      "kind": "held_out_flipped_regression_tests",
+      "node_ids": [
+        "/tests/verifier_tests/test_output.py::test_pipe",
+        "/tests/verifier_tests/test_output.py::test_pipe_headerless",
+        "/tests/verifier_tests/test_regression.py::test_ansi_color_in_table_cells",
+        "/tests/verifier_tests/test_regression.py::test_88_256_ANSI_color_codes",
+        "/tests/verifier_tests/test_regression.py::test_empty_pipe_table_with_columns"
+      ],
+      "provenance": "regression_copy"
+    },
+    {
+      "covers": [
+        "R1"
+      ],
+      "execution": "tests/test.sh",
+      "id": "V2",
+      "kind": "template_generated_edge_tests",
+      "node_ids": [
+        "/tests/edge/test_edge_inverted_condition.py::test_edge_inverted_condition_pipe_left_right"
+      ],
+      "per_test": [
+        {
+          "code": "T([[1, 2]], tablefmt=\"pipe\", colalign=(\"left\", \"right\"))",
+          "edge": "condition_true_path",
+          "id": "pipe_left_right"
+        }
+      ],
+      "provenance": "template_generated"
+    }
+  ],
+  "verifier_synthesis": {
+    "admission_rule": "fail-on-broken AND pass-on-oracle, in-container",
+    "caveat": "characterization tests: golden taken from oracle, proves compatibility not semantic validity",
+    "n_admitted": 1,
+    "n_discarded": 12,
+    "regression_copies_confirmed": true,
+    "updated_at": "2026-07-08T16:49:56+00:00"
+  }
+}

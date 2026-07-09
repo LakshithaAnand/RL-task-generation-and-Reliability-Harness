@@ -1,0 +1,237 @@
+{
+  "caveat": "empirical solve-rate anchoring is the designed next step, not yet run.",
+  "coverage": {
+    "by_skill_and_difficulty": {
+      "boundary-condition-reasoning": {
+        "easy": 1,
+        "hard": 1
+      },
+      "control-flow-reasoning": {
+        "easy": 1,
+        "medium": 2
+      }
+    },
+    "clustered_in_one_cell": false,
+    "occupied_cells": 4,
+    "repos": {
+      "tabulate": 5
+    },
+    "single_repo_note": "all 5 task(s) share one seed repo (tabulate); cross-repo diversity is not yet demonstrated \u2014 a stated limitation, not an oversight"
+  },
+  "difficulty_rules": {
+    "call_graph_depth": ">=2 -> 1 pt; 0/1 or unavailable -> 0 pts",
+    "flipped_test_count": "<=4 -> 2 pts; 5-19 -> 1 pt; >=20 -> 0 pts",
+    "instruction_verbosity": "symptom_only -> 1 pt; explicit -> 0 pts",
+    "label": "total <=1 easy; 2-3 medium; >=4 hard",
+    "verifier_test_count": "<=5 -> 1 pt; else 0 pts"
+  },
+  "generated_at": "2026-07-08T16:54:27+00:00",
+  "stage": "metadata_tag",
+  "tasks": [
+    {
+      "candidate_id": "c02-boundary_flip-L2446",
+      "difficulty": {
+        "caveat": "empirical solve-rate anchoring is the designed next step, not yet run.",
+        "empirical_solve_rate": null,
+        "signals": [
+          {
+            "name": "flipped_test_count",
+            "note": "fewer flipped tests -> harder to localize",
+            "points": 1,
+            "value": 18
+          },
+          {
+            "name": "instruction_verbosity",
+            "note": "symptom_only gives no file/function hint",
+            "points": 0,
+            "value": "explicit"
+          },
+          {
+            "name": "verifier_test_count",
+            "note": "regression copies + admitted edge + hardening edge tests",
+            "points": 0,
+            "value": 22
+          },
+          {
+            "name": "call_graph_depth",
+            "note": "site unreachable via simple call edges; scored 0",
+            "points": 0,
+            "value": null
+          }
+        ],
+        "structural_preliminary": "easy",
+        "total_points": 1
+      },
+      "diversity": {
+        "category": "software-engineering",
+        "repo": "tabulate",
+        "skill_type": "boundary-condition-reasoning"
+      },
+      "task_name": "tbgen/tabulate-c02-boundary_flip-L2446"
+    },
+    {
+      "candidate_id": "c03-boundary_flip-L1458",
+      "difficulty": {
+        "caveat": "empirical solve-rate anchoring is the designed next step, not yet run.",
+        "empirical_solve_rate": null,
+        "signals": [
+          {
+            "name": "flipped_test_count",
+            "note": "fewer flipped tests -> harder to localize",
+            "points": 2,
+            "value": 2
+          },
+          {
+            "name": "instruction_verbosity",
+            "note": "symptom_only gives no file/function hint",
+            "points": 1,
+            "value": "symptom_only"
+          },
+          {
+            "name": "verifier_test_count",
+            "note": "regression copies + admitted edge + hardening edge tests",
+            "points": 1,
+            "value": 3
+          },
+          {
+            "name": "call_graph_depth",
+            "note": "approximate intra-module call depth from public API",
+            "points": 0,
+            "value": 1
+          }
+        ],
+        "structural_preliminary": "hard",
+        "total_points": 4
+      },
+      "diversity": {
+        "category": "software-engineering",
+        "repo": "tabulate",
+        "skill_type": "boundary-condition-reasoning"
+      },
+      "task_name": "tbgen/tabulate-c03-boundary_flip-L1458"
+    },
+    {
+      "candidate_id": "c05-inverted_condition-L121",
+      "difficulty": {
+        "caveat": "empirical solve-rate anchoring is the designed next step, not yet run.",
+        "empirical_solve_rate": null,
+        "signals": [
+          {
+            "name": "flipped_test_count",
+            "note": "fewer flipped tests -> harder to localize",
+            "points": 1,
+            "value": 5
+          },
+          {
+            "name": "instruction_verbosity",
+            "note": "symptom_only gives no file/function hint",
+            "points": 0,
+            "value": "explicit"
+          },
+          {
+            "name": "verifier_test_count",
+            "note": "regression copies + admitted edge + hardening edge tests",
+            "points": 0,
+            "value": 6
+          },
+          {
+            "name": "call_graph_depth",
+            "note": "site unreachable via simple call edges; scored 0",
+            "points": 0,
+            "value": null
+          }
+        ],
+        "structural_preliminary": "easy",
+        "total_points": 1
+      },
+      "diversity": {
+        "category": "software-engineering",
+        "repo": "tabulate",
+        "skill_type": "control-flow-reasoning"
+      },
+      "task_name": "tbgen/tabulate-c05-inverted_condition-L121"
+    },
+    {
+      "candidate_id": "c06-inverted_condition-L846",
+      "difficulty": {
+        "caveat": "empirical solve-rate anchoring is the designed next step, not yet run.",
+        "empirical_solve_rate": null,
+        "signals": [
+          {
+            "name": "flipped_test_count",
+            "note": "fewer flipped tests -> harder to localize",
+            "points": 0,
+            "value": 192
+          },
+          {
+            "name": "instruction_verbosity",
+            "note": "symptom_only gives no file/function hint",
+            "points": 1,
+            "value": "symptom_only"
+          },
+          {
+            "name": "verifier_test_count",
+            "note": "regression copies + admitted edge + hardening edge tests",
+            "points": 0,
+            "value": 194
+          },
+          {
+            "name": "call_graph_depth",
+            "note": "approximate intra-module call depth from public API",
+            "points": 1,
+            "value": 2
+          }
+        ],
+        "structural_preliminary": "medium",
+        "total_points": 2
+      },
+      "diversity": {
+        "category": "software-engineering",
+        "repo": "tabulate",
+        "skill_type": "control-flow-reasoning"
+      },
+      "task_name": "tbgen/tabulate-c06-inverted_condition-L846"
+    },
+    {
+      "candidate_id": "c07-inverted_condition-L2393",
+      "difficulty": {
+        "caveat": "empirical solve-rate anchoring is the designed next step, not yet run.",
+        "empirical_solve_rate": null,
+        "signals": [
+          {
+            "name": "flipped_test_count",
+            "note": "fewer flipped tests -> harder to localize",
+            "points": 2,
+            "value": 4
+          },
+          {
+            "name": "instruction_verbosity",
+            "note": "symptom_only gives no file/function hint",
+            "points": 0,
+            "value": "explicit"
+          },
+          {
+            "name": "verifier_test_count",
+            "note": "regression copies + admitted edge + hardening edge tests",
+            "points": 1,
+            "value": 4
+          },
+          {
+            "name": "call_graph_depth",
+            "note": "approximate intra-module call depth from public API",
+            "points": 0,
+            "value": 1
+          }
+        ],
+        "structural_preliminary": "medium",
+        "total_points": 3
+      },
+      "diversity": {
+        "category": "software-engineering",
+        "repo": "tabulate",
+        "skill_type": "control-flow-reasoning"
+      },
+      "task_name": "tbgen/tabulate-c07-inverted_condition-L2393"
+    }
+  ]
+}

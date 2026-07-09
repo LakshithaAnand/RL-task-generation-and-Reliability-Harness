@@ -1,0 +1,304 @@
+{
+  "agent": "claude-code",
+  "attempts_per_task": 5,
+  "generated_at": "2026-07-08T16:45:57+00:00",
+  "job_dir": "jobs/empdiff",
+  "model": "claude-haiku-4-5-20251001",
+  "n_concurrent": 4,
+  "results": [
+    {
+      "agreement": true,
+      "attempts": [
+        {
+          "agent_seconds": 52.5,
+          "cost_usd": 0.1290788,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c02-boundary_flip-L2446__83DGypA",
+          "wall_clock_seconds": 97.0
+        },
+        {
+          "agent_seconds": 60.4,
+          "cost_usd": 0.15030270000000004,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c02-boundary_flip-L2446__DtqZWbC",
+          "wall_clock_seconds": 97.1
+        },
+        {
+          "agent_seconds": 39.7,
+          "cost_usd": 0.09757595000000002,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c02-boundary_flip-L2446__FER8Kop",
+          "wall_clock_seconds": 78.7
+        },
+        {
+          "agent_seconds": 36.7,
+          "cost_usd": 0.09366144999999998,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c02-boundary_flip-L2446__UsHPjDe",
+          "wall_clock_seconds": 73.2
+        },
+        {
+          "agent_seconds": 32.4,
+          "cost_usd": 0.07794345,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c02-boundary_flip-L2446__c7MqnZS",
+          "wall_clock_seconds": 68.6
+        }
+      ],
+      "candidate_id": "c02-boundary_flip-L2446",
+      "empirical_label": "easy",
+      "n_attempts": 5,
+      "solve_rate": 1.0,
+      "structural_label": "easy",
+      "successes": 5,
+      "task_name": "tbgen/tabulate-c02-boundary_flip-L2446"
+    },
+    {
+      "agreement": false,
+      "attempts": [
+        {
+          "agent_seconds": 52.5,
+          "cost_usd": 0.0776789,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c03-boundary_flip-L1458__GBYS3Qp",
+          "wall_clock_seconds": 88.9
+        },
+        {
+          "agent_seconds": 46.8,
+          "cost_usd": 0.12262525,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c03-boundary_flip-L1458__LQJT3ne",
+          "wall_clock_seconds": 82.5
+        },
+        {
+          "agent_seconds": 70.0,
+          "cost_usd": 0.1543265,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c03-boundary_flip-L1458__nHE7Q5V",
+          "wall_clock_seconds": 119.9
+        },
+        {
+          "agent_seconds": 51.9,
+          "cost_usd": 0.13595825,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c03-boundary_flip-L1458__phZsLf4",
+          "wall_clock_seconds": 87.8
+        },
+        {
+          "agent_seconds": 74.8,
+          "cost_usd": 0.1515644,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c03-boundary_flip-L1458__xwhTFsE",
+          "wall_clock_seconds": 110.9
+        }
+      ],
+      "candidate_id": "c03-boundary_flip-L1458",
+      "empirical_label": "easy",
+      "n_attempts": 5,
+      "solve_rate": 1.0,
+      "structural_label": "hard",
+      "successes": 5,
+      "task_name": "tbgen/tabulate-c03-boundary_flip-L1458"
+    },
+    {
+      "agreement": true,
+      "attempts": [
+        {
+          "agent_seconds": 103.0,
+          "cost_usd": 0.18841084999999996,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c05-inverted_condition__8X4LvmZ",
+          "wall_clock_seconds": 140.0
+        },
+        {
+          "agent_seconds": 46.8,
+          "cost_usd": 0.10052765,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c05-inverted_condition__DSK2p8i",
+          "wall_clock_seconds": 83.5
+        },
+        {
+          "agent_seconds": 60.7,
+          "cost_usd": 0.10624365,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c05-inverted_condition__e8rg8s6",
+          "wall_clock_seconds": 112.3
+        },
+        {
+          "agent_seconds": 47.7,
+          "cost_usd": 0.10419355000000002,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c05-inverted_condition__h65qH9k",
+          "wall_clock_seconds": 84.4
+        },
+        {
+          "agent_seconds": 52.8,
+          "cost_usd": 0.0940812,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c05-inverted_condition__ip9kDBE",
+          "wall_clock_seconds": 88.8
+        }
+      ],
+      "candidate_id": "c05-inverted_condition-L121",
+      "empirical_label": "easy",
+      "n_attempts": 5,
+      "solve_rate": 1.0,
+      "structural_label": "easy",
+      "successes": 5,
+      "task_name": "tbgen/tabulate-c05-inverted_condition-L121"
+    },
+    {
+      "agreement": false,
+      "attempts": [
+        {
+          "agent_seconds": 133.1,
+          "cost_usd": 0.26110120000000003,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c06-inverted_condition__8KWgeuG",
+          "wall_clock_seconds": 170.2
+        },
+        {
+          "agent_seconds": 68.2,
+          "cost_usd": 0.143212,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c06-inverted_condition__8zx3fsQ",
+          "wall_clock_seconds": 105.5
+        },
+        {
+          "agent_seconds": 56.9,
+          "cost_usd": 0.13558865,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c06-inverted_condition__QEiJZen",
+          "wall_clock_seconds": 94.3
+        },
+        {
+          "agent_seconds": 53.0,
+          "cost_usd": 0.12743685000000002,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c06-inverted_condition__jYN5hQS",
+          "wall_clock_seconds": 91.5
+        },
+        {
+          "agent_seconds": 74.5,
+          "cost_usd": 0.15615469999999998,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c06-inverted_condition__k25pGX6",
+          "wall_clock_seconds": 118.7
+        }
+      ],
+      "candidate_id": "c06-inverted_condition-L846",
+      "empirical_label": "easy",
+      "n_attempts": 5,
+      "solve_rate": 1.0,
+      "structural_label": "medium",
+      "successes": 5,
+      "task_name": "tbgen/tabulate-c06-inverted_condition-L846"
+    },
+    {
+      "agreement": true,
+      "attempts": [
+        {
+          "agent_seconds": 317.5,
+          "cost_usd": 0.5628126999999998,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c07-inverted_condition__PXSajvy",
+          "wall_clock_seconds": 356.3
+        },
+        {
+          "agent_seconds": 493.5,
+          "cost_usd": 0.6968293999999998,
+          "exception": null,
+          "reward": 0.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c07-inverted_condition__RQPP9D6",
+          "wall_clock_seconds": 530.2
+        },
+        {
+          "agent_seconds": 77.1,
+          "cost_usd": 0.12256855,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c07-inverted_condition__rxfzthH",
+          "wall_clock_seconds": 114.5
+        },
+        {
+          "agent_seconds": 118.9,
+          "cost_usd": 0.25709725000000005,
+          "exception": null,
+          "reward": 1.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c07-inverted_condition__tzQtCff",
+          "wall_clock_seconds": 173.2
+        },
+        {
+          "agent_seconds": 555.2,
+          "cost_usd": 1.03561855,
+          "exception": null,
+          "reward": 0.0,
+          "timed_out": false,
+          "trial_name": "tabulate-c07-inverted_condition__wSz5QHL",
+          "wall_clock_seconds": 592.8
+        }
+      ],
+      "candidate_id": "c07-inverted_condition-L2393",
+      "empirical_label": "medium",
+      "n_attempts": 5,
+      "solve_rate": 0.6,
+      "structural_label": "medium",
+      "successes": 3,
+      "task_name": "tbgen/tabulate-c07-inverted_condition-L2393"
+    }
+  ],
+  "small_sample_caveat": "n=5 attempts per task \u2014 one success shifts the label; solve-rates are descriptive, not calibrated estimates",
+  "stage": "empirical_difficulty",
+  "thresholds": {
+    "easy": ">=0.75",
+    "hard": "<0.25",
+    "medium": "0.25-0.74",
+    "note": "thresholds fixed in docs/PLAN.md (easy >=75%, medium 25-74%, hard <25%) before any empirical results were seen"
+  },
+  "total_cost_usd": 5.2826
+}

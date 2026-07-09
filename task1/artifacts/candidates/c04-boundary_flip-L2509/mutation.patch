@@ -1,0 +1,11 @@
+--- a/tabulate/__init__.py
++++ b/tabulate/__init__.py
+@@ -2506,7 +2506,7 @@
+                 indent = self.subsequent_indent
+             else:
+                 indent = self.initial_indent
+-            if self._len(indent) + self._len(self.placeholder.lstrip()) > self.width:
++            if self._len(indent) + self._len(self.placeholder.lstrip()) >= self.width:
+                 raise ValueError("placeholder too large for max width")
+ 
+         # Arrange in reverse order so items can be efficiently popped

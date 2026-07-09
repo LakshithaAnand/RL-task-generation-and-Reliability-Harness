@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-07-08T16:47:23+00:00",
+  "n_eligible": 1,
+  "seeds": [
+    {
+      "checks": {
+        "clone": {
+          "ok": true,
+          "reused_existing_clone": true
+        },
+        "docker_build": {
+          "dockerfile": "/Users/aadarshsubramanian/dev/tb-task-pipeline/artifacts/build/tabulate/Dockerfile",
+          "image": "tb-seed-tabulate:bf58e37e6b35",
+          "ok": true
+        },
+        "license": {
+          "file": "LICENSE",
+          "license": "MIT",
+          "ok": true
+        },
+        "size": {
+          "max_mb": 50,
+          "ok": true,
+          "size_mb": 0.34
+        },
+        "tests": {
+          "counts": {
+            "passed": 247,
+            "skipped": 37
+          },
+          "duration_seconds": 1.27,
+          "exit_code": 0,
+          "ok": true
+        }
+      },
+      "commit": "bf58e37e6b35e3cc9a0bd740f752abfd32b6e6f8",
+      "eligible": true,
+      "seed": "tabulate",
+      "tag": "v0.9.0",
+      "url": "https://github.com/astanin/python-tabulate.git"
+    }
+  ],
+  "stage": "eligibility"
+}

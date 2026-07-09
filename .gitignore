@@ -1,0 +1,33 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Virtualenvs / build
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+
+# Harbor / run outputs (reproducible, not source)
+jobs/
+task1/jobs/
+
+# Large reproducible artifacts (evidence reports ARE committed)
+task1/artifacts/repos/
+task1/artifacts/build/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+~$*

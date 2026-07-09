@@ -1,0 +1,5 @@
+/tests/verifier_tests/test_output.py::test_pipe
+/tests/verifier_tests/test_output.py::test_pipe_headerless
+/tests/verifier_tests/test_regression.py::test_ansi_color_in_table_cells
+/tests/verifier_tests/test_regression.py::test_88_256_ANSI_color_codes
+/tests/verifier_tests/test_regression.py::test_empty_pipe_table_with_columns
