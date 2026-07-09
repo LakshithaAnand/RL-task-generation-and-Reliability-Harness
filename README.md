@@ -35,7 +35,7 @@ Each task is self-contained; follow the README inside `task1/` and `task2/`.
   committed state in ~7 minutes with **zero API keys**; regenerated task folders
   come out byte-identical to committed. `scripts/handcheck.sh` independently
   re-verifies the key security claim.
-- **Task 2:** see `task2/README.md`. Model-calling steps (generating attempts,
+- **Task 2:** see `task2/README.md`. You can find the smoke test steps there that does not require an API to run. Model-calling steps (generating attempts,
   running the grader) require an `ANTHROPIC_API_KEY`; the committed attempts and
   reports in `data/` let the analysis be reviewed without re-running anything.
 
