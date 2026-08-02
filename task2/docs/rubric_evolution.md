@@ -1,6 +1,6 @@
 # Rubric & prompt evolution — the 2026-07-07 replacement
 
-The grader rubrics and prompts are part of the candidate deliverable, and on
+The grader rubrics and prompts are project-owned artifacts, and on
 2026-07-07 all three were replaced wholesale in the build-spec appendix. This
 document records both generations verbatim, what structurally changed, and —
 because every LLM grade was regenerated under the new prompts — the measured

@@ -1,6 +1,6 @@
 # Project: Synthetic Task Generation Pipeline (Terminal-Bench 2.0 / Harbor)
 
-Interview take-home. Full design: docs/PLAN.md — read it before any stage work.
+Full design: docs/PLAN.md — read it before any stage work.
 
 ## Thesis
 The product is verifiable reward with an executable assurance case. Every accepted task ships evidence: starts unsolved, oracle-solvable, instruction–verifier traceable, rejects near-misses, documented residual risk.

@@ -109,7 +109,7 @@ task2/
   config.yaml               # models, budgets, timeouts (all configurable)
   plan.md                   # the build plan this project followed
   FINDINGS.md               # dated findings log, one entry per build step
-  docs/environment_design_note.md   # 2-page env design note (assignment deliverable)
+  docs/environment_design_note.md   # 2-page env design note
   docs/multihop_grading.md          # multi-hop grading: design, eligibility rule, results
   docs/rubric_evolution.md          # old vs new rubric prompts + measured impact of the swap
   src/task2/

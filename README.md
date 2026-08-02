@@ -1,7 +1,7 @@
-# Labelbox FDE/FDR Take-Home — Lakshitha Anand
+# RL Task Generation & Grading
 
 Synthetic task generation, an RL environment, an LLM grader, and a reliability
-analysis for Terminal-Bench 2.0 / Harbor. This repository contains both tasks,
+analysis for Terminal-Bench 2.0 / Harbor. This repository contains both parts,
 their design write-ups, and (for Task 2) the collected attempts used in the
 analysis.
 

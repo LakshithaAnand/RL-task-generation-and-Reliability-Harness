@@ -1,7 +1,7 @@
 # Task 2 Build Plan — RL Environment, LLM Grader, Reliability Analysis
 
 This document is the working plan for everything that will be built in this folder
-(`task2/`). Scope is fixed by two sources only: the onsite assignment PDF (Task 2
+(`task2/`). Scope is fixed by two sources only: the project spec (Task 2
 section) and `task2_claude_code_build_prompt_v2.md`. Anything not traceable to one
 of those is out of scope.
 
@@ -48,7 +48,7 @@ task2/
   config.yaml           # model IDs, budgets, timeouts, paths
   README.md             # how to run, design rationale, findings, limitations
   docs/
-    environment_design_note.md   # 1-2 page design note required by assignment
+    environment_design_note.md   # 1-2 page design note
   src/task2/
     tasks.py            # TB2 task loader + validation
     environment.py      # Docker lifecycle: reset/run_attempt/step/verify/snapshot_diff/close
@@ -148,7 +148,7 @@ failure). Edge cases handled: `total_tests == initial_passed`,
   untouched, filled by `.format()`-style substitution only.
 - Modes: pointwise, pairwise (**A/B order randomized per call and logged** for
   the position-bias probe), and **step-level pointwise**
-  (helped/neutral/hurt — assignment-required).
+  (helped/neutral/hurt — spec-required).
 - Two pipelines:
   - **single-pass**: full trajectory straight to the judge;
   - **multi-hop**: deterministic extraction (final diff, changed files, verifier

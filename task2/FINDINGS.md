@@ -101,7 +101,7 @@ network probe confirms isolation, container removed on close.
 oracle (and any real attempt) starts with `pip install grpcio==1.73.0
 grpcio-tools==1.73.0`, which needs network — exactly what principle #6 forbids
 during attempts. Fix: light modification (explicitly permitted by the
-assignment) — pre-install the two *pinned* packages in the task's Dockerfile.
+spec) — pre-install the two *pinned* packages in the task's Dockerfile.
 `pip install` of an exactly-pinned, already-installed package short-circuits
 ("Requirement already satisfied") without touching the network, so the
 unmodified oracle still passes offline. Task hash changes → image auto-rebuilds.
@@ -443,7 +443,7 @@ quickstart, per-command pipeline guide, from-scratch regeneration with
 nondeterminism caveats, design rationale, findings summary, limitations,
 future work), `docs/environment_design_note.md` (action space, observations,
 reward structure, reward-hacking surface table, training-run monitoring list —
-the assignment's env deliverable), plus the running `FINDINGS.md` and
+the environment design deliverable), plus the running `FINDINGS.md` and
 `plan.md` with the acceptance checklist ticked against measured results.
 
 **Step 10 checkpoint result — PASS.** All 10 steps complete; acceptance
@@ -520,7 +520,7 @@ randomization — now explained in a code comment.
 
 ---
 
-## Multi-hop eligibility analysis (2026-07-06, user-requested pre-submission)
+## Multi-hop eligibility analysis (2026-07-06)
 
 **F11.1 — Deterministic eligibility rule replaces the ad-hoc ablation
 subset.** Rule: `steps >= 10 OR trajectory_chars >= 8000 OR task ==
@@ -581,7 +581,7 @@ updated to match.
 
 ---
 
-## Task-stratified bias probes (2026-07-06, user-requested pre-submission)
+## Task-stratified bias probes (2026-07-06)
 
 **F12.1 — Both bias probes now cover every task, hard task included.** The
 original samples were balanced on pass/fail but selected alphabetically,
@@ -615,7 +615,7 @@ calls. README, plan.md, and the report regenerated to match.
 ## Rubric replacement (2026-07-07, user-directed)
 
 The three grader rubrics + prompts were replaced wholesale in the build-spec
-appendix (rubrics/prompts are the candidate's deliverable, so replacement is
+appendix (rubrics/prompts are project-owned artifacts, so replacement is
 legitimate): R1 Diagnosis Quality → **Problem Localization**, R2 Fix
 Correctness → **Patch Correctness**, R3 Codebase Impact → **Generalization &
 Regression Safety**. The three ROLES are preserved (process /
