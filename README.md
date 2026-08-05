@@ -1,4 +1,4 @@
-# RL Task Generation & Grading
+# RL Task Generation & Reliability Harness
 
 Synthetic task generation, an RL environment, an LLM grader, and a reliability
 analysis for Terminal-Bench 2.0 / Harbor. This repository contains both parts,
